@@ -1,0 +1,23 @@
+{
+    "name": "ync-bearz/design-pattern",
+    "type": "project",
+    "description": "Design Pattern Practice.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
