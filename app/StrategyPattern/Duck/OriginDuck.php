@@ -1,13 +1,24 @@
 <?php
 namespace App\StrategyPattern\Duck;
 
+use App\StrategyPattern\Duck\PerformFly\FlyBehavior;
+use App\StrategyPattern\Duck\PerformQuack\QuackBehavior;
+
 abstract class OriginDuck
 {
+    /**
+     * @var string $name
+     * @var FlyBehavior $FlyBehavior
+     * @var QuackBehavior $QuackBehavior
+     */
     protected $name = '原型鴨';
+    protected $FlyBehavior;
+    protected $QuackBehavior;
 
-    public function quack()
+
+    public function performQuack()
     {
-        echo "呱呱叫 \n";
+        $this->QuackBehavior->quack();
     }
 
     public function swim()
@@ -15,9 +26,9 @@ abstract class OriginDuck
         echo "我會游泳噢 \n";
     }
 
-    public function fly()
+    public function performFly()
     {
-        echo "我在天上飛～ \n";
+        $this->FlyBehavior->fly();
     }
 
     /**
@@ -30,8 +41,8 @@ abstract class OriginDuck
         echo "我是" . $this->name . "\n";
 
         $this->display();
-        $this->quack();
-        $this->fly();
+        $this->performQuack();
+        $this->performFly();
         $this->swim();
 
         echo "----------- \n";

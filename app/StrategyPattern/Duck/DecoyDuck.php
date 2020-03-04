@@ -2,23 +2,20 @@
 namespace App\StrategyPattern\Duck;
 
 use App\StrategyPattern\Duck\OriginDuck;
+use App\StrategyPattern\Duck\PerformFly\FlyNoWay;
+use App\StrategyPattern\Duck\PerformQuack\MuteQuack;
 
 class DecoyDuck extends OriginDuck
 {
-    protected $name = '誘餌鴨';
-
-    public function quack()
+    public function __construct()
     {
-        //
+        $this->name = '誘餌鴨';
+        $this->FlyBehavior = new FlyNoWay();
+        $this->QuackBehavior = new MuteQuack();
     }
 
     public function display()
     {
         echo "外觀是誘餌鴨 \n";
-    }
-
-    public function fly()
-    {
-        //
     }
 }

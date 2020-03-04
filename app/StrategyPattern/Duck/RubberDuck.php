@@ -3,23 +3,20 @@
 namespace App\StrategyPattern\Duck;
 
 use App\StrategyPattern\Duck\OriginDuck;
+use App\StrategyPattern\Duck\PerformFly\FlyNoWay;
+use App\StrategyPattern\Duck\PerformQuack\Squeak;
 
 class RubberDuck extends OriginDuck
 {
-    protected $name = '橡皮鴨';
-
-    public function quack()
+    public function __construct()
     {
-        echo "吱吱叫 \n";
+        $this->name = '橡皮鴨';
+        $this->FlyBehavior = new FlyNoWay();
+        $this->QuackBehavior = new Squeak();
     }
 
     public function display()
     {
         echo "外觀是橡皮的 \n";
-    }
-
-    public function fly()
-    {
-        //
     }
 }

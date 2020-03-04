@@ -2,10 +2,17 @@
 namespace App\StrategyPattern\Duck;
 
 use App\StrategyPattern\Duck\OriginDuck;
+use App\StrategyPattern\Duck\PerformQuack\Quack;
+use App\StrategyPattern\Duck\PerformFly\FlyWithWings;
 
 class MallardDuck extends OriginDuck
 {
-    protected $name = '綠頭鴨';
+    public function __construct()
+    {
+        $this->name = '綠頭鴨';
+        $this->FlyBehavior = new FlyWithWings();
+        $this->QuackBehavior = new Quack();
+    }
 
     public function display()
     {
