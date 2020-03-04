@@ -7,6 +7,6 @@ class FlyNoWay implements FlyBehavior
 {
     public function fly()
     {
-        //
+        echo "我不會飛.. \n";
     }
 }
