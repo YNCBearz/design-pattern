@@ -4,12 +4,12 @@ namespace App\StrategyPattern\Duck;
 
 use App\StrategyPattern\Duck\OriginDuck;
 
-class RedHeadDuck extends OriginDuck
+class RubberDuck extends OriginDuck
 {
-    protected $name = '紅頭鴨';
+    protected $name = '橡皮鴨';
 
     public function display()
     {
-        echo "外觀是紅頭的 \n";
+        echo "外觀是橡皮的 \n";
     }
 }

@@ -5,7 +5,7 @@ use App\StrategyPattern\Duck\OriginDuck;
 
 class MallardDuck extends OriginDuck
 {
-    private $name = '綠頭鴨';
+    protected $name = '綠頭鴨';
 
     public function display()
     {

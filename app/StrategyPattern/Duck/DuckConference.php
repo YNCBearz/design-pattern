@@ -10,8 +10,10 @@ class DuckConference
     {
         $MallardDuck = new MallardDuck();
         $RedHeadDuck = new RedHeadDuck();
+        $RubberDuck = new RubberDuck();
 
         $MallardDuck->show();
         $RedHeadDuck->show();
+        $RubberDuck->show();
     }
 }

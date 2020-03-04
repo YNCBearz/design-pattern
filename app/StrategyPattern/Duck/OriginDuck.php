@@ -3,7 +3,7 @@ namespace App\StrategyPattern\Duck;
 
 abstract class OriginDuck
 {
-    private $name = '原型鴨';
+    protected $name = '原型鴨';
 
     public function quack()
     {
@@ -15,6 +15,11 @@ abstract class OriginDuck
         echo "我會游泳噢 \n";
     }
 
+    public function fly()
+    {
+        echo "我在天上飛～ \n";
+    }
+
     /**
      * 每種鴨子的外觀不同
      */
@@ -22,10 +27,11 @@ abstract class OriginDuck
 
     public function show()
     {
-        echo "我是$this->name \n";
+        echo "我是" . $this->name . "\n";
 
         $this->display();
         $this->quack();
+        $this->fly();
         $this->swim();
 
         echo "----------- \n";
