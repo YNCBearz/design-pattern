@@ -11,9 +11,11 @@ class DuckConference
         $MallardDuck = new MallardDuck();
         $RedHeadDuck = new RedHeadDuck();
         $RubberDuck = new RubberDuck();
+        $DecoyDuck = new DecoyDuck();
 
         $MallardDuck->show();
         $RedHeadDuck->show();
         $RubberDuck->show();
+        $DecoyDuck->show();
     }
 }
