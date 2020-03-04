@@ -4,6 +4,7 @@ namespace App\StrategyPattern\Duck;
 use App\StrategyPattern\Duck\OriginDuck;
 use App\StrategyPattern\Duck\PerformFly\FlyNoWay;
 use App\StrategyPattern\Duck\PerformQuack\RobotQuack;
+use App\StrategyPattern\Duck\PerformFly\FlyWithRocket;
 
 class ModelDuck extends OriginDuck
 {
@@ -17,5 +18,19 @@ class ModelDuck extends OriginDuck
     public function display()
     {
         echo "外觀是機械的 \n";
+    }
+
+    public function show()
+    {
+        echo "我是" . $this->name . "\n";
+
+        $this->display();
+        $this->performQuack();
+        $this->performFly();
+        $this->setFlyBehavior(new FlyWithRocket());
+        $this->performFly();
+        $this->swim();
+
+        echo "----------- \n";
     }
 }

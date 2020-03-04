@@ -47,4 +47,9 @@ abstract class OriginDuck
 
         echo "----------- \n";
     }
+
+    protected function setFlyBehavior(FlyBehavior $flyBehavior)
+    {
+        $this->flyBehavior = $flyBehavior;
+    }
 }
