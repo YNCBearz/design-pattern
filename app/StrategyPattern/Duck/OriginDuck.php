@@ -11,14 +11,14 @@ abstract class OriginDuck
      * @var FlyBehavior $FlyBehavior
      * @var QuackBehavior $QuackBehavior
      */
-    protected $name = '原型鴨';
-    protected $FlyBehavior;
-    protected $QuackBehavior;
+    protected $name = '命名尚未設定';
+    protected $flyBehavior;
+    protected $quackBehavior;
 
 
     public function performQuack()
     {
-        $this->QuackBehavior->quack();
+        $this->quackBehavior->quack();
     }
 
     public function swim()
@@ -28,7 +28,7 @@ abstract class OriginDuck
 
     public function performFly()
     {
-        $this->FlyBehavior->fly();
+        $this->flyBehavior->fly();
     }
 
     /**

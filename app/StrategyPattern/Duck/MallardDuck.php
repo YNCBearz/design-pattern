@@ -10,8 +10,8 @@ class MallardDuck extends OriginDuck
     public function __construct()
     {
         $this->name = '綠頭鴨';
-        $this->FlyBehavior = new FlyWithWings();
-        $this->QuackBehavior = new Quack();
+        $this->flyBehavior = new FlyWithWings();
+        $this->quackBehavior = new Quack();
     }
 
     public function display()

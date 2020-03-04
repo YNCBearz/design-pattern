@@ -10,8 +10,8 @@ class DecoyDuck extends OriginDuck
     public function __construct()
     {
         $this->name = '誘餌鴨';
-        $this->FlyBehavior = new FlyNoWay();
-        $this->QuackBehavior = new MuteQuack();
+        $this->flyBehavior = new FlyNoWay();
+        $this->quackBehavior = new MuteQuack();
     }
 
     public function display()

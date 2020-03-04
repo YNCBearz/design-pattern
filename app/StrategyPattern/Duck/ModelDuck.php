@@ -10,8 +10,8 @@ class ModelDuck extends OriginDuck
     public function __construct()
     {
         $this->name = '模型鴨';
-        $this->FlyBehavior = new FlyNoWay();
-        $this->QuackBehavior = new RobotQuack();
+        $this->flyBehavior = new FlyNoWay();
+        $this->quackBehavior = new RobotQuack();
     }
 
     public function display()

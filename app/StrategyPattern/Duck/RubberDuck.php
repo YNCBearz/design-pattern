@@ -11,8 +11,8 @@ class RubberDuck extends OriginDuck
     public function __construct()
     {
         $this->name = '橡皮鴨';
-        $this->FlyBehavior = new FlyNoWay();
-        $this->QuackBehavior = new Squeak();
+        $this->flyBehavior = new FlyNoWay();
+        $this->quackBehavior = new Squeak();
     }
 
     public function display()
