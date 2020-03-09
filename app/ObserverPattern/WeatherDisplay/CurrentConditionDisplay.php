@@ -2,13 +2,35 @@
 
 namespace App\ObserverPattern\WeatherDisplay;
 
-class CurrentConditionDisplay
+use App\ObserverPattern\WeatherDisplay\Contracts\Subject;
+use App\ObserverPattern\WeatherDisplay\Contracts\Observer;
+use App\ObserverPattern\WeatherDisplay\Contracts\DisplayElement;
+
+class CurrentConditionDisplay implements Observer, DisplayElement
 {
     public $board_name = '目前天氣';
+    private $temperature;
+    private $humidity;
+    private $WeatherData;
 
-    public function update($temp, $humidity, $pressure)
+    public function __construct(Subject $WeatherData)
     {
-        //更新溫度、濕度、氣壓
-        echo $this->board_name . "已更新 \n";
+        $this->WeatherData = $WeatherData;
+        $WeatherData->registerObserver($this);
+    }
+
+    public function update($temperature, $humidity, $pressure)
+    {
+        $this->temperature = $temperature;
+        $this->humidity = $humidity;
+
+        $this->display();
+    }
+
+    public function display()
+    {
+        echo $this->board_name . ": \n";
+        echo "溫度： " . $this->temperature . "\n";
+        echo "濕度： " . $this->humidity . "\n";
     }
 }

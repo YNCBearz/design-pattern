@@ -2,47 +2,64 @@
 namespace App\ObserverPattern\WeatherDisplay;
 
 use App\ObserverPattern\WeatherDisplay\ForecastDisplay;
+use App\ObserverPattern\WeatherDisplay\Contracts\Subject;
 use App\ObserverPattern\WeatherDisplay\StatisticsDisplay;
+use App\ObserverPattern\WeatherDisplay\Contracts\Observer;
 use App\ObserverPattern\WeatherDisplay\CurrentConditionDisplay;
 
-class WeatherData
+class WeatherData implements Subject
 {
+    /**
+     * @var Observer[]
+     */
+    private $observers;
+
+    private $temperature;
+    private $humidity;
+    private $pressure;
+
+    public function __construct()
+    {
+        $this->observers = array();
+    }
+
+    public function registerObserver(Observer $observer)
+    {
+        array_push($this->observers, $observer);
+        echo $observer->board_name . "已註冊 \n";
+    }
+
+    public function removeObserver(Observer $observer)
+    {
+        $index = array_search($observer, $this->observers);
+
+        if ($index >= 0) {
+            unset($this->observers[$index]);
+            echo $observer->board_name . "已註銷 \n";
+        }
+    }
+
+    public function notifyObservers()
+    {
+        for ($i = 0; $i < count($this->observers); $i++) {
+            $observer = $this->observers[$i];
+            $observer->update($this->temperature, $this->humidity, $this->pressure);
+        }
+    }
+
     /**
      * 氣象站的開發人員暗示，在這個方法中寫下我們的代碼
      */
     public function measurementChanged()
     {
-        $temp = $this->getTemperature();
-        $humidity = $this->getHumidity();
-        $pressure = $this->getPressure();
-
-        //建議在這裡加上我們的代碼
-        $CurrentConditionDisplay = new CurrentConditionDisplay();
-        $StatisticsDisplay = new StatisticsDisplay();
-        $ForecastDisplay = new ForecastDisplay();
-
-        $CurrentConditionDisplay->update($temp, $humidity, $pressure);
-        $StatisticsDisplay->update($temp, $humidity, $pressure);
-        $ForecastDisplay->update($temp, $humidity, $pressure);
+        $this->notifyObservers();
     }
 
-    private function getTemperature()
+    public function setMeasurements($temperature, $humidity, $pressure)
     {
-        //可能透過api獲得溫度數據
-        return '25°';
+        $this->temperature = $temperature;
+        $this->humidity = $humidity;
+        $this->pressure = $pressure;
+        $this->measurementChanged();
     }
-
-    private function getHumidity()
-    {
-        //可能透過api獲得濕度數據
-        return '77%';
-    }
-
-    private function getPressure()
-    {
-        //可能透過api獲得氣壓數據
-        return '1010.00毫巴';
-    }
-
-
 }
