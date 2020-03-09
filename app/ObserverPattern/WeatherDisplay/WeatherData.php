@@ -1,6 +1,10 @@
 <?php
 namespace App\ObserverPattern\WeatherDisplay;
 
+use App\ObserverPattern\WeatherDisplay\ForecastDisplay;
+use App\ObserverPattern\WeatherDisplay\StatisticsDisplay;
+use App\ObserverPattern\WeatherDisplay\CurrentConditionDisplay;
+
 class WeatherData
 {
     /**
@@ -13,6 +17,13 @@ class WeatherData
         $pressure = $this->getPressure();
 
         //建議在這裡加上我們的代碼
+        $CurrentConditionDisplay = new CurrentConditionDisplay();
+        $StatisticsDisplay = new StatisticsDisplay();
+        $ForecastDisplay = new ForecastDisplay();
+
+        $CurrentConditionDisplay->update($temp, $humidity, $pressure);
+        $StatisticsDisplay->update($temp, $humidity, $pressure);
+        $ForecastDisplay->update($temp, $humidity, $pressure);
     }
 
     private function getTemperature()
