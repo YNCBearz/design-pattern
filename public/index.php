@@ -25,7 +25,7 @@ use App\ObserverPattern\WeatherDisplay\WeatherStation;
 // $StarbuzzCoffee->run();
 
 /**
- * 工廠模式 - 披薩店
+ * 簡單工廠模式 - 披薩店
  */
 $PizzaStore = new PizzaStore();
 $PizzaStore->run();

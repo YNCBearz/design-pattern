@@ -2,13 +2,18 @@
 
 namespace App\FactoryPattern\Pizza;
 
-use App\FactoryPattern\Pizza\ClamPizza;
-use App\FactoryPattern\Pizza\CheesePizza;
-use App\FactoryPattern\Pizza\PepperoniPizza;
+use App\FactoryPattern\Pizza\SimplePizzaFactory;
 use App\FactoryPattern\Pizza\Contracts\AbstractPizza as Pizza;
 
 class PizzaStore
 {
+    private $factory;
+
+    public function __construct()
+    {
+        $this->factory = new SimplePizzaFactory();
+    }
+
     public function run()
     {
         $this->orderPizza('cheese');
@@ -24,13 +29,7 @@ class PizzaStore
     {
         $this->welcome();
 
-        if ($type == 'cheese') {
-            $pizza = new CheesePizza();
-        } else if ($type == 'pepperoni') {
-            $pizza = new PepperoniPizza();
-        } else if ($type == 'clam') {
-            $pizza = new ClamPizza();
-        }
+        $pizza = $this->factory->createPizza($type);
 
         $pizza->prepare();
         $pizza->bake();
