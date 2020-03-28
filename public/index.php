@@ -1,6 +1,7 @@
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
+use App\FactoryPattern\Pizza\PizzaStore;
 use App\StrategyPattern\Duck\DucksConference;
 use App\DecoratePattern\Coffee\StarbuzzCoffee;
 use App\ObserverPattern\WeatherDisplay\WeatherStation;
@@ -17,8 +18,14 @@ use App\ObserverPattern\WeatherDisplay\WeatherStation;
 // $WeatherStation = new WeatherStation();
 // $WeatherStation->run();
 
+// /**
+//  * 裝飾者模式 - 星巴茲咖啡
+//  */
+// $StarbuzzCoffee = new StarbuzzCoffee();
+// $StarbuzzCoffee->run();
+
 /**
- * 裝飾者模式 - 星巴茲咖啡
+ * 工廠模式 - 披薩店
  */
-$StarbuzzCoffee = new StarbuzzCoffee();
-$StarbuzzCoffee->run();
+$PizzaStore = new PizzaStore();
+$PizzaStore->run();
