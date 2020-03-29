@@ -7,8 +7,9 @@ use App\FactoryPattern\Pizza\Contracts\AbstractPizza as Pizza;
 
 class PizzaStore
 {
-    private $factory;
+    protected $factory;
     private $pizza;
+    protected $name = '原味披薩創始店';
 
     public function __construct()
     {
@@ -56,7 +57,8 @@ class PizzaStore
 
     protected function thankYouForComing()
     {
-        echo "這是您點的{$this->pizza->name}，歡迎再度光臨 \n";
+        echo "這是您點的{$this->pizza->name} \n";
+        echo "歡迎再度光臨「{$this->name}」 \n";
         echo "------------------\n";
     }
 }

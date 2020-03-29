@@ -5,6 +5,7 @@ use App\FactoryPattern\Pizza\PizzaStore;
 use App\StrategyPattern\Duck\DucksConference;
 use App\DecoratePattern\Coffee\StarbuzzCoffee;
 use App\ObserverPattern\WeatherDisplay\WeatherStation;
+use App\FactoryPattern\Pizza\NewYork\NYStylePizzaStore;
 
 /**
  * 策略模式 - 鴨子篇
@@ -24,8 +25,14 @@ use App\ObserverPattern\WeatherDisplay\WeatherStation;
 // $StarbuzzCoffee = new StarbuzzCoffee();
 // $StarbuzzCoffee->run();
 
+// /**
+//  * 簡單工廠模式 - 披薩店
+//  */
+// $PizzaStore = new PizzaStore();
+// $PizzaStore->run();
+
 /**
- * 簡單工廠模式 - 披薩店
+ * 工廠方法模式 - 紐約披薩店
  */
-$PizzaStore = new PizzaStore();
-$PizzaStore->run();
+$NYStylePizzaStore = new NYStylePizzaStore();
+$NYStylePizzaStore->run();
