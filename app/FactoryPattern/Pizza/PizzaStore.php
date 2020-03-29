@@ -8,6 +8,7 @@ use App\FactoryPattern\Pizza\Contracts\AbstractPizza as Pizza;
 class PizzaStore
 {
     private $factory;
+    private $pizza;
 
     public function __construct()
     {
@@ -23,32 +24,39 @@ class PizzaStore
 
     /**
      * @param string $type
-     * @return Pizza
      */
     public function orderPizza($type)
     {
         $this->welcome();
 
-        $pizza = $this->factory->createPizza($type);
+        $this->pizza = $this->createPizza($type);
 
-        $pizza->prepare();
-        $pizza->bake();
-        $pizza->cut();
-        $pizza->box();
+        $this->pizza->prepare();
+        $this->pizza->bake();
+        $this->pizza->cut();
+        $this->pizza->box();
 
         $this->thankYouForComing();
+    }
 
+    /**
+     * @param string $type
+     * @return \App\FactoryPattern\Pizza\Contracts\AbstractPizza
+     */
+    protected function createPizza($type): Pizza
+    {
+        $pizza = $this->factory->createPizza($type);
         return $pizza;
     }
 
-    private function welcome()
+    protected function welcome()
     {
         echo "歡迎光臨\n";
     }
 
-    private function thankYouForComing()
+    protected function thankYouForComing()
     {
-        echo "歡迎再度光臨\n";
+        echo "這是您點的{$this->pizza->name}，歡迎再度光臨 \n";
         echo "------------------\n";
     }
 }
