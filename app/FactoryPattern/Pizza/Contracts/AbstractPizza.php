@@ -13,15 +13,23 @@ abstract class AbstractPizza implements PizzaInterface
      * @var array $toppings 佐料
      */
     public $name;
-    public $dough = '普通麵團';
-    public $sauce = '一般醬料';
+    public $dough;
+    public $sauce;
     public $toppings = [];
+
+    /**
+     * @var IngredientFactoryInterface $ingredientFactory 原料工廠
+     */
+    public $ingredientFactory;
 
     public function prepare()
     {
+        $this->dough = $this->ingredientFactory->createDough();
+        $this->sauce = $this->ingredientFactory->createSauce();
+
         echo "{$this->name} 準備中 \n";
-        echo "捏揉{$this->dough}... \n";
-        echo "加入{$this->sauce}... \n";
+        echo "捏揉{$this->dough->name}... \n";
+        echo "加入{$this->sauce->name}... \n";
 
         $this->addToppings();
     }
@@ -31,7 +39,7 @@ abstract class AbstractPizza implements PizzaInterface
         return count($this->toppings) == 0;
     }
 
-    private function addToppings()
+    protected function addToppings()
     {
         $toppings = $this->toppings;
 

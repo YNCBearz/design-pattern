@@ -2,8 +2,12 @@
 namespace App\FactoryPattern\Pizza;
 
 use App\FactoryPattern\Pizza\Contracts\AbstractPizza;
+use App\FactoryPattern\Pizza\Contracts\IngredientFactoryInterface;
 
 class CheesePizza extends AbstractPizza
 {
-    public $name = '起司披薩';
+    public function __construct(IngredientFactoryInterface $ingredientFactory)
+    {
+        $this->ingredientFactory = $ingredientFactory;
+    }
 }
