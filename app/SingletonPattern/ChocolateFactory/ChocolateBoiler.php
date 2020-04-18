@@ -10,10 +10,24 @@ class ChocolateBoiler
     private $empty;
     private $boiled;
 
-    public function __construct()
+    /**
+     * @var ChocolateBoiler|null $instance
+     */
+    private static $instance = null;
+
+    private function __construct()
     {
         $this->empty = true;
         $this->boiled = false;
+    }
+
+    public static function getInstance()
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
     }
 
     public function fill()
