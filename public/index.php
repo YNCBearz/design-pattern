@@ -6,6 +6,7 @@ use App\StrategyPattern\Duck\DucksConference;
 use App\DecoratePattern\Coffee\StarbuzzCoffee;
 use App\ObserverPattern\WeatherDisplay\WeatherStation;
 use App\FactoryPattern\Pizza\NewYork\NYStylePizzaStore;
+use App\SingletonPattern\ChocolateFactory\ChocolateFactory;
 
 /**
  * 策略模式 - 鴨子篇
@@ -32,7 +33,13 @@ use App\FactoryPattern\Pizza\NewYork\NYStylePizzaStore;
 // $PizzaStore->run();
 
 /**
- * 工廠方法模式 - 紐約披薩店
+ * 工廠方法模式、抽象工廠 - 紐約披薩店
  */
-$NYStylePizzaStore = new NYStylePizzaStore();
-$NYStylePizzaStore->run();
+// $NYStylePizzaStore = new NYStylePizzaStore();
+// $NYStylePizzaStore->run();
+
+/**
+ * 單例模式 - 巧克力工廠
+ */
+$ChocolateFactory = new ChocolateFactory();
+$ChocolateFactory->run();
