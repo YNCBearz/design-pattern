@@ -49,6 +49,6 @@ class Program
     {
         $this->operation->firstNumber = $this->firstNumber;
         $this->operation->secondNumber = $this->secondNumber;
-        return $this->operation->run();
+        return $this->operation->execute();
     }
 }

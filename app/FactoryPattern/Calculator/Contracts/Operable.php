@@ -4,5 +4,5 @@ namespace App\FactoryPattern\Calculator\Contracts;
 
 interface Operable
 {
-    public function run();
+    public function execute();
 }

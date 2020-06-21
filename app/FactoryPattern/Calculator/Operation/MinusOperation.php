@@ -9,7 +9,7 @@ class MinusOperation implements Operable
     public $firstNumber;
     public $secondNumber;
 
-    public function run()
+    public function execute()
     {
         return $this->firstNumber - $this->secondNumber;
     }
