@@ -14,7 +14,7 @@ class ProgramTest extends TestCase
         $this->resultShouldBe('Division by zero');
     }
 
-    public function testDivision()
+    public function testDivide()
     {
         $this->service = new Program(8, 4, '/');
         $this->resultShouldBe(2);

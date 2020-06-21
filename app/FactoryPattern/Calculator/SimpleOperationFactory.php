@@ -5,6 +5,7 @@ namespace App\FactoryPattern\Calculator;
 use App\FactoryPattern\Calculator\Contracts\Operable;
 use App\FactoryPattern\Calculator\Operation\AddOperation;
 use App\FactoryPattern\Calculator\Operation\MinusOperation;
+use App\FactoryPattern\Calculator\Operation\DivideOperation;
 
 class SimpleOperationFactory
 {
@@ -21,6 +22,10 @@ class SimpleOperationFactory
 
             case '-':
                 return new MinusOperation();
+                break;
+
+            case '/':
+                return new DivideOperation();
                 break;
         }
     }

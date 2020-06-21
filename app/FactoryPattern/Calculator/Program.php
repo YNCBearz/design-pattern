@@ -37,26 +37,13 @@ class Program
     public function run()
     {
         $simpleOperationFactory = new SimpleOperationFactory();
-        $operationString = $this->operationString;
+        $this->operation = $simpleOperationFactory->create($this->operationString);
 
-        switch ($operationString) {
-            case '+':
-            case '-':
-                $this->operation = $simpleOperationFactory->create($operationString);
-                return $this->execute();
-                break;
-
-            case "/":
-                if ($this->secondNumber === 0) {
-                    return 'Division by zero';
-                }
-                return $this->firstNumber / $this->secondNumber;
-                break;
-        }
+        return $this->execute();
     }
 
     /**
-     * @return int
+     * @return int|string
      */
     private function execute()
     {
