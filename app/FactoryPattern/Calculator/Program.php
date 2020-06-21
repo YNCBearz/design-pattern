@@ -2,6 +2,9 @@
 
 namespace App\FactoryPattern\Calculator;
 
+use App\FactoryPattern\Calculator\Contracts\Operable;
+use App\FactoryPattern\Calculator\SimpleOperationFactory;
+
 class Program
 {
     /**
@@ -19,6 +22,11 @@ class Program
      */
     private $operationString;
 
+    /**
+     * @var Operable
+     */
+    private $operation;
+
     public function __construct($firstNumber, $secondNumber, $operationString)
     {
         $this->firstNumber = $firstNumber;
@@ -28,11 +36,13 @@ class Program
 
     public function run()
     {
+        $simpleOperationFactory = new SimpleOperationFactory();
         $operationString = $this->operationString;
 
         switch ($operationString) {
             case '+':
-                return $this->firstNumber + $this->secondNumber;
+                $this->operation = $simpleOperationFactory->create($operationString);
+                return $this->execute();
                 break;
 
             case '-':
@@ -46,5 +56,15 @@ class Program
                 return $this->firstNumber / $this->secondNumber;
                 break;
         }
+    }
+
+    /**
+     * @return int
+     */
+    private function execute()
+    {
+        $this->operation->firstNumber = $this->firstNumber;
+        $this->operation->secondNumber = $this->secondNumber;
+        return $this->operation->run();
     }
 }
