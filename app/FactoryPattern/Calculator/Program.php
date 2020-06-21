@@ -28,6 +28,16 @@ class Program
 
     public function run()
     {
-        return $this->firstNumber + $this->secondNumber;
+        $operationString = $this->operationString;
+
+        switch ($operationString) {
+            case '+':
+                return $this->firstNumber + $this->secondNumber;
+                break;
+
+            case '-':
+                return $this->firstNumber - $this->secondNumber;
+                break;
+        }
     }
 }
