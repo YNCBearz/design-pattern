@@ -6,6 +6,7 @@ use App\FactoryPattern\Calculator\Contracts\Operable;
 use App\FactoryPattern\Calculator\Operation\AddOperation;
 use App\FactoryPattern\Calculator\Operation\MinusOperation;
 use App\FactoryPattern\Calculator\Operation\DivideOperation;
+use App\FactoryPattern\Calculator\Operation\MultiplyOperation;
 
 class SimpleOperationFactory
 {
@@ -26,6 +27,10 @@ class SimpleOperationFactory
 
             case '/':
                 return new DivideOperation();
+                break;
+
+            case '*':
+                return new MultiplyOperation();
                 break;
         }
     }

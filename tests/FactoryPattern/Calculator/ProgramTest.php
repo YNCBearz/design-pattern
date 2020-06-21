@@ -8,6 +8,12 @@ use App\FactoryPattern\Calculator\Program;
 class ProgramTest extends TestCase
 {
 
+    public function testMultiply()
+    {
+        $this->service = new Program(8, 2, '*');
+        $this->resultShouldBe(16);
+    }
+
     public function testDivisionIfSecondNumberIsZero()
     {
         $this->service = new Program(8, 0, '/');
