@@ -38,6 +38,13 @@ class Program
             case '-':
                 return $this->firstNumber - $this->secondNumber;
                 break;
+
+            case "/":
+                if ($this->secondNumber === 0) {
+                    return 'Division by zero';
+                }
+                return $this->firstNumber / $this->secondNumber;
+                break;
         }
     }
 }
