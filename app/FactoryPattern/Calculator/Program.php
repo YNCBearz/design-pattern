@@ -41,12 +41,9 @@ class Program
 
         switch ($operationString) {
             case '+':
+            case '-':
                 $this->operation = $simpleOperationFactory->create($operationString);
                 return $this->execute();
-                break;
-
-            case '-':
-                return $this->firstNumber - $this->secondNumber;
                 break;
 
             case "/":
