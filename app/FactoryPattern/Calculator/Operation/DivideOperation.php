@@ -9,7 +9,7 @@ class DivideOperation implements Operable
     public $firstNumber;
     public $secondNumber;
 
-    public function run()
+    public function execute()
     {
         if ($this->secondNumber === 0) {
             return 'Division by zero';
