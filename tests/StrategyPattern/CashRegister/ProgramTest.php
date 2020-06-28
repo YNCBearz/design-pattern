@@ -12,7 +12,8 @@ class ProgramTest extends TestCase
     public function testNormalCase()
     {
         $param = (object) [
-            'originalPrice' => 100
+            'originalPrice' => 100,
+            'promotion' => 'No'
         ];
 
         $this->priceShouldBe($param, 100);
@@ -21,9 +22,20 @@ class ProgramTest extends TestCase
     private function priceShouldBe($param, $expected)
     {
         $originalPrice = $param->originalPrice;
-        $this->sut = new Program($originalPrice);
+        $promotion = $param->promotion;
+        $this->sut = new Program($originalPrice, $promotion);
 
         $actual = $this->sut->pay();
         $this->assertEquals($expected, $actual);
+    }
+
+    public function test20PercentOff()
+    {
+        $param = (object) [
+            'originalPrice' => 100,
+            'promotion' => '20% off'
+        ];
+
+        $this->priceShouldBe($param, 80);
     }
 }
