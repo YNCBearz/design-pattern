@@ -38,4 +38,34 @@ class ProgramTest extends TestCase
 
         $this->priceShouldBe($param, 80);
     }
+
+    public function testSpend300Feedback100_Given400()
+    {
+        $param = (object) [
+            'originalPrice' => 400,
+            'promotion' => 'spend_300_feedback_100'
+        ];
+
+        $this->priceShouldBe($param, 300);
+    }
+
+    public function testSpend300Feedback100_Given700()
+    {
+        $param = (object) [
+            'originalPrice' => 700,
+            'promotion' => 'spend_300_feedback_100'
+        ];
+
+        $this->priceShouldBe($param, 500);
+    }
+
+    public function testSpend300Feedback100_Given200()
+    {
+        $param = (object) [
+            'originalPrice' => 200,
+            'promotion' => 'spend_300_feedback_100'
+        ];
+
+        $this->priceShouldBe($param, 200);
+    }
 }

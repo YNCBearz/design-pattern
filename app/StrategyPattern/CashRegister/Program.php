@@ -22,10 +22,18 @@ class Program
 
     public function pay()
     {
+        $originalPrice = $this->originalPrice;
+
         if ($this->promotion == '20% off') {
-            return $this->originalPrice * 0.8;
+            return $originalPrice * 0.8;
         }
 
-        return $this->originalPrice;
+        if ($this->promotion == 'spend_300_feedback_100') {
+            if ($originalPrice >= 300) {
+                return $originalPrice - floor($originalPrice / 300) * 100;
+            }
+        }
+
+        return $originalPrice;
     }
 }
