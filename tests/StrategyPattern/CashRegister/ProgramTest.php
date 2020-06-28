@@ -11,12 +11,19 @@ class ProgramTest extends TestCase
 
     public function testNormalCase()
     {
-        $originalPrice = 100;
+        $param = (object) [
+            'originalPrice' => 100
+        ];
+
+        $this->priceShouldBe($param, 100);
+    }
+
+    private function priceShouldBe($param, $expected)
+    {
+        $originalPrice = $param->originalPrice;
         $this->sut = new Program($originalPrice);
-        $expected = $originalPrice;
 
         $actual = $this->sut->pay();
-
         $this->assertEquals($expected, $actual);
     }
 }
