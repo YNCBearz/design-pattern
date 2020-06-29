@@ -16,7 +16,7 @@ class Program
      * @param string $promotion
      * @param string $receiptType
      */
-    public function __construct($originalPrice, $promotion, $receiptType = 'normal')
+    public function __construct($originalPrice, $promotion, $receiptType)
     {
         $this->originalPrice = $originalPrice;
         $this->cashContext = new CashContext($originalPrice, $promotion, $receiptType);

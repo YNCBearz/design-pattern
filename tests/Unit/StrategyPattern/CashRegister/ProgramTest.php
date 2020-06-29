@@ -13,7 +13,8 @@ class ProgramTest extends TestCase
     {
         $param = (object) [
             'originalPrice' => 100,
-            'promotion' => 'normal'
+            'promotion' => 'normal',
+            'receiptType' => 'normal'
         ];
 
         $this->priceShouldBe($param, 100);
@@ -23,7 +24,8 @@ class ProgramTest extends TestCase
     {
         $originalPrice = $param->originalPrice;
         $promotion = $param->promotion;
-        $this->sut = new Program($originalPrice, $promotion);
+        $receiptType = $param->receiptType;
+        $this->sut = new Program($originalPrice, $promotion, $receiptType);
 
         $actual = $this->sut->pay();
         $this->assertEquals($expected, $actual);
@@ -33,7 +35,8 @@ class ProgramTest extends TestCase
     {
         $param = (object) [
             'originalPrice' => 100,
-            'promotion' => '20% off'
+            'promotion' => '20% off',
+            'receiptType' => 'normal'
         ];
 
         $this->priceShouldBe($param, 80);
@@ -43,7 +46,8 @@ class ProgramTest extends TestCase
     {
         $param = (object) [
             'originalPrice' => 400,
-            'promotion' => 'spend_300_feedback_100'
+            'promotion' => 'spend_300_feedback_100',
+            'receiptType' => 'normal'
         ];
 
         $this->priceShouldBe($param, 300);
@@ -53,7 +57,8 @@ class ProgramTest extends TestCase
     {
         $param = (object) [
             'originalPrice' => 700,
-            'promotion' => 'spend_300_feedback_100'
+            'promotion' => 'spend_300_feedback_100',
+            'receiptType' => 'normal'
         ];
 
         $this->priceShouldBe($param, 500);
@@ -63,7 +68,8 @@ class ProgramTest extends TestCase
     {
         $param = (object) [
             'originalPrice' => 200,
-            'promotion' => 'spend_300_feedback_100'
+            'promotion' => 'spend_300_feedback_100',
+            'receiptType' => 'normal'
         ];
 
         $this->priceShouldBe($param, 200);
