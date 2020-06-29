@@ -11,14 +11,24 @@ class Program
      */
     private $cashContext;
 
-    public function __construct($originalPrice, $promotion)
+    /**
+     * @param int $originalPrice
+     * @param string $promotion
+     * @param string $receiptType
+     */
+    public function __construct($originalPrice, $promotion, $receiptType = 'normal')
     {
         $this->originalPrice = $originalPrice;
-        $this->cashContext = new CashContext($originalPrice, $promotion);
+        $this->cashContext = new CashContext($originalPrice, $promotion, $receiptType);
     }
 
     public function pay()
     {
         return $this->cashContext->pay();
+    }
+
+    public function getReceipt()
+    {
+        return $this->cashContext->getReceipt();
     }
 }

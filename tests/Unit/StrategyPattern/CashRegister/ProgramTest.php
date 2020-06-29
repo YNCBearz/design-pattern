@@ -13,7 +13,7 @@ class ProgramTest extends TestCase
     {
         $param = (object) [
             'originalPrice' => 100,
-            'promotion' => 'No'
+            'promotion' => 'normal'
         ];
 
         $this->priceShouldBe($param, 100);
@@ -67,5 +67,28 @@ class ProgramTest extends TestCase
         ];
 
         $this->priceShouldBe($param, 200);
+    }
+
+    private function receiptShouldBe($param, $expected)
+    {
+        $originalPrice = $param->originalPrice;
+        $promotion = $param->promotion;
+        $receiptType = $param->receiptType;
+
+        $this->sut = new Program($originalPrice, $promotion, $receiptType);
+
+        $actual = $this->sut->getReceipt();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testNormalReceipt()
+    {
+        $param = (object) [
+            'originalPrice' => 100,
+            'promotion' => 'normal',
+            'receiptType' => 'normal'
+        ];
+
+        $this->receiptShouldBe($param, '一般發票');
     }
 }

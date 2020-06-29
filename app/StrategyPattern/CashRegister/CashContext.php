@@ -3,7 +3,9 @@
 namespace App\StrategyPattern\CashRegister;
 
 use App\StrategyPattern\CashRegister\NormalPay;
+use App\StrategyPattern\CashRegister\NormalReceipt;
 use App\StrategyPattern\CashRegister\Contracts\Payable;
+use App\StrategyPattern\CashRegister\Contracts\Receiptable;
 
 class CashContext
 {
@@ -13,10 +15,26 @@ class CashContext
     private $promotionMethod;
 
     /**
+     * @var Receiptable
+     */
+    private $receiptMethod;
+
+    /**
      * @param string $promotion
      * @param int $originalPrice
+     * @param string $receiptType
      */
-    public function __construct($originalPrice, $promotion)
+    public function __construct($originalPrice, $promotion, $receiptType)
+    {
+        $this->resolvePromotionMethod($originalPrice, $promotion);
+        $this->resolveReceiptMethod($receiptType);
+    }
+
+    /**
+     * @param int $originalPrice
+     * @param string $promotion
+     */
+    private function resolvePromotionMethod($originalPrice, $promotion)
     {
         switch ($promotion) {
             case '20% off':
@@ -33,8 +51,27 @@ class CashContext
         }
     }
 
+    /**
+     * @param string $receiptType
+     */
+    private function resolveReceiptMethod($receiptType)
+    {
+        switch ($receiptType) {
+
+
+            default:
+                $this->receiptMethod = new NormalReceipt();
+                break;
+        }
+    }
+
     public function pay()
     {
         return $this->promotionMethod->pay();
+    }
+
+    public function getReceipt()
+    {
+        return $this->receiptMethod->getReceipt();
     }
 }
