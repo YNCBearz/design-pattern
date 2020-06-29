@@ -2,38 +2,23 @@
 
 namespace App\StrategyPattern\CashRegister;
 
+use App\StrategyPattern\CashRegister\CashContext;
+
 class Program
 {
     /**
-     * @var int
+     * @var CashContext
      */
-    private $originalPrice;
-
-    /**
-     * @var string
-     */
-    private $promotion;
+    private $cashContext;
 
     public function __construct($originalPrice, $promotion)
     {
         $this->originalPrice = $originalPrice;
-        $this->promotion = $promotion;
+        $this->cashContext = new CashContext($originalPrice, $promotion);
     }
 
     public function pay()
     {
-        $originalPrice = $this->originalPrice;
-
-        if ($this->promotion == '20% off') {
-            return $originalPrice * 0.8;
-        }
-
-        if ($this->promotion == 'spend_300_feedback_100') {
-            if ($originalPrice >= 300) {
-                return $originalPrice - floor($originalPrice / 300) * 100;
-            }
-        }
-
-        return $originalPrice;
+        return $this->cashContext->pay();
     }
 }
