@@ -87,6 +87,16 @@ class ProgramTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testElectronicReceipt()
+    {
+        $param = (object) [
+            'originalPrice' => 100,
+            'promotion' => 'normal',
+            'receiptType' => 'electronicReceipt'
+        ];
+
+        $this->receiptShouldBe($param, '電子發票');
+    }
     public function testNormalReceipt()
     {
         $param = (object) [
