@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\StrategyPattern\CashRegister;
+namespace Tests\Unit\StrategyPattern\CashRegister;
 
 use PHPUnit\Framework\TestCase;
 use App\StrategyPattern\CashRegister\Program;
