@@ -18,7 +18,7 @@ class CashContext
     /**
      * @var Receiptable
      */
-    private $receiptMethod;
+    private $receiptType;
 
     /**
      * @param string $promotion
@@ -28,7 +28,7 @@ class CashContext
     public function __construct($originalPrice, $promotion, $receiptType)
     {
         $this->resolvePromotionMethod($originalPrice, $promotion);
-        $this->resolveReceiptMethod($receiptType);
+        $this->resolveReceiptType($receiptType);
     }
 
     /**
@@ -55,15 +55,15 @@ class CashContext
     /**
      * @param string $receiptType
      */
-    private function resolveReceiptMethod($receiptType)
+    private function resolveReceiptType($receiptType)
     {
         switch ($receiptType) {
             case 'electronicReceipt':
-                $this->receiptMethod = new ElectronicReceipt();
+                $this->receiptType = new ElectronicReceipt();
                 break;
 
             default:
-                $this->receiptMethod = new NormalReceipt();
+                $this->receiptType = new NormalReceipt();
                 break;
         }
     }
@@ -75,6 +75,6 @@ class CashContext
 
     public function getReceipt()
     {
-        return $this->receiptMethod->getReceipt();
+        return $this->receiptType->getReceipt();
     }
 }
