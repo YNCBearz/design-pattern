@@ -13,13 +13,13 @@ class Program
 
     /**
      * @param int $originalPrice
-     * @param string $promotion
+     * @param string $discountType
      * @param string $receiptType
      */
-    public function __construct($originalPrice, $promotion, $receiptType)
+    public function __construct($originalPrice, $discountType, $receiptType)
     {
         $this->originalPrice = $originalPrice;
-        $this->cashContext = new CashContext($originalPrice, $promotion, $receiptType);
+        $this->cashContext = new CashContext($originalPrice, $discountType, $receiptType);
     }
 
     public function pay()

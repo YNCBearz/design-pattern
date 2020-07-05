@@ -13,7 +13,7 @@ class CashContext
     /**
      * @var Payable
      */
-    private $promotionMethod;
+    private $discountMethod;
 
     /**
      * @var Receiptable
@@ -21,33 +21,33 @@ class CashContext
     private $receiptType;
 
     /**
-     * @param string $promotion
      * @param int $originalPrice
+     * @param string $discount
      * @param string $receiptType
      */
-    public function __construct($originalPrice, $promotion, $receiptType)
+    public function __construct($originalPrice, $discount, $receiptType)
     {
-        $this->resolvePromotionMethod($originalPrice, $promotion);
+        $this->resolveDiscountMethod($originalPrice, $discount);
         $this->resolveReceiptType($receiptType);
     }
 
     /**
      * @param int $originalPrice
-     * @param string $promotion
+     * @param string $discount
      */
-    private function resolvePromotionMethod($originalPrice, $promotion)
+    private function resolveDiscountMethod($originalPrice, $discount)
     {
-        switch ($promotion) {
+        switch ($discount) {
             case '20% off':
-                $this->promotionMethod = new OffPercentPay($originalPrice, 0.2);
+                $this->discountMethod = new OffPercentPay($originalPrice, 0.2);
                 break;
 
             case 'spend_300_feedback_100':
-                $this->promotionMethod = new FeedbackPay($originalPrice, 300, 100);
+                $this->discountMethod = new FeedbackPay($originalPrice, 300, 100);
                 break;
 
             default:
-                $this->promotionMethod = new NormalPay($originalPrice);
+                $this->discountMethod = new NormalPay($originalPrice);
                 break;
         }
     }
@@ -70,7 +70,7 @@ class CashContext
 
     public function pay()
     {
-        return $this->promotionMethod->pay();
+        return $this->discountMethod->pay();
     }
 
     public function getReceipt()
