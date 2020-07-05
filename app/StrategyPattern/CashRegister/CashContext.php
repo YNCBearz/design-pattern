@@ -18,7 +18,7 @@ class CashContext
     /**
      * @var Receiptable
      */
-    private $receiptType;
+    private $receipt;
 
     /**
      * @param int $originalPrice
@@ -59,11 +59,11 @@ class CashContext
     {
         switch ($receiptType) {
             case 'electronicReceipt':
-                $this->receiptType = new ElectronicReceipt();
+                $this->receipt = new ElectronicReceipt();
                 break;
 
             default:
-                $this->receiptType = new NormalReceipt();
+                $this->receipt = new NormalReceipt();
                 break;
         }
     }
@@ -75,6 +75,6 @@ class CashContext
 
     public function getReceipt()
     {
-        return $this->receiptType->getReceipt();
+        return $this->receipt->getReceipt();
     }
 }
