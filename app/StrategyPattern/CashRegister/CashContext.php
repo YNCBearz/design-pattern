@@ -24,22 +24,22 @@ class CashContext
 
     /**
      * @param int $originalPrice
-     * @param string $discount
+     * @param string $discountType
      * @param string $receiptType
      */
-    public function __construct($originalPrice, $discount, $receiptType)
+    public function __construct($originalPrice, $discountType, $receiptType)
     {
-        $this->resolveDiscountMethod($originalPrice, $discount);
+        $this->resolveDiscountMethod($originalPrice, $discountType);
         $this->resolveReceiptType($receiptType);
     }
 
     /**
      * @param int $originalPrice
-     * @param string $discount
+     * @param string $discountType
      */
-    private function resolveDiscountMethod($originalPrice, $discount)
+    private function resolveDiscountMethod($originalPrice, $discountType)
     {
-        switch ($discount) {
+        switch ($discountType) {
             case '20% off':
                 $this->discountMethod = new OffPercentPay($originalPrice, 0.2);
                 break;
