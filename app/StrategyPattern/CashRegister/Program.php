@@ -18,7 +18,6 @@ class Program
      */
     public function __construct($originalPrice, $discountType, $receiptType)
     {
-        $this->originalPrice = $originalPrice;
         $this->cashContext = new CashContext($originalPrice, $discountType, $receiptType);
     }
 
