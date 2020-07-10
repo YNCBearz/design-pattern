@@ -1,9 +1,12 @@
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
+use App\FactoryPattern\Pizza\PizzaStore;
 use App\StrategyPattern\Duck\DucksConference;
 use App\DecoratePattern\Coffee\StarbuzzCoffee;
 use App\ObserverPattern\WeatherDisplay\WeatherStation;
+use App\FactoryPattern\Pizza\NewYork\NYStylePizzaStore;
+use App\SingletonPattern\ChocolateFactory\ChocolateFactory;
 
 /**
  * 策略模式 - 鴨子篇
@@ -17,8 +20,26 @@ use App\ObserverPattern\WeatherDisplay\WeatherStation;
 // $WeatherStation = new WeatherStation();
 // $WeatherStation->run();
 
+// /**
+//  * 裝飾者模式 - 星巴茲咖啡
+//  */
+// $StarbuzzCoffee = new StarbuzzCoffee();
+// $StarbuzzCoffee->run();
+
+// /**
+//  * 簡單工廠模式 - 披薩店
+//  */
+// $PizzaStore = new PizzaStore();
+// $PizzaStore->run();
+
 /**
- * 裝飾者模式 - 星巴茲咖啡
+ * 工廠方法模式、抽象工廠 - 紐約披薩店
  */
-$StarbuzzCoffee = new StarbuzzCoffee();
-$StarbuzzCoffee->run();
+// $NYStylePizzaStore = new NYStylePizzaStore();
+// $NYStylePizzaStore->run();
+
+/**
+ * 單例模式 - 巧克力工廠
+ */
+$ChocolateFactory = new ChocolateFactory();
+$ChocolateFactory->run();
