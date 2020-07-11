@@ -18,7 +18,19 @@ class ProgramTest extends TestCase
     {
         $expected = '麵包、肉、生菜、沙拉、麵包、肉、起司、生菜、沙拉、麵包';
 
-        $actual = $this->sut->makeBurger('BigMac');
+        $actual = $this->sut->makeBigMac();
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testMakeBigMacWithNoSauce()
+    {
+        $expected = '麵包、肉、生菜、麵包、肉、起司、生菜、麵包';
+
+        $this->sut->customize([
+            'sauce' => 'none'
+        ]);
+
+        $actual = $this->sut->makeBigMac();
         $this->assertEquals($expected, $actual);
     }
 }
