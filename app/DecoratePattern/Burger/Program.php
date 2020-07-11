@@ -15,11 +15,15 @@ class Program
     protected $cheese = 'normal';
     protected $pickle = 'normal';
 
+    protected $demand = [];
+
     /**
      * @param array $demand
      */
     public function customize($demand)
     {
+        $this->demand = $demand;
+
         foreach ($demand as $option => $value) {
             $this->$option = $value;
         }
@@ -30,14 +34,6 @@ class Program
      */
     public function makeBigMac()
     {
-        if ($this->sauce == 'none') {
-            return '大麥克：麵包、牛肉、生菜、麵包、牛肉、起司、生菜、麵包';
-        }
-
-        if ($this->cheese == 'double') {
-            return '大麥克：麵包、牛肉、生菜、沙拉、麵包、牛肉、起司、起司、生菜、沙拉、麵包';
-        }
-
         $bigMac = new BigMac();
         $topBread = new Bread($bigMac);
         $firstBeef = new Beef($topBread);
@@ -50,6 +46,7 @@ class Program
         $secondSalad = new Salad($secondLettuce);
         $bottomBread = new Bread($secondSalad);
 
+        $bottomBread->customize($this->demand);
         $result = $bottomBread->getDescription();
 
         return $this->subLastPunctuation($result);

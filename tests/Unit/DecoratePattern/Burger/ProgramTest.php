@@ -39,7 +39,7 @@ class ProgramTest extends TestCase
 
     public function testMakeBigMacWithDoubleCheese()
     {
-        $expected = '大麥克：麵包、牛肉、生菜、沙拉、麵包、牛肉、起司、起司、生菜、沙拉、麵包';
+        $expected = '大麥克：麵包、牛肉、生菜、沙拉、麵包、牛肉、兩倍起司、生菜、沙拉、麵包';
 
         $this->sut->customize([
             'cheese' => 'double'
