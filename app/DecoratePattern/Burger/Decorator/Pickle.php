@@ -25,10 +25,7 @@ class Pickle extends Ingredient
      */
     public function customize($demand)
     {
-        if (isset($demand['pickle'])) {
-            $this->pickle = $demand['pickle'];
-        }
-
+        parent::changeDefaultIfDemanded($demand, 'pickle');
         return parent::customize($demand);
     }
 }

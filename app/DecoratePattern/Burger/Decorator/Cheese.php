@@ -25,10 +25,7 @@ class Cheese extends Ingredient
      */
     public function customize($demand)
     {
-        if (isset($demand['cheese'])) {
-            $this->cheese = $demand['cheese'];
-        }
-
+        parent::changeDefaultIfDemanded($demand, 'cheese');
         return parent::customize($demand);
     }
 }

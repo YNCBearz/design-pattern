@@ -25,10 +25,7 @@ class Salad extends Ingredient
      */
     public function customize($demand)
     {
-        if (isset($demand['salad'])) {
-            $this->salad = $demand['salad'];
-        }
-
+        parent::changeDefaultIfDemanded($demand, 'salad');
         return parent::customize($demand);
     }
 }
