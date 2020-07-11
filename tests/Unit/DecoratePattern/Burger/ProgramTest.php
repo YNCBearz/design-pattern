@@ -19,7 +19,7 @@ class ProgramTest extends TestCase
 
     public function testMakeBigMac()
     {
-        $expected = '大麥克：麵包、肉、生菜、沙拉、麵包、肉、起司、生菜、沙拉、麵包';
+        $expected = '大麥克：麵包、牛肉、生菜、沙拉、麵包、牛肉、起司、生菜、沙拉、麵包';
 
         $actual = $this->sut->makeBigMac();
         $this->assertEquals($expected, $actual);
@@ -27,7 +27,7 @@ class ProgramTest extends TestCase
 
     public function testMakeBigMacWithNoSauce()
     {
-        $expected = '大麥克：麵包、肉、生菜、麵包、肉、起司、生菜、麵包';
+        $expected = '大麥克：麵包、牛肉、生菜、麵包、牛肉、起司、生菜、麵包';
 
         $this->sut->customize([
             'sauce' => 'none'
@@ -39,7 +39,7 @@ class ProgramTest extends TestCase
 
     public function testMakeBigMacWithDoubleCheese()
     {
-        $expected = '大麥克：麵包、肉、生菜、沙拉、麵包、肉、起司、起司、生菜、沙拉、麵包';
+        $expected = '大麥克：麵包、牛肉、生菜、沙拉、麵包、牛肉、起司、起司、生菜、沙拉、麵包';
 
         $this->sut->customize([
             'cheese' => 'double'
@@ -50,7 +50,7 @@ class ProgramTest extends TestCase
 
     public function testMakeDoubleCheeseBurger()
     {
-        $expected = '雙層牛肉吉事堡：麵包、酸菜、起司、肉、起司、肉、麵包';
+        $expected = '雙層牛肉吉事堡：麵包、酸菜、起司、牛肉、起司、牛肉、麵包';
 
         $actual = $this->sut->makeDoubleCheeseBurger();
         $this->assertEquals($expected, $actual);
@@ -58,7 +58,7 @@ class ProgramTest extends TestCase
 
     public function testMakeDoubleCheeseBurgerWithNoPickle()
     {
-        $expected = '雙層牛肉吉事堡：麵包、起司、肉、起司、肉、麵包';
+        $expected = '雙層牛肉吉事堡：麵包、起司、牛肉、起司、牛肉、麵包';
 
         $this->sut->customize([
             'pickle' => 'none'
