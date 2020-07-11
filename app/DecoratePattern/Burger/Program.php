@@ -45,7 +45,7 @@ class Program
         $secondSalad = new Salad($secondLettuce);
         $bottomBread = new Bread($secondSalad);
 
-        return $this->createBurger($bottomBread);
+        return $this->getBurgerDescription($bottomBread);
     }
 
     public function makeDoubleCheeseBurger()
@@ -59,7 +59,7 @@ class Program
         $secondBeef = new Beef($secondCheese);
         $bottomBread = new Bread($secondBeef);
 
-        return $this->createBurger($bottomBread);
+        return $this->getBurgerDescription($bottomBread);
     }
 
     /**
@@ -77,7 +77,7 @@ class Program
      * @param Ingredient $burger
      * @return string
      */
-    private function createBurger(Ingredient $burger)
+    private function getBurgerDescription(Ingredient $burger)
     {
         $result = $burger->customize($this->demand)->getDescription();
         return $this->subLastPunctuation($result);
