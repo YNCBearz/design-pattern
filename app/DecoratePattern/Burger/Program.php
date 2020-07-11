@@ -33,4 +33,9 @@ class Program
 
         return '麵包、肉、生菜、沙拉、麵包、肉、起司、生菜、沙拉、麵包';
     }
+
+    public function makeDoubleCheeseBurger()
+    {
+        return '麵包、酸菜、起司、肉、起司、肉、麵包';
+    }
 }
