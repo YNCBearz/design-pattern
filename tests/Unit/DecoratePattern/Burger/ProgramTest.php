@@ -52,4 +52,15 @@ class ProgramTest extends TestCase
         $actual = $this->sut->makeDoubleCheeseBurger();
         $this->assertEquals($expected, $actual);
     }
+
+    public function testMakeDoubleCheeseBurgerWithNoPickle()
+    {
+        $expected = '麵包、起司、肉、起司、肉、麵包';
+
+        $this->sut->customize([
+            'pickle' => 'none'
+        ]);
+        $actual = $this->sut->makeDoubleCheeseBurger();
+        $this->assertEquals($expected, $actual);
+    }
 }

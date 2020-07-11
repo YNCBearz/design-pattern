@@ -8,6 +8,8 @@ class Program
 
     protected $cheese = 'normal';
 
+    protected $pickle = 'normal';
+
     /**
      * @param array $demand
      */
@@ -36,6 +38,10 @@ class Program
 
     public function makeDoubleCheeseBurger()
     {
+        if ($this->pickle == 'none') {
+            return '麵包、起司、肉、起司、肉、麵包';
+        }
+
         return '麵包、酸菜、起司、肉、起司、肉、麵包';
     }
 }
