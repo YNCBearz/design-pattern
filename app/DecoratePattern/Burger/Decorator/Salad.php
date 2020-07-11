@@ -8,11 +8,11 @@ class Salad extends Ingredient
 {
     protected $name = '沙拉';
 
-    protected $sauce = 'normal';
+    protected $salad = 'normal';
 
     public function getDescription()
     {
-        if ($this->sauce == 'none') {
+        if ($this->salad == 'none') {
             return $this->ingredient->getDescription();
         }
 
@@ -25,8 +25,8 @@ class Salad extends Ingredient
      */
     public function customize($demand)
     {
-        if (isset($demand['sauce'])) {
-            $this->sauce = $demand['sauce'];
+        if (isset($demand['salad'])) {
+            $this->salad = $demand['salad'];
         }
 
         return parent::customize($demand);
