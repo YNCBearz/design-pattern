@@ -8,14 +8,21 @@ use App\DecoratePattern\Burger\Decorator\Beef;
 use App\DecoratePattern\Burger\Decorator\Lettuce;
 use App\DecoratePattern\Burger\Decorator\Cheese;
 use App\DecoratePattern\Burger\Decorator\Salad;
+use App\DecoratePattern\Burger\ConcreteComponent\DoubleCheeseBurger;
+use App\DecoratePattern\Burger\Decorator\Pickle;
+use App\DecoratePattern\Burger\Burger;
 
 class Program
 {
-    protected $sauce = 'normal';
-    protected $cheese = 'normal';
-    protected $pickle = 'normal';
-
+    /**
+     * @var array
+     */
     protected $demand = [];
+
+    /**
+     * @var Burger
+     */
+    protected $burger;
 
     /**
      * @param array $demand
@@ -23,10 +30,6 @@ class Program
     public function customize($demand)
     {
         $this->demand = $demand;
-
-        foreach ($demand as $option => $value) {
-            $this->$option = $value;
-        }
     }
 
     /**
@@ -48,7 +51,22 @@ class Program
 
         $bottomBread->customize($this->demand);
         $result = $bottomBread->getDescription();
+        return $this->subLastPunctuation($result);
+    }
 
+    public function makeDoubleCheeseBurger()
+    {
+        $doubleCheeseBurger = new DoubleCheeseBurger();
+        $topBread = new Bread($doubleCheeseBurger);
+        $pickle = new Pickle($topBread);
+        $firstCheese = new Cheese($pickle);
+        $firstBeef = new Beef($firstCheese);
+        $secondCheese = new Cheese($firstBeef);
+        $secondBeef = new Beef($secondCheese);
+        $bottomBread = new Bread($secondBeef);
+
+        $bottomBread->customize($this->demand);
+        $result = $bottomBread->getDescription();
         return $this->subLastPunctuation($result);
     }
 
@@ -61,14 +79,5 @@ class Program
     private function subLastPunctuation($string)
     {
         return mb_substr($string, 0, mb_strlen($string, 'UTF-8') - 1, 'UTF-8');
-    }
-
-    public function makeDoubleCheeseBurger()
-    {
-        if ($this->pickle == 'none') {
-            return '雙層牛肉吉事堡：麵包、起司、牛肉、起司、牛肉、麵包';
-        }
-
-        return '雙層牛肉吉事堡：麵包、酸菜、起司、牛肉、起司、牛肉、麵包';
     }
 }
