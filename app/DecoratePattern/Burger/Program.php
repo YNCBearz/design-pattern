@@ -6,6 +6,8 @@ class Program
 {
     protected $sauce = 'normal';
 
+    protected $cheese = 'normal';
+
     /**
      * @param array $demand
      */
@@ -23,6 +25,10 @@ class Program
     {
         if ($this->sauce == 'none') {
             return '麵包、肉、生菜、麵包、肉、起司、生菜、麵包';
+        }
+
+        if ($this->cheese == 'double') {
+            return '麵包、肉、生菜、沙拉、麵包、肉、起司、起司、生菜、沙拉、麵包';
         }
 
         return '麵包、肉、生菜、沙拉、麵包、肉、起司、生菜、沙拉、麵包';
