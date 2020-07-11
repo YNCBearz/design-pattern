@@ -23,7 +23,7 @@ class Program
     /**
      * @param array $demand
      */
-    public function customize($demand)
+    public function setDemand($demand)
     {
         $this->demand = $demand;
     }

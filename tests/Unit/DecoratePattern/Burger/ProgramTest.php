@@ -29,7 +29,7 @@ class ProgramTest extends TestCase
     {
         $expected = '大麥克：麵包、牛肉、生菜、麵包、牛肉、起司、生菜、麵包';
 
-        $this->sut->customize([
+        $this->sut->setDemand([
             'sauce' => 'none'
         ]);
 
@@ -41,7 +41,7 @@ class ProgramTest extends TestCase
     {
         $expected = '大麥克：麵包、牛肉、生菜、沙拉、麵包、牛肉、兩倍起司、生菜、沙拉、麵包';
 
-        $this->sut->customize([
+        $this->sut->setDemand([
             'cheese' => 'double'
         ]);
         $actual = $this->sut->makeBigMac();
@@ -60,7 +60,7 @@ class ProgramTest extends TestCase
     {
         $expected = '雙層牛肉吉事堡：麵包、起司、牛肉、起司、牛肉、麵包';
 
-        $this->sut->customize([
+        $this->sut->setDemand([
             'pickle' => 'none'
         ]);
         $actual = $this->sut->makeDoubleCheeseBurger();
