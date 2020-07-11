@@ -18,4 +18,17 @@ class Pickle extends Ingredient
 
         return parent::getDescription();
     }
+
+    /**
+     * @param array $demand
+     * @return Ingredient
+     */
+    public function customize($demand)
+    {
+        if (isset($demand['pickle'])) {
+            $this->pickle = $demand['pickle'];
+        }
+
+        return parent::customize($demand);
+    }
 }

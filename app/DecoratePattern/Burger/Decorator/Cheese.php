@@ -18,4 +18,17 @@ class Cheese extends Ingredient
 
         return parent::getDescription();
     }
+
+    /**
+     * @param array $demand
+     * @return Ingredient
+     */
+    public function customize($demand)
+    {
+        if (isset($demand['cheese'])) {
+            $this->cheese = $demand['cheese'];
+        }
+
+        return parent::customize($demand);
+    }
 }

@@ -7,7 +7,7 @@ use App\DecoratePattern\Burger\Burger as BaseIngredient;
 abstract class Ingredient extends BaseIngredient
 {
     /**
-     * @var BaseIngredient
+     * @var BaseIngredient|Ingredient
      */
     protected $ingredient;
 
@@ -33,12 +33,8 @@ abstract class Ingredient extends BaseIngredient
      */
     public function customize($demand)
     {
-        if ($this->ingredient instanceof self) {
+        if ($this->ingredient instanceof Ingredient) {
             $this->ingredient->customize($demand);
-        }
-
-        foreach ($demand as $option => $value) {
-            $this->$option = $value;
         }
 
         return $this;

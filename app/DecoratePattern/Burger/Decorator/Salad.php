@@ -18,4 +18,17 @@ class Salad extends Ingredient
 
         return parent::getDescription();
     }
+
+    /**
+     * @param array $demand
+     * @return Ingredient
+     */
+    public function customize($demand)
+    {
+        if (isset($demand['sauce'])) {
+            $this->sauce = $demand['sauce'];
+        }
+
+        return parent::customize($demand);
+    }
 }
