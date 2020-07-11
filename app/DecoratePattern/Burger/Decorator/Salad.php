@@ -2,7 +2,9 @@
 
 namespace App\DecoratePattern\Burger\Decorator;
 
-class Salad extends Stuffing
+use App\DecoratePattern\Burger\Decorator\Ingredient;
+
+class Salad extends Ingredient
 {
     protected $name = '沙拉';
 
@@ -11,7 +13,7 @@ class Salad extends Stuffing
     public function getDescription()
     {
         if ($this->sauce == 'none') {
-            return $this->stuffing->getDescription();
+            return $this->ingredient->getDescription();
         }
 
         return parent::getDescription();

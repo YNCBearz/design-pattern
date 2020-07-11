@@ -2,7 +2,9 @@
 
 namespace App\DecoratePattern\Burger\Decorator;
 
-class Cheese extends Stuffing
+use App\DecoratePattern\Burger\Decorator\Ingredient;
+
+class Cheese extends Ingredient
 {
     protected $name = '起司';
 
@@ -11,7 +13,7 @@ class Cheese extends Stuffing
     public function getDescription()
     {
         if ($this->cheese == 'double') {
-            return $this->stuffing->getDescription() . '兩倍' . $this->name . '、';
+            return $this->ingredient->getDescription() . '兩倍' . $this->name . '、';
         }
 
         return parent::getDescription();

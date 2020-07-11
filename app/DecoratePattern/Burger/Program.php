@@ -20,11 +20,6 @@ class Program
     protected $demand = [];
 
     /**
-     * @var Burger
-     */
-    protected $burger;
-
-    /**
      * @param array $demand
      */
     public function customize($demand)

@@ -2,7 +2,9 @@
 
 namespace App\DecoratePattern\Burger\Decorator;
 
-class Pickle extends Stuffing
+use App\DecoratePattern\Burger\Decorator\Ingredient;
+
+class Pickle extends Ingredient
 {
     protected $name = '酸菜';
 
@@ -11,7 +13,7 @@ class Pickle extends Stuffing
     public function getDescription()
     {
         if ($this->pickle == 'none') {
-            return $this->stuffing->getDescription();
+            return $this->ingredient->getDescription();
         }
 
         return parent::getDescription();

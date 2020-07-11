@@ -2,7 +2,9 @@
 
 namespace App\DecoratePattern\Burger\Decorator;
 
-class Bread extends Stuffing
+use App\DecoratePattern\Burger\Decorator\Ingredient;
+
+class Bread extends Ingredient
 {
     protected $name = '麵包';
 }

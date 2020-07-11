@@ -2,14 +2,14 @@
 
 namespace App\DecoratePattern\Burger\Decorator;
 
-use App\DecoratePattern\Burger\Burger as BaseStuffing;
+use App\DecoratePattern\Burger\Burger as BaseIngredient;
 
-abstract class Stuffing extends BaseStuffing
+abstract class Ingredient extends BaseIngredient
 {
     /**
-     * @var BaseStuffing
+     * @var BaseIngredient
      */
-    protected $stuffing;
+    protected $ingredient;
 
     protected $sauce = 'normal';
     protected $cheese = 'normal';
@@ -17,14 +17,14 @@ abstract class Stuffing extends BaseStuffing
 
     protected $name = '配料';
 
-    public function __construct(BaseStuffing $stuffing)
+    public function __construct(BaseIngredient $ingredient)
     {
-        $this->stuffing = $stuffing;
+        $this->ingredient = $ingredient;
     }
 
     public function getDescription()
     {
-        return $this->stuffing->getDescription() . $this->name . '、';
+        return $this->ingredient->getDescription() . $this->name . '、';
     }
 
     /**
@@ -32,8 +32,8 @@ abstract class Stuffing extends BaseStuffing
      */
     public function customize($demand)
     {
-        if ($this->stuffing instanceof Stuffing) {
-            $this->stuffing->customize($demand);
+        if ($this->ingredient instanceof self) {
+            $this->ingredient->customize($demand);
         }
 
         foreach ($demand as $option => $value) {
