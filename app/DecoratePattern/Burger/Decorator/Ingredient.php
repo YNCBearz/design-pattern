@@ -2,22 +2,19 @@
 
 namespace App\DecoratePattern\Burger\Decorator;
 
-use App\DecoratePattern\Burger\Burger as BaseIngredient;
+use App\DecoratePattern\Burger\Burger;
+use App\DecoratePattern\Burger\Contracts\Food;
 
-abstract class Ingredient extends BaseIngredient
+abstract class Ingredient implements Food
 {
     /**
-     * @var BaseIngredient|Ingredient
+     * @var Burger|Ingredient
      */
     protected $ingredient;
 
-    protected $sauce = 'normal';
-    protected $cheese = 'normal';
-    protected $pickle = 'normal';
-
     protected $name = '配料';
 
-    public function __construct(BaseIngredient $ingredient)
+    public function __construct(Food $ingredient)
     {
         $this->ingredient = $ingredient;
     }
