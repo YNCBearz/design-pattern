@@ -10,7 +10,6 @@ use App\DecoratePattern\Burger\Decorator\Cheese;
 use App\DecoratePattern\Burger\Decorator\Salad;
 use App\DecoratePattern\Burger\ConcreteComponent\DoubleCheeseBurger;
 use App\DecoratePattern\Burger\Decorator\Pickle;
-use App\DecoratePattern\Burger\Burger;
 use App\DecoratePattern\Burger\Decorator\Ingredient;
 
 class Program
