@@ -11,6 +11,7 @@ use App\DecoratePattern\Burger\Decorator\Salad;
 use App\DecoratePattern\Burger\ConcreteComponent\DoubleCheeseBurger;
 use App\DecoratePattern\Burger\Decorator\Pickle;
 use App\DecoratePattern\Burger\Burger;
+use App\DecoratePattern\Burger\Decorator\Ingredient;
 
 class Program
 {
@@ -44,9 +45,7 @@ class Program
         $secondSalad = new Salad($secondLettuce);
         $bottomBread = new Bread($secondSalad);
 
-        $bottomBread->customize($this->demand);
-        $result = $bottomBread->getDescription();
-        return $this->subLastPunctuation($result);
+        return $this->createBurger($bottomBread);
     }
 
     public function makeDoubleCheeseBurger()
@@ -60,9 +59,7 @@ class Program
         $secondBeef = new Beef($secondCheese);
         $bottomBread = new Bread($secondBeef);
 
-        $bottomBread->customize($this->demand);
-        $result = $bottomBread->getDescription();
-        return $this->subLastPunctuation($result);
+        return $this->createBurger($bottomBread);
     }
 
     /**
@@ -74,5 +71,15 @@ class Program
     private function subLastPunctuation($string)
     {
         return mb_substr($string, 0, mb_strlen($string, 'UTF-8') - 1, 'UTF-8');
+    }
+
+    /**
+     * @param Ingredient $burger
+     * @return string
+     */
+    private function createBurger(Ingredient $burger)
+    {
+        $result = $burger->customize($this->demand)->getDescription();
+        return $this->subLastPunctuation($result);
     }
 }

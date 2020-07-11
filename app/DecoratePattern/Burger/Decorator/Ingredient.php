@@ -29,6 +29,7 @@ abstract class Ingredient extends BaseIngredient
 
     /**
      * @param array $demand
+     * @return Ingredient
      */
     public function customize($demand)
     {
@@ -39,5 +40,7 @@ abstract class Ingredient extends BaseIngredient
         foreach ($demand as $option => $value) {
             $this->$option = $value;
         }
+
+        return $this;
     }
 }
