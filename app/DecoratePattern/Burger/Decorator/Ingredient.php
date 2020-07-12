@@ -2,8 +2,8 @@
 
 namespace App\DecoratePattern\Burger\Decorator;
 
-use App\DecoratePattern\Burger\Burger;
 use App\DecoratePattern\Burger\Contracts\Food;
+use App\DecoratePattern\Burger\ConcreteComponent\Burger;
 
 abstract class Ingredient implements Food
 {
