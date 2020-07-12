@@ -13,7 +13,7 @@ class Cheese extends Ingredient
     public function getDescription()
     {
         if ($this->cheese == 'double') {
-            return $this->ingredient->getDescription() . '兩倍' . $this->name . '、';
+            return $this->food->getDescription() . '兩倍' . $this->name . '、';
         }
 
         return parent::getDescription();

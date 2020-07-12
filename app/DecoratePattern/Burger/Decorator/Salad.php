@@ -13,7 +13,7 @@ class Salad extends Ingredient
     public function getDescription()
     {
         if ($this->salad == 'none') {
-            return $this->ingredient->getDescription();
+            return $this->food->getDescription();
         }
 
         return parent::getDescription();

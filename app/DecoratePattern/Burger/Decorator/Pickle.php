@@ -13,7 +13,7 @@ class Pickle extends Ingredient
     public function getDescription()
     {
         if ($this->pickle == 'none') {
-            return $this->ingredient->getDescription();
+            return $this->food->getDescription();
         }
 
         return parent::getDescription();

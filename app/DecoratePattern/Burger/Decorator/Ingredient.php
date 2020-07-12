@@ -8,32 +8,32 @@ use App\DecoratePattern\Burger\ConcreteComponent\Burger;
 abstract class Ingredient implements Food
 {
     /**
-     * @var Burger|Ingredient
+     * @var Food
      */
-    protected $ingredient;
+    protected $food;
 
     protected $name = '配料';
 
-    public function __construct(Food $ingredient)
+    public function __construct(Food $food)
     {
-        $this->ingredient = $ingredient;
+        $this->food = $food;
     }
 
     public function getDescription()
     {
-        return $this->ingredient->getDescription() . $this->name . '、';
+        return $this->food->getDescription() . $this->name . '、';
     }
 
     /**
      * 讓最後一個裝飾者客製化自己外，也能客製化先前的裝飾者
      *
      * @param array $demand
-     * @return Ingredient
+     * @return food
      */
     public function customize($demand)
     {
-        if ($this->ingredient instanceof Ingredient) {
-            $this->ingredient->customize($demand);
+        if ($this->food instanceof Ingredient) {
+            $this->food->customize($demand);
         }
 
         return $this;
