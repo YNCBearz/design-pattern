@@ -73,12 +73,12 @@ class Program
     }
 
     /**
-     * @param Ingredient $burger
+     * @param Ingredient $ingredient
      * @return string
      */
-    private function getBurgerDescription(Ingredient $burger)
+    private function getBurgerDescription(Ingredient $ingredient)
     {
-        $result = $burger->customize($this->demand)->getDescription();
+        $result = $ingredient->customize($this->demand)->getDescription();
         return $this->subLastPunctuation($result);
     }
 }
