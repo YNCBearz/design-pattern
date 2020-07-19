@@ -7,6 +7,7 @@ use App\DecoratePattern\Coffee\StarbuzzCoffee;
 use App\ObserverPattern\WeatherDisplay\WeatherStation;
 use App\FactoryPattern\Pizza\NewYork\NYStylePizzaStore;
 use App\SingletonPattern\ChocolateFactory\ChocolateFactory;
+use App\CommandPattern\RemoteControl\RemoteControl;
 
 /**
  * 策略模式 - 鴨子篇
@@ -41,5 +42,11 @@ use App\SingletonPattern\ChocolateFactory\ChocolateFactory;
 /**
  * 單例模式 - 巧克力工廠
  */
-$ChocolateFactory = new ChocolateFactory();
-$ChocolateFactory->run();
+// $ChocolateFactory = new ChocolateFactory();
+// $ChocolateFactory->run();
+
+/**
+ * 命令模式 - 遙控器
+ */
+$RemoteControl = new RemoteControl();
+$RemoteControl->run();
