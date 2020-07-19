@@ -7,4 +7,9 @@ class Light
     {
         echo "燈亮了 \n";
     }
+
+    public function off()
+    {
+        echo "燈暗了 \n";
+    }
 }
