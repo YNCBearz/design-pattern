@@ -27,8 +27,7 @@ class ProgramTest extends TestCase
             'Filet Mignon'
         ];
 
-        $actual = $this->sut->makeOrder($order);
-        $this->assertEquals($expected, $actual);
+        $this->foodShouldBe($order, $expected);
     }
 
     public function testMakeSirloinSteakOrder()
@@ -39,6 +38,27 @@ class ProgramTest extends TestCase
             'Sirloin Steak'
         ];
 
+        $this->foodShouldBe($order, $expected);
+    }
+
+    public function testMakeFiletAndSirloinOrder()
+    {
+        $expected = ['菲力牛排', '沙朗牛排'];
+
+        $order = [
+            'Filet Mignon',
+            'Sirloin Steak'
+        ];
+
+        $this->foodShouldBe($order, $expected);
+    }
+
+    /**
+     * @param array $order
+     * @param array $expected
+     */
+    private function foodShouldBe($order, $expected)
+    {
         $actual = $this->sut->makeOrder($order);
         $this->assertEquals($expected, $actual);
     }
