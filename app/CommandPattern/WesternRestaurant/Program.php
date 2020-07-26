@@ -2,8 +2,8 @@
 
 namespace App\CommandPattern\WesternRestaurant;
 
-use App\CommandPattern\WesternRestaurant\Receiver\ChefA;
-use App\CommandPattern\WesternRestaurant\Receiver\ChefB;
+use App\CommandPattern\WesternRestaurant\Receiver\RobotChefA;
+use App\CommandPattern\WesternRestaurant\Receiver\RobotChefB;
 
 class Program
 {
@@ -13,8 +13,8 @@ class Program
      */
     public function makeOrder($order)
     {
-        $chefA = new ChefA();
-        $chefB = new ChefB();
+        $chefA = new RobotChefA();
+        $chefB = new RobotChefB();
         $cookFiletMignonCommand = new cookFiletMignonCommand($chefA);
         $cookSirloinSteakCommand = new CookSirloinSteakCommand($chefB);
 

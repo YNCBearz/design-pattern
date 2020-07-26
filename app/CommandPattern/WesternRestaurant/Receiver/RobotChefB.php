@@ -2,6 +2,6 @@
 
 namespace App\CommandPattern\WesternRestaurant\Receiver;
 
-class ChefB extends Chef
+class RobotChefB extends Chef
 {
 }
