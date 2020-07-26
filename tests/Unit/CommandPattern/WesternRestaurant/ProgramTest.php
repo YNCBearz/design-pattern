@@ -19,10 +19,24 @@ class ProgramTest extends TestCase
 
     public function testMakeFiletMignonOrder()
     {
-        $expected = '菲力牛排';
+        $expected = [
+            '菲力牛排'
+        ];
 
         $order = [
             'Filet Mignon'
+        ];
+
+        $actual = $this->sut->makeOrder($order);
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testMakeSirloinSteakOrder()
+    {
+        $expected = ['沙朗牛排'];
+
+        $order = [
+            'Sirloin Steak'
         ];
 
         $actual = $this->sut->makeOrder($order);
