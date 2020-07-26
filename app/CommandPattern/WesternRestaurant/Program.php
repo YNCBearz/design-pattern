@@ -2,6 +2,9 @@
 
 namespace App\CommandPattern\WesternRestaurant;
 
+use App\CommandPattern\WesternRestaurant\Receiver\ChefA;
+use App\CommandPattern\WesternRestaurant\Receiver\ChefB;
+
 class Program
 {
     /**
@@ -10,13 +13,18 @@ class Program
      */
     public function makeOrder($order)
     {
+        $chefA = new ChefA();
+        $chefB = new ChefB();
+        $cookFiletMignonCommand = new cookFiletMignonCommand($chefA);
+        $cookSirloinSteakCommand = new CookSirloinSteakCommand($chefB);
+
         $result = [];
         if (in_array('Filet Mignon', $order)) {
-            $result[] = '菲力牛排';
+            $result[] = $cookFiletMignonCommand->execute();
         }
 
         if (in_array('Sirloin Steak', $order)) {
-            $result[] = '沙朗牛排';
+            $result[] = $cookSirloinSteakCommand->execute();
         }
 
         return $result;
