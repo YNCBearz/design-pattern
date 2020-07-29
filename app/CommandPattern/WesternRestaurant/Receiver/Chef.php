@@ -2,7 +2,7 @@
 
 namespace App\CommandPattern\WesternRestaurant\Receiver;
 
-class Chef
+abstract class Chef
 {
     /**
      * @return string
