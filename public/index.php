@@ -53,7 +53,7 @@ use App\TemplateMethodPattern\Beverage\BeverageShop;
 // $RemoteControl->run();
 
 /**
- * 模板方法模式 - 飲料篇
+ * 樣板方法模式 - 飲料篇
  */
 $Beverage = new BeverageShop();
 $Beverage->run();
