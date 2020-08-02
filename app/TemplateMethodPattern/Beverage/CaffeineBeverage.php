@@ -9,7 +9,9 @@ abstract class CaffeineBeverage
         $this->boilWater();
         $this->brew();
         $this->pourInCup();
-        $this->addCondiments();
+        if ($this->customerWantsCondiments()) {
+            $this->addCondiments();
+        }
     }
 
     protected function boilWater()
@@ -20,6 +22,11 @@ abstract class CaffeineBeverage
     protected function pourInCup()
     {
         echo "倒進杯子中 \n";
+    }
+
+    protected function customerWantsCondiments()
+    {
+        return true;
     }
 
     abstract protected function brew();
