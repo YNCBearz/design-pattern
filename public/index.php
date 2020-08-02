@@ -8,7 +8,7 @@ use App\ObserverPattern\WeatherDisplay\WeatherStation;
 use App\FactoryPattern\Pizza\NewYork\NYStylePizzaStore;
 use App\SingletonPattern\ChocolateFactory\ChocolateFactory;
 use App\CommandPattern\RemoteControl\RemoteControl;
-use App\TemplateMethodPattern\CaffeineBeverage\BeverageShop;
+use App\TemplateMethodPattern\Beverage\BeverageShop;
 
 /**
  * 策略模式 - 鴨子篇
