@@ -2,6 +2,9 @@
 
 namespace App\AdapterPattern\TalentShow;
 
+use App\AdapterPattern\TalentShow\Adapter\PianoPlayerAdapter;
+use App\AdapterPattern\TalentShow\Adapter\JokeTellerAdapter;
+
 class Program
 {
     /**
@@ -9,13 +12,18 @@ class Program
      */
     public function run()
     {
-        $result = [];
+        $performers = [];
 
         $pianoPlayer = new PianoPlayer();
-        $result[] = $pianoPlayer->play();
+        $performers[] = new PianoPlayerAdapter($pianoPlayer);
 
         $jokeTeller = new JokeTeller();
-        $result[] =  $jokeTeller->tell();
+        $performers[] = new JokeTellerAdapter($jokeTeller);
+
+        $result = [];
+        foreach ($performers as $performer) {
+            $result[] = $performer->show();
+        }
 
         return $result;
     }
