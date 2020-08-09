@@ -4,13 +4,19 @@ namespace App\AdapterPattern\TalentShow;
 
 class Program
 {
-    public function musicShow()
+    /**
+     * @return array
+     */
+    public function run()
     {
-        return '鋼琴演奏';
-    }
+        $result = [];
 
-    public function jokeShow()
-    {
-        return '講笑話';
+        $pianoPlayer = new PianoPlayer();
+        $result[] = $pianoPlayer->play();
+
+        $jokeTeller = new JokeTeller();
+        $result[] =  $jokeTeller->tell();
+
+        return $result;
     }
 }

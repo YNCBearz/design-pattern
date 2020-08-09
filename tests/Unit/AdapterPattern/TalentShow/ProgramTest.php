@@ -18,21 +18,10 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-    public function testMusicShow()
+    public function testRun()
     {
-        $expected = '鋼琴演奏';
-
-        $actual = $this->sut->musicShow();
-
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function testJokeShow()
-    {
-        $expected = '講笑話';
-
-        $actual = $this->sut->jokeShow();
-
+        $expected = ['鋼琴演奏', '講笑話'];
+        $actual = $this->sut->run();
         $this->assertEquals($expected, $actual);
     }
 }
