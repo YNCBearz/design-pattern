@@ -23,7 +23,7 @@ class Program
         $this->coffeeMachine = new CoffeeMachine();
     }
 
-    private function makeIceCream()
+    public function makeIceCream()
     {
         return $this->iceCreamMachine
             ->addIngredients()
@@ -32,20 +32,12 @@ class Program
             ->squeeze();
     }
 
-    private function makeLatte()
+    public function makeLatte()
     {
         return $this->coffeeMachine
             ->addCoffeeBeans()
             ->grind()
             ->brew()
             ->stirWithMilk();
-    }
-
-    public function run()
-    {
-        $order[] = $this->makeIceCream();
-        $order[] = $this->makeLatte();
-
-        return $order;
     }
 }

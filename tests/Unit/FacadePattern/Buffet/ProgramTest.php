@@ -17,12 +17,17 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-    public function testRun()
+    public function testMakeIceCream()
     {
-        $expected = ['霜淇淋', '拿鐵'];
+        $expected = '霜淇淋';
+        $actual = $this->sut->makeIceCream();
+        $this->assertEquals($expected, $actual);
+    }
 
-        $actual = $this->sut->run();
-
+    public function testMakeLatte()
+    {
+        $expected = '拿鐵';
+        $actual = $this->sut->makeLatte();
         $this->assertEquals($expected, $actual);
     }
 }
