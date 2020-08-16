@@ -2,42 +2,18 @@
 
 namespace App\FacadePattern\Buffet;
 
-use App\FacadePattern\Buffet\IceCreamMachine;
-use App\FacadePattern\Buffet\CoffeeMachine;
+use App\FacadePattern\Buffet\Facade\CoffeeMachineFacade;
+use App\FacadePattern\Buffet\Facade\IceCreamMachineFacade;
 
 class Program
 {
-    /**
-     * @var iceCreamMachine
-     */
-    protected $iceCreamMachine;
-
-    /**
-     * @var CoffeeMachine
-     */
-    protected $coffeeMachine;
-
-    public function __construct()
-    {
-        $this->iceCreamMachine = new IceCreamMachine();
-        $this->coffeeMachine = new CoffeeMachine();
-    }
-
     public function makeIceCream()
     {
-        return $this->iceCreamMachine
-            ->addIngredients()
-            ->stir()
-            ->chill()
-            ->squeeze();
+        return IceCreamMachineFacade::makeIceCream();
     }
 
     public function makeLatte()
     {
-        return $this->coffeeMachine
-            ->addCoffeeBeans()
-            ->grind()
-            ->brew()
-            ->stirWithMilk();
+        return CoffeeMachineFacade::makeLatte();
     }
 }
