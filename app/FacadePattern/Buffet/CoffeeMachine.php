@@ -1,6 +1,6 @@
 <?php
 
-namespace App\FacadePattern\ConvenienceStore;
+namespace App\FacadePattern\Buffet;
 
 class CoffeeMachine
 {

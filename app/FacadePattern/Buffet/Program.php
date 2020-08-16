@@ -1,9 +1,9 @@
 <?php
 
-namespace App\FacadePattern\ConvenienceStore;
+namespace App\FacadePattern\Buffet;
 
-use App\FacadePattern\ConvenienceStore\IceCreamMachine;
-use App\FacadePattern\ConvenienceStore\CoffeeMachine;
+use App\FacadePattern\Buffet\IceCreamMachine;
+use App\FacadePattern\Buffet\CoffeeMachine;
 
 class Program
 {

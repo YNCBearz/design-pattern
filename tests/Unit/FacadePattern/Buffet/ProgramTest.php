@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\FacadePattern\ConvenienceStore;
+namespace Tests\Unit\FacadePattern\Buffet;
 
 use PHPUnit\Framework\TestCase;
-use App\FacadePattern\ConvenienceStore\Program;
+use App\FacadePattern\Buffet\Program;
 
 class ProgramTest extends TestCase
 {
