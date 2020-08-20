@@ -5,6 +5,7 @@ namespace Tests\Unit\StatePattern\Youtube;
 use PHPUnit\Framework\TestCase;
 use App\StatePattern\Youtube\Program;
 use App\StatePattern\Youtube\State\MemberState;
+use App\StatePattern\Youtube\State\PremiumState;
 
 class ProgramTest extends TestCase
 {
@@ -102,6 +103,18 @@ class ProgramTest extends TestCase
     private function licenseShouldBe($expected)
     {
         $this->assertEquals($expected, $this->sut->getLicense());
+    }
+
+    /**
+     * @test
+     */
+    public function testSetPremiumState()
+    {
+        $expected = PremiumState::class;
+
+        $this->sut->setPremiumState();
+
+        $this->assertInstanceOf($expected, $this->sut->getState());
     }
 
     /**

@@ -2,9 +2,10 @@
 
 namespace App\StatePattern\Youtube;
 
-use Exception;
 use App\StatePattern\Youtube\State\MemberState;
-use App\StatePattern\Youtube\Contracts\UserState;
+use App\StatePattern\Youtube\State\GuestState;
+use App\StatePattern\Youtube\State\PremiumState;
+use App\StatePattern\Youtube\State\UserState;
 
 class Program
 {
@@ -19,6 +20,16 @@ class Program
     protected $memberState;
 
     /**
+     * @var GuestState
+     */
+    protected $guestState;
+
+    /**
+     * @var PremiumState
+     */
+    protected $premiumState;
+
+    /**
      * @var UserState
      */
     protected $state;
@@ -26,21 +37,21 @@ class Program
     public function __construct()
     {
         $this->memberState = new MemberState($this);
+        $this->guestState = new GuestState($this);
+        $this->premiumState = new PremiumState($this);
+
+        $this->state = $this->guestState;
         $this->setLicense('guest');
     }
 
     public function register()
     {
-        if ($this->license == 'premium') {
-            return;
-        }
-
-        $this->license = 'member';
+        $this->state->register();
     }
 
     public function getLicense()
     {
-        return $this->license;
+        return $this->state->getLicense();
     }
 
     /**
@@ -48,36 +59,27 @@ class Program
      */
     public function setLicense($license)
     {
-        $this->license = $license;
+        $this->state = $this->{$license . 'State'};
     }
 
     public function subscribe()
     {
-        if ($this->license == 'premium') {
-            return;
-        }
-
-        if ($this->license == 'member') {
-            $this->license = 'premium';
-            return;
-        }
-
-        throw new Exception('You need to be a member before subscribing.');
+        $this->state->subscribe();
     }
 
     public function cancelSubscription()
     {
-        if ($this->license == 'premium') {
-            $this->license = 'member';
-            return;
-        }
-
-        throw new Exception('Sorry, you have not subscribed.');
+        $this->state->cancelSubscription();
     }
 
     public function setMemberState()
     {
         $this->state = $this->memberState;
+    }
+
+    public function setPremiumState()
+    {
+        $this->state = $this->premiumState;
     }
 
     public function getState()
