@@ -7,7 +7,7 @@ class Program
     /**
      * @var string
      */
-    public $license;
+    protected $license;
 
     public function __construct()
     {
@@ -17,5 +17,10 @@ class Program
     public function register()
     {
         $this->license = 'member';
+    }
+
+    public function getLicense()
+    {
+        return $this->license;
     }
 }

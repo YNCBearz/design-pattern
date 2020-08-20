@@ -26,6 +26,18 @@ class ProgramTest extends TestCase
 
         $this->sut->register();
 
-        $this->assertEquals($expected, $this->sut->license);
+        $this->assertEquals($expected, $this->sut->getLicense());
     }
+
+    /**
+     * @test
+     */
+    // public function Given_Premium_When_Register_Then_Premium()
+    // {
+    //     $expected = 'premium';
+
+    //     $this->sut->register();
+
+    //     $this->assertEquals($expected, $this->sut->license);
+    // }
 }
