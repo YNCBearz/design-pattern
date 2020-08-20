@@ -40,11 +40,16 @@ class Program
 
     public function subscribe()
     {
-        if ($this->license == 'member') {
+        if ($this->license == 'member' || $this->license == 'premium') {
             $this->license = 'premium';
             return;
         }
 
-        throw new Exception('You need to be a member before subscribing.', 1);
+        throw new Exception('You need to be a member before subscribing.');
+    }
+
+    public function cancelSubscription()
+    {
+        throw new Exception('Sorry, you have not subscribed.');
     }
 }
