@@ -32,12 +32,13 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
-    // public function Given_Premium_When_Register_Then_Premium()
-    // {
-    //     $expected = 'premium';
+    public function Given_Premium_When_Register_Then_Premium()
+    {
+        $expected = 'premium';
+        $this->sut->setLicense('premium');
 
-    //     $this->sut->register();
+        $this->sut->register();
 
-    //     $this->assertEquals($expected, $this->sut->license);
-    // }
+        $this->assertEquals($expected, $this->sut->getLicense());
+    }
 }
