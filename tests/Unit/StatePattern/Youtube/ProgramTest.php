@@ -20,6 +20,18 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
+    public function Given_Member_When_Subscribe_Then_Premium()
+    {
+        $this->sut->setLicense('member');
+
+        $this->sut->subscribe();
+
+        $this->licenseShouldBe('premium');
+    }
+
+    /**
+     * @test
+     */
     public function Given_Guest_When_Subscribe_Then_Throw_Exception()
     {
         $this->expectExceptionMessage('You need to be a member before subscribing.');

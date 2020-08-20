@@ -40,6 +40,11 @@ class Program
 
     public function subscribe()
     {
+        if ($this->license == 'member') {
+            $this->license = 'premium';
+            return;
+        }
+
         throw new Exception('You need to be a member before subscribing.', 1);
     }
 }
