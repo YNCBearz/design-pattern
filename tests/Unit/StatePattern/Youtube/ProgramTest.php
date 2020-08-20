@@ -22,11 +22,9 @@ class ProgramTest extends TestCase
      */
     public function Given_Guest_When_Register_Then_Member()
     {
-        $expected = 'member';
-
         $this->sut->register();
 
-        $this->assertEquals($expected, $this->sut->getLicense());
+        $this->licenseShouldBe('member');
     }
 
     /**
@@ -34,11 +32,18 @@ class ProgramTest extends TestCase
      */
     public function Given_Premium_When_Register_Then_Premium()
     {
-        $expected = 'premium';
         $this->sut->setLicense('premium');
 
         $this->sut->register();
 
+        $this->licenseShouldBe('premium');
+    }
+
+    /**
+     * @param string $expected
+     */
+    private function licenseShouldBe($expected)
+    {
         $this->assertEquals($expected, $this->sut->getLicense());
     }
 }

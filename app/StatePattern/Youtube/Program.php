@@ -11,7 +11,7 @@ class Program
 
     public function __construct()
     {
-        $this->license = 'guest';
+        $this->setLicense('guest');
     }
 
     public function register()
@@ -19,6 +19,7 @@ class Program
         if ($this->license == 'premium') {
             return;
         }
+
         $this->license = 'member';
     }
 
