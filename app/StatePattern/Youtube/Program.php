@@ -2,6 +2,8 @@
 
 namespace App\StatePattern\Youtube;
 
+use Exception;
+
 class Program
 {
     /**
@@ -34,5 +36,10 @@ class Program
     public function setLicense($license)
     {
         $this->license = $license;
+    }
+
+    public function subscribe()
+    {
+        throw new Exception('You need to be a member before subscribing.', 1);
     }
 }

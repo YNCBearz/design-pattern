@@ -20,6 +20,16 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
+    public function Given_Guest_When_Subscribe_Then_Throw_Exception()
+    {
+        $this->expectExceptionMessage('You need to be a member before subscribing.');
+
+        $this->sut->subscribe();
+    }
+
+    /**
+     * @test
+     */
     public function Given_Guest_When_Register_Then_Member()
     {
         $this->sut->register();
