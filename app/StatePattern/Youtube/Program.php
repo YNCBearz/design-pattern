@@ -40,7 +40,11 @@ class Program
 
     public function subscribe()
     {
-        if ($this->license == 'member' || $this->license == 'premium') {
+        if ($this->license == 'premium') {
+            return;
+        }
+
+        if ($this->license == 'member') {
             $this->license = 'premium';
             return;
         }
