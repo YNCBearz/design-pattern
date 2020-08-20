@@ -3,6 +3,8 @@
 namespace App\StatePattern\Youtube;
 
 use Exception;
+use App\StatePattern\Youtube\State\MemberState;
+use App\StatePattern\Youtube\Contracts\UserState;
 
 class Program
 {
@@ -11,8 +13,19 @@ class Program
      */
     protected $license;
 
+    /**
+     * @var MemberState
+     */
+    protected $memberState;
+
+    /**
+     * @var UserState
+     */
+    protected $state;
+
     public function __construct()
     {
+        $this->memberState = new MemberState($this);
         $this->setLicense('guest');
     }
 
@@ -60,5 +73,15 @@ class Program
         }
 
         throw new Exception('Sorry, you have not subscribed.');
+    }
+
+    public function setMemberState()
+    {
+        $this->state = $this->memberState;
+    }
+
+    public function getState()
+    {
+        return $this->state;
     }
 }
