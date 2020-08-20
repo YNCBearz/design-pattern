@@ -50,6 +50,11 @@ class Program
 
     public function cancelSubscription()
     {
+        if ($this->license == 'premium') {
+            $this->license = 'member';
+            return;
+        }
+
         throw new Exception('Sorry, you have not subscribed.');
     }
 }

@@ -20,6 +20,18 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
+    public function Given_Premium_When_CancelSubscription_Then_Member()
+    {
+        $this->sut->setLicense('premium');
+
+        $this->sut->cancelSubscription();
+
+        $this->licenseShouldBe('member');
+    }
+
+    /**
+     * @test
+     */
     public function Given_Guest_When_CancelSubscription_Then_Throw_Exception()
     {
         $this->expectExceptionMessage('Sorry, you have not subscribed.');
