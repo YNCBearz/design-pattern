@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\FactoryPattern\Calculator;
+namespace Tests\Unit\FactoryPattern\Calculator;
 
 use PHPUnit\Framework\TestCase;
 use App\FactoryPattern\Calculator\Program;
