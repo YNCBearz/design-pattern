@@ -2,21 +2,40 @@
 
 namespace App\FactoryPattern\Transport\FactoryMethodPattern;
 
+use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\LimitedExpressFactory;
+use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\LocalTrainFactory;
+use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\SemiExpressFactory;
+
 class Program
 {
     /**
-     * @param string $method (creditCard, cash)
+     * @param string $model
      * @return string
      */
-    public function payRailWayFee($method)
+    public function getModel($model)
     {
-        switch ($method) {
-            case 'cash':
-                return '鐵路：現金付款';
+        $modelFactory = $this->createModelFactory($model);
+        $model = $modelFactory->createModel();
+        return $model->getName();
+    }
+
+    /**
+     * @param string $model
+     * @return ModelFactory
+     */
+    private function createModelFactory($model)
+    {
+        switch ($model) {
+            case 'LimitedExpress':
+                return new LimitedExpressFactory();
                 break;
 
-            case 'creditCard':
-                return '鐵路：信用卡付款';
+            case 'LocalTrain':
+                return new LocalTrainFactory();
+                break;
+
+            case 'SemiExpress':
+                return new SemiExpressFactory();
                 break;
         }
     }
