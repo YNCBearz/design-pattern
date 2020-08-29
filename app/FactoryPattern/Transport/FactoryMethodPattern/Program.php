@@ -5,18 +5,18 @@ namespace App\FactoryPattern\Transport\FactoryMethodPattern;
 class Program
 {
     /**
-     * @param string $payment (creditCard, cash)
+     * @param string $method (creditCard, cash)
      * @return string
      */
-    public function pay($payment)
+    public function payRailWayFee($method)
     {
-        switch ($payment) {
+        switch ($method) {
             case 'cash':
-                return '高速鐵路：現金付款';
+                return '鐵路：現金付款';
                 break;
 
             case 'creditCard':
-                return '高速鐵路：信用卡付款';
+                return '鐵路：信用卡付款';
                 break;
         }
     }
