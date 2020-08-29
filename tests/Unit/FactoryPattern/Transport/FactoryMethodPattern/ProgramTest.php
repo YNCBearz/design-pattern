@@ -17,6 +17,13 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
+    public function testPayByCash()
+    {
+        $expected = '高速鐵路：現金付款';
+        $actual = $this->sut->pay('cash');
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testPayByCreditCard()
     {
         $expected = '高速鐵路：信用卡付款';

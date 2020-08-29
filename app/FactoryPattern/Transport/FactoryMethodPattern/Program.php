@@ -10,6 +10,14 @@ class Program
      */
     public function pay($payment)
     {
-        return '高速鐵路：信用卡付款';
+        switch ($payment) {
+            case 'cash':
+                return '高速鐵路：現金付款';
+                break;
+
+            case 'creditCard':
+                return '高速鐵路：信用卡付款';
+                break;
+        }
     }
 }
