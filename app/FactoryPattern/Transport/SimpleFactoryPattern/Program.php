@@ -2,7 +2,7 @@
 
 namespace App\FactoryPattern\Transport\SimpleFactoryPattern;
 
-use App\FactoryPattern\Transport\SimpleFactoryPattern\RailWayPaymentFactory;
+use App\FactoryPattern\Transport\SimpleFactoryPattern\RailwayModelFactory;
 
 class Program
 {
@@ -12,14 +12,8 @@ class Program
      */
     public function getModel($model)
     {
-        switch ($model) {
-            case 'LocalTrain':
-                return '區間車';
-                break;
-
-            case 'LimitedExpress':
-                return '自強號';
-                break;
-        }
+        $railwayModelFactory = new RailwayModelFactory();
+        $model = $railwayModelFactory->createModel($model);
+        return $model->getName();
     }
 }
