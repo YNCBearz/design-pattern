@@ -5,6 +5,7 @@ namespace App\FactoryPattern\Transport\FactoryMethodPattern;
 use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\LimitedExpressFactory;
 use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\LocalTrainFactory;
 use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\SemiExpressFactory;
+use ReflectionClass;
 
 class Program
 {
@@ -25,18 +26,10 @@ class Program
      */
     private function createModelFactory($model)
     {
-        switch ($model) {
-            case 'LimitedExpress':
-                return new LimitedExpressFactory();
-                break;
+        $namespace = 'App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories';
+        $className = $model . 'Factory';
 
-            case 'LocalTrain':
-                return new LocalTrainFactory();
-                break;
-
-            case 'SemiExpress':
-                return new SemiExpressFactory();
-                break;
-        }
+        $reflector = new ReflectionClass($namespace . '\\' . $className);
+        return $reflector->newInstance();
     }
 }
