@@ -24,6 +24,13 @@ class ProgramTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testRailwaySemiExpress()
+    {
+        $expected = '復興號';
+        $actual = $this->sut->getModel('SemiExpress');
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testRailwayLimitedExpress()
     {
         $expected = '自強號';

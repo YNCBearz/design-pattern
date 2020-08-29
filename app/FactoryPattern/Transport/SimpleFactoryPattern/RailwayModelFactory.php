@@ -5,6 +5,7 @@ namespace App\FactoryPattern\Transport\SimpleFactoryPattern;
 use App\FactoryPattern\Transport\SimpleFactoryPattern\Contracts\Model;
 use App\FactoryPattern\Transport\SimpleFactoryPattern\Model\LocalTrain;
 use App\FactoryPattern\Transport\SimpleFactoryPattern\Model\LimitedExpress;
+use App\FactoryPattern\Transport\SimpleFactoryPattern\Model\SemiExpress;
 
 class RailWayModelFactory
 {
@@ -21,6 +22,10 @@ class RailWayModelFactory
 
             case 'LimitedExpress':
                 return new LimitedExpress();
+                break;
+
+            case 'SemiExpress':
+                return new SemiExpress();
                 break;
         }
     }
