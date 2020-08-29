@@ -17,17 +17,10 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-    public function testRailWayPayByCash()
+    public function testRailWayLimitedExpress()
     {
-        $expected = '鐵路：現金付款';
-        $actual = $this->sut->payRailWayFee('cash');
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function testRailWayPayByCreditCard()
-    {
-        $expected = '鐵路：信用卡付款';
-        $actual = $this->sut->payRailWayFee('creditCard');
+        $expected = '自強號';
+        $actual = $this->sut->getModel('LimitedExpress');
         $this->assertEquals($expected, $actual);
     }
 }

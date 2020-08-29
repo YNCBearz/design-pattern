@@ -7,13 +7,11 @@ use App\FactoryPattern\Transport\SimpleFactoryPattern\RailWayPaymentFactory;
 class Program
 {
     /**
-     * @param string $method (creditCard, cash)
+     * @param string $model
      * @return string
      */
-    public function payRailWayFee($method)
+    public function getModel($model)
     {
-        $paymentFactory = new RailWayPaymentFactory();
-        $payment = $paymentFactory->createPayment($method);
-        return $payment->pay();
+        return '自強號';
     }
 }
