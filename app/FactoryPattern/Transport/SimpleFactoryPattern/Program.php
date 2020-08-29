@@ -12,6 +12,14 @@ class Program
      */
     public function getModel($model)
     {
-        return '自強號';
+        switch ($model) {
+            case 'LocalTrain':
+                return '區間車';
+                break;
+
+            case 'LimitedExpress':
+                return '自強號';
+                break;
+        }
     }
 }
