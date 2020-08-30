@@ -37,4 +37,11 @@ class ProgramTest extends TestCase
         $actual = $this->sut->getModel('LimitedExpress');
         $this->assertEquals($expected, $actual);
     }
+
+    public function testPlaneBoeing747()
+    {
+        $expected = '波音747';
+        $actual = $this->sut->getModel('Boeing747');
+        $this->assertEquals($expected, $actual);
+    }
 }
