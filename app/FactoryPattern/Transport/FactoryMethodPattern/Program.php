@@ -2,9 +2,7 @@
 
 namespace App\FactoryPattern\Transport\FactoryMethodPattern;
 
-use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\LimitedExpressFactory;
-use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\LocalTrainFactory;
-use App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories\SemiExpressFactory;
+use App\FactoryPattern\Transport\FactoryMethodPattern\Contracts\ModelFactory;
 use ReflectionClass;
 
 class Program
