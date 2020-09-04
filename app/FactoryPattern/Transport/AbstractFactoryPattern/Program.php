@@ -2,9 +2,7 @@
 
 namespace App\FactoryPattern\Transport\AbstractFactoryPattern;
 
-use App\FactoryPattern\Transport\AbstractFactoryPattern\ModelFactories\LimitedExpressFactory;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\ModelFactories\LocalTrainFactory;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\ModelFactories\SemiExpressFactory;
+use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\ModelFactory;
 use ReflectionClass;
 
 class Program
@@ -18,6 +16,17 @@ class Program
         $modelFactory = $this->createModelFactory($model);
         $model = $modelFactory->createModel();
         return $model->getName();
+    }
+
+    /**
+     * @param string $model
+     * @return string
+     */
+    public function getCrew($model)
+    {
+        $modelFactory = $this->createModelFactory($model);
+        $crew = $modelFactory->createCrew();
+        return $crew->getName();
     }
 
     /**

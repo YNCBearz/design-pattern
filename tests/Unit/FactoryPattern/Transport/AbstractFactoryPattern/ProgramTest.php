@@ -17,6 +17,13 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
+    public function testRailwayLocalTrainCrew()
+    {
+        $expected = '區間車機組人員';
+        $actual = $this->sut->getCrew('LocalTrain');
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testRailwayLocalTrain()
     {
         $expected = '區間車';
@@ -31,6 +38,13 @@ class ProgramTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testRailwaySemiExpressCrew()
+    {
+        $expected = '復興號機組人員';
+        $actual = $this->sut->getCrew('SemiExpress');
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testRailwayLimitedExpress()
     {
         $expected = '自強號';
@@ -38,10 +52,24 @@ class ProgramTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testRailwayLimitedExpressCrew()
+    {
+        $expected = '自強號機組人員';
+        $actual = $this->sut->getCrew('LimitedExpress');
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testPlaneBoeing747()
     {
         $expected = '波音747';
         $actual = $this->sut->getModel('Boeing747');
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testPlaneBoeing747Crew()
+    {
+        $expected = '波音747機組人員';
+        $actual = $this->sut->getCrew('Boeing747');
         $this->assertEquals($expected, $actual);
     }
 }
