@@ -5,8 +5,8 @@ namespace App\FactoryPattern\Transport\AbstractFactoryPattern\ModelFactories;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\ModelFactory;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Model;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Model\Boeing747;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Crew;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\Crew\Boeing747Crew;
+use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Chair;
+use App\FactoryPattern\Transport\AbstractFactoryPattern\Chair\PlaneChair;
 
 class Boeing747Factory implements ModelFactory
 {
@@ -17,8 +17,8 @@ class Boeing747Factory implements ModelFactory
         return new Boeing747();
     }
 
-    public function createCrew(): Crew
+    public function createChair(): Chair
     {
-        return new Boeing747Crew();
+        return new PlaneChair();
     }
 }

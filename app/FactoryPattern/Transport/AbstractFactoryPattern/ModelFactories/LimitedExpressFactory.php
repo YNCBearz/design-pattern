@@ -5,8 +5,8 @@ namespace App\FactoryPattern\Transport\AbstractFactoryPattern\ModelFactories;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Model;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Model\LimitedExpress;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\ModelFactory;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Crew;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\Crew\LimitedExpressCrew;
+use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Chair;
+use App\FactoryPattern\Transport\AbstractFactoryPattern\Chair\ReservedSeatChair;
 
 class LimitedExpressFactory implements ModelFactory
 {
@@ -17,8 +17,8 @@ class LimitedExpressFactory implements ModelFactory
         return new LimitedExpress();
     }
 
-    public function createCrew(): Crew
+    public function createChair(): Chair
     {
-        return new LimitedExpressCrew();
+        return new ReservedSeatChair();
     }
 }

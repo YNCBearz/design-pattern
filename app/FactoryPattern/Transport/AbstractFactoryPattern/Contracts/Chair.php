@@ -2,7 +2,7 @@
 
 namespace App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts;
 
-interface Crew
+interface Chair
 {
     public function getName();
 }

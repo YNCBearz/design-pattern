@@ -22,11 +22,11 @@ class Program
      * @param string $model
      * @return string
      */
-    public function getCrew($model)
+    public function getChair($model)
     {
         $modelFactory = $this->createModelFactory($model);
-        $crew = $modelFactory->createCrew();
-        return $crew->getName();
+        $chair = $modelFactory->createChair();
+        return $chair->getName();
     }
 
     /**

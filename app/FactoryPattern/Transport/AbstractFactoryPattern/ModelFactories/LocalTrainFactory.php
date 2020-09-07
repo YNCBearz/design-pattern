@@ -5,8 +5,8 @@ namespace App\FactoryPattern\Transport\AbstractFactoryPattern\ModelFactories;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Model;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\ModelFactory;
 use App\FactoryPattern\Transport\AbstractFactoryPattern\Model\LocalTrain;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Crew;
-use App\FactoryPattern\Transport\AbstractFactoryPattern\Crew\LocalTrainCrew;
+use App\FactoryPattern\Transport\AbstractFactoryPattern\Contracts\Chair;
+use App\FactoryPattern\Transport\AbstractFactoryPattern\Chair\LongChair;
 
 class LocalTrainFactory implements ModelFactory
 {
@@ -17,8 +17,8 @@ class LocalTrainFactory implements ModelFactory
         return new LocalTrain();
     }
 
-    public function createCrew(): Crew
+    public function createChair(): Chair
     {
-        return new LocalTrainCrew();
+        return new LongChair();
     }
 }
