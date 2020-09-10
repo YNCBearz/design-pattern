@@ -6,11 +6,16 @@ use App\SOLID\LSP\Restaurant\Contracts\Eatable;
 use App\SOLID\LSP\Restaurant\Food\Burger;
 use App\SOLID\LSP\Restaurant\Food\FriedRice;
 use App\SOLID\LSP\Restaurant\Food\Steak;
+use Exception;
 
 class DadRestaurant
 {
     public function getFood($money): Eatable
     {
+        if (!is_int($money)) {
+            throw new Exception("我們只收現金", 1);
+        }
+
         $randomNumber = rand(1, 3);
 
         switch ($randomNumber) {

@@ -27,4 +27,14 @@ class ProgramTest extends TestCase
 
         $this->assertInstanceOf($expected, $actual);
     }
+
+    public function testUseCardInDadRestaurantCannotGetFood()
+    {
+        $expected = Eatable::class;
+        $card = 'card: 1234';
+
+        $actual = $this->sut->useMoneyInDadRestaurantToGetFood($card);
+
+        $this->expectExceptionMessage('我們只收現金');
+    }
 }
