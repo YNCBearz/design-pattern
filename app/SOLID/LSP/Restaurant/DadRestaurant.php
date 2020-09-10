@@ -13,7 +13,7 @@ class DadRestaurant
     public function getFood($money): Eatable
     {
         if (!is_int($money)) {
-            throw new Exception("我們只收現金", 1);
+            throw new Exception('我們只收現金');
         }
 
         $randomNumber = rand(1, 3);

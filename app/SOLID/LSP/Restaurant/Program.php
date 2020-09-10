@@ -9,4 +9,10 @@ class Program
         $restaurant = new DadRestaurant();
         return $restaurant->getFood($money);
     }
+
+    public function useMoneyInSonRestaurantToGetFood($money)
+    {
+        $restaurant = new SonRestaurant();
+        return $restaurant->getFood($money);
+    }
 }

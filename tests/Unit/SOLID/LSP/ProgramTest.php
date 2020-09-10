@@ -11,7 +11,7 @@ class ProgramTest extends TestCase
     /**
      * @var Program
      */
-    protected $program;
+    protected $sut;
 
     public function setUp(): void
     {
@@ -22,19 +22,30 @@ class ProgramTest extends TestCase
     {
         $expected = Eatable::class;
         $money = 100;
-
         $actual = $this->sut->useMoneyInDadRestaurantToGetFood($money);
-
         $this->assertInstanceOf($expected, $actual);
     }
 
     public function testUseCardInDadRestaurantCannotGetFood()
     {
-        $expected = Eatable::class;
-        $card = 'card: 1234';
-
-        $actual = $this->sut->useMoneyInDadRestaurantToGetFood($card);
-
+        $card = '信用卡';
         $this->expectExceptionMessage('我們只收現金');
+        $this->sut->useMoneyInDadRestaurantToGetFood($card);
+    }
+
+    public function testUseCardInSonRestaurantToGetFood()
+    {
+        $expected = Eatable::class;
+        $card = '信用卡';
+        $actual = $this->sut->useMoneyInSonRestaurantToGetFood($card);
+        $this->assertInstanceOf($expected, $actual);
+    }
+
+    public function testUseMoneyInSonRestaurantToGetFood()
+    {
+        $expected = Eatable::class;
+        $money = 100;
+        $actual = $this->sut->useMoneyInSonRestaurantToGetFood($money);
+        $this->assertInstanceOf($expected, $actual);
     }
 }
