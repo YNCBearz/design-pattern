@@ -18,12 +18,12 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-    public function testUseMoneyGetFoodFromDadRestaurant()
+    public function testUseMoneyInDadRestaurantToGetFood()
     {
         $expected = Eatable::class;
         $money = 100;
 
-        $actual = $this->sut->useMoneyToGetFood($money);
+        $actual = $this->sut->useMoneyInDadRestaurantToGetFood($money);
 
         $this->assertInstanceOf($expected, $actual);
     }
