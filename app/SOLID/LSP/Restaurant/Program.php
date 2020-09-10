@@ -10,9 +10,9 @@ class Program
         return $restaurant->getFood($money);
     }
 
-    public function useMoneyInSonRestaurantToGetFood($money)
+    public function useMoneyInSonRestaurantToGetFood($goldFlow)
     {
         $restaurant = new SonRestaurant();
-        return $restaurant->getFood($money);
+        return $restaurant->getFood($goldFlow);
     }
 }
