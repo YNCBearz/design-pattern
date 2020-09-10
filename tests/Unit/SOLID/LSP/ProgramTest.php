@@ -18,34 +18,34 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-    public function testUseMoneyInDadRestaurantToGetFood()
+    public function testUseMoneyInDadRestaurant()
     {
         $expected = Eatable::class;
         $money = 100;
-        $actual = $this->sut->useMoneyInDadRestaurantToGetFood($money);
+        $actual = $this->sut->getFoodInDadRestaurant($money);
         $this->assertInstanceOf($expected, $actual);
     }
 
-    public function testUseCardInDadRestaurantCannotGetFood()
+    public function testUseCardInDadRestaurant()
     {
         $card = '信用卡';
         $this->expectExceptionMessage('我們只收現金');
-        $this->sut->useMoneyInDadRestaurantToGetFood($card);
+        $this->sut->getFoodInDadRestaurant($card);
     }
 
-    public function testUseCardInSonRestaurantToGetFood()
+    public function testUseCardInSonRestaurant()
     {
         $expected = Eatable::class;
         $card = '信用卡';
-        $actual = $this->sut->useMoneyInSonRestaurantToGetFood($card);
+        $actual = $this->sut->getFoodInSonRestaurant($card);
         $this->assertInstanceOf($expected, $actual);
     }
 
-    public function testUseMoneyInSonRestaurantToGetFood()
+    public function testUseMoneyInSonRestaurant()
     {
         $expected = Eatable::class;
         $money = 100;
-        $actual = $this->sut->useMoneyInSonRestaurantToGetFood($money);
+        $actual = $this->sut->getFoodInSonRestaurant($money);
         $this->assertInstanceOf($expected, $actual);
     }
 }
