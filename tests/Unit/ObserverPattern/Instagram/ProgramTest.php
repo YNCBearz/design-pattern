@@ -16,4 +16,10 @@ class ProgramTest extends TestCase
     {
         $this->sut = new Program();
     }
+
+    public function testNotifyNewReply()
+    {
+        $this->sut->notifyNewReply();
+        $this->assertStringContainsString("通知：貼文有新訊息", $this->getActualOutput());
+    }
 }
