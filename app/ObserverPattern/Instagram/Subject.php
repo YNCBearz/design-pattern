@@ -11,13 +11,24 @@ abstract class Subject
      */
     protected $observers = [];
 
-    public function getObservers()
-    {
-        return $this->observers;
-    }
-
-    public function attach(Observer $observer)
+    public function attachObserver(Observer $observer)
     {
         $this->observers[] = $observer;
+    }
+
+    public function detachObserver(Observer $observer)
+    {
+        $index = array_search($observer, $this->observers);
+
+        if ($index >= 0) {
+            unset($this->observers[$index]);
+        }
+    }
+
+    public function notifyObservers()
+    {
+        foreach ($this->observers as $observer) {
+            $observer->update();
+        }
     }
 }
