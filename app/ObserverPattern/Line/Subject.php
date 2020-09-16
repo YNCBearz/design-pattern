@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ObserverPattern\Instagram;
+namespace App\ObserverPattern\Line;
 
-use App\ObserverPattern\Instagram\Observer;
+use App\ObserverPattern\Line\Observer;
 
 abstract class Subject
 {

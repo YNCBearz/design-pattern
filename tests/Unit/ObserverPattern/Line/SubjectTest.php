@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit\ObserverPattern\Instagram;
+namespace Tests\Unit\ObserverPattern\Line;
 
 use PHPUnit\Framework\TestCase;
-use App\ObserverPattern\Instagram\Subject;
-use App\ObserverPattern\Instagram\Observer;
 use Tests\Traits\NotPublicPropertyMutatorTrait;
+use App\ObserverPattern\Line\Subject;
+use App\ObserverPattern\Line\Observer;
 
 class SubjectTest extends TestCase
 {

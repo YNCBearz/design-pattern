@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ObserverPattern\Instagram;
+namespace App\ObserverPattern\Line;
 
-use App\ObserverPattern\Instagram\Observer;
+use App\ObserverPattern\Line\Observer;
 
 class User extends Observer
 {
@@ -15,6 +15,5 @@ class User extends Observer
 
     public function update()
     {
-        echo "通知：貼文有新訊息 \n";
     }
 }

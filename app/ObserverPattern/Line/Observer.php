@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ObserverPattern\Instagram;
+namespace App\ObserverPattern\Line;
 
 abstract class Observer
 {
