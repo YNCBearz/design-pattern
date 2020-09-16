@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ObserverPattern\Line;
+namespace App\ObserverPattern\LineGroup;
 
-use App\ObserverPattern\Line\Observer;
+use App\ObserverPattern\LineGroup\Observer;
 
 abstract class Subject
 {

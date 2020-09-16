@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ObserverPattern\Line;
+namespace App\ObserverPattern\LineGroup;
 
 abstract class Observer
 {

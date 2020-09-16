@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit\ObserverPattern\Line;
+namespace Tests\Unit\ObserverPattern\LineGroup;
 
 use PHPUnit\Framework\TestCase;
 use Tests\Traits\NotPublicPropertyMutatorTrait;
-use App\ObserverPattern\Line\Subject;
-use App\ObserverPattern\Line\Observer;
+use App\ObserverPattern\LineGroup\Subject;
+use App\ObserverPattern\LineGroup\Observer;
 
 class SubjectTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ObserverPattern\Line;
+namespace App\ObserverPattern\LineGroup;
 
-use App\ObserverPattern\Line\Observer;
+use App\ObserverPattern\LineGroup\Observer;
 
 class User extends Observer
 {
@@ -15,5 +15,6 @@ class User extends Observer
 
     public function update()
     {
+        //更新群組訊息
     }
 }
