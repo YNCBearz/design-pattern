@@ -2,9 +2,10 @@
 
 namespace App\SOLID\ISP\CoffeeMachine;
 
-use App\SOLID\ISP\CoffeeMachine\Contracts\AutomaticCoffeeMachineInterface;
+use App\SOLID\ISP\CoffeeMachine\Contracts\CoffeeGrinder;
+use App\SOLID\ISP\CoffeeMachine\Contracts\CoffeeMaker;
 
-class AutomaticCoffeeMachine implements AutomaticCoffeeMachineInterface
+class AutomaticCoffeeMachine implements CoffeeGrinder, CoffeeMaker
 {
     public function grind($coffeeBeans)
     {
