@@ -23,4 +23,11 @@ class ProgramTest extends TestCase
         $actual = $this->sut->getCoffeeByAutomaticCoffeeMachine('咖啡豆');
         $this->assertEquals($expected, $actual);
     }
+
+    public function testGetCoffeeByGrinderAndMocalPot()
+    {
+        $expected = '咖啡';
+        $actual = $this->sut->getCoffeeByNormalCoffeeGrinderAndMocalPot('咖啡豆');
+        $this->assertEquals($expected, $actual);
+    }
 }

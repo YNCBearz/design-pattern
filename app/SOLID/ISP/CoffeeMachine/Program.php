@@ -4,6 +4,8 @@ namespace App\SOLID\ISP\CoffeeMachine;
 
 use App\SOLID\ISP\CoffeeMachine\Contracts\CoffeeGrinder;
 use App\SOLID\ISP\CoffeeMachine\Contracts\CoffeeMaker;
+use App\SOLID\ISP\CoffeeMachine\NormalCoffeeGrinder;
+use App\SOLID\ISP\CoffeeMachine\MocalPot;
 
 class Program
 {
@@ -22,6 +24,16 @@ class Program
         $automaticCoffeeMachine = new AutomaticCoffeeMachine();
         $this->setCoffeeGrinder($automaticCoffeeMachine);
         $this->setCoffeeMaker($automaticCoffeeMachine);
+
+        return $this->getCoffee($coffeeBeans);
+    }
+
+    public function getCoffeeByNormalCoffeeGrinderAndMocalPot($coffeeBeans)
+    {
+        $normalCoffeeGrinder = new NormalCoffeeGrinder();
+        $mocalPot = new MocalPot();
+        $this->setCoffeeGrinder($normalCoffeeGrinder);
+        $this->setCoffeeMaker($mocalPot);
 
         return $this->getCoffee($coffeeBeans);
     }
