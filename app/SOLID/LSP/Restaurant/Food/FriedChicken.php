@@ -4,10 +4,10 @@ namespace App\SOLID\LSP\Restaurant\Food;
 
 use App\SOLID\LSP\Restaurant\Contracts\Eatable;
 
-class FriedRice implements Eatable
+class FriedChicken implements Eatable
 {
     public function beEaten()
     {
-        return '招牌炒飯被吃了';
+        return '招牌炸雞被吃了';
     }
 }

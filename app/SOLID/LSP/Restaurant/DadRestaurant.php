@@ -4,9 +4,9 @@ namespace App\SOLID\LSP\Restaurant;
 
 use App\SOLID\LSP\Restaurant\Contracts\Eatable;
 use App\SOLID\LSP\Restaurant\Food\Burger;
-use App\SOLID\LSP\Restaurant\Food\FriedRice;
-use App\SOLID\LSP\Restaurant\Food\Steak;
 use Exception;
+use App\SOLID\LSP\Restaurant\Food\ChickenNuggets;
+use App\SOLID\LSP\Restaurant\Food\FriedChicken;
 
 class DadRestaurant
 {
@@ -24,11 +24,11 @@ class DadRestaurant
                 break;
 
             case 2:
-                return new FriedRice();
+                return new FriedChicken();
                 break;
 
             case 3:
-                return new Steak();
+                return new ChickenNuggets();
                 break;
         }
     }
