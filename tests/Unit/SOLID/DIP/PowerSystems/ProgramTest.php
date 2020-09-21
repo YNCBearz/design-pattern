@@ -17,10 +17,10 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-    public function testGeneratePower()
+    public function testGetPower()
     {
         $expected = '電力';
-        $actual = $this->sut->generatePower();
+        $actual = $this->sut->getPower();
         $this->assertEquals($expected, $actual);
     }
 }

@@ -2,10 +2,13 @@
 
 namespace App\SOLID\DIP\PowerSystems;
 
+use App\SOLID\DIP\PowerSystems\ThermalPower;
+
 class Program
 {
-    public function generatePower()
+    public function getPower()
     {
-        return '電力';
+        $thermalPower = new ThermalPower();
+        return $thermalPower->generatePower();
     }
 }
