@@ -33,8 +33,9 @@ abstract class Ingredient implements Food
      */
     public function customize($demand)
     {
+        $this->changeDefaultIfDemanded($demand);
+
         if ($this->food instanceof Ingredient) {
-            $this->changeDefaultIfDemanded($demand);
             $this->food->customize($demand);
         }
 
