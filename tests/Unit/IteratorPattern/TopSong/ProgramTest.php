@@ -19,13 +19,6 @@ class ProgramTest extends TestCase
         $this->sut = new Program($songLists);
     }
 
-    public function testListByReleaseDate()
-    {
-        $expected = ['Light Years Away', 'Miss You 3000', 'Mojito'];
-        $actual = $this->sut->listByReleaseDate();
-        $this->assertEquals($expected, $actual);
-    }
-
     private function getSongLists()
     {
         return [
@@ -33,5 +26,12 @@ class ProgramTest extends TestCase
             ['name' => 'Light Years Away', 'singer' => 'G.E.M.', 'releaseDate' => '2016-12-30'],
             ['name' => 'Miss You 3000', 'singer' => '831', 'releaseDate' => '2019-11-13']
         ];
+    }
+
+    public function testList()
+    {
+        $expected = ['Mojito', 'Light Years Away', 'Miss You 3000'];
+        $actual = $this->sut->list();
+        $this->assertEquals($expected, $actual);
     }
 }

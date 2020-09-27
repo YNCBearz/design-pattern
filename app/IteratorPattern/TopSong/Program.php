@@ -4,13 +4,23 @@ namespace App\IteratorPattern\TopSong;
 
 class Program
 {
+    /**
+     * @var array
+     */
+    protected $songLists;
+
     public function __construct(array $songLists)
     {
         $this->songLists = $songLists;
     }
 
-    public function listByReleaseDate()
+    public function list()
     {
-        return ['Light Years Away', 'Miss You 3000', 'Mojito'];
+        $result = [];
+        foreach ($this->songLists as $song) {
+            $result[] = $song['name'];
+        }
+
+        return $result;
     }
 }
