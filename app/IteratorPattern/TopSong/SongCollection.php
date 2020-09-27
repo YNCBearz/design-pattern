@@ -12,23 +12,27 @@ class SongCollection
      */
     protected $items = [];
 
-    public function __construct(array $originalSongs)
+    public function __construct(array $dataOfSongs)
     {
-        $this->items = $this->generateSongs($originalSongs);
+        $this->items = $this->generateSongs($dataOfSongs);
     }
 
     /**
-     * @param array $originalSongs
+     * @param array $dataOfSongs
      * @return Song[]
      */
-    private function generateSongs($originalSongs)
+    private function generateSongs($dataOfSongs)
     {
-        $result = [];
-        foreach ($originalSongs as $originalSong) {
-            $result[] = new Song($originalSong);
+        foreach ($dataOfSongs as $dataOfSong) {
+            $result[] = $this->addItem($dataOfSong);
         }
 
         return $result;
+    }
+
+    private function addItem(array $dataOfSong)
+    {
+        return new Song($dataOfSong);
     }
 
     /**
