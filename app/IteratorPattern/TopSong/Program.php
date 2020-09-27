@@ -2,30 +2,22 @@
 
 namespace App\IteratorPattern\TopSong;
 
+use App\IteratorPattern\TopSong\SongCollection;
+
 class Program
 {
     /**
-     * @var Song[]
+     * @var SongCollection
      */
-    protected $songs;
+    protected $songCollection;
 
     public function __construct(array $songs)
     {
-        // $this->songs = $this->generateSongs($songs);
-        $this->songs = $songs;
-    }
-
-    private function generateSongs()
-    {
+        $this->songCollection = new SongCollection($songs);
     }
 
     public function list()
     {
-        $result = [];
-        foreach ($this->songs as $song) {
-            $result[] = $song['name'];
-        }
-
-        return $result;
+        return $this->songCollection->list();
     }
 }
