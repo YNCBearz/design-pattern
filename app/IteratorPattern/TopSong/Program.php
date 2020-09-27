@@ -5,19 +5,24 @@ namespace App\IteratorPattern\TopSong;
 class Program
 {
     /**
-     * @var array
+     * @var Song[]
      */
-    protected $songLists;
+    protected $songs;
 
-    public function __construct(array $songLists)
+    public function __construct(array $songs)
     {
-        $this->songLists = $songLists;
+        // $this->songs = $this->generateSongs($songs);
+        $this->songs = $songs;
+    }
+
+    private function generateSongs()
+    {
     }
 
     public function list()
     {
         $result = [];
-        foreach ($this->songLists as $song) {
+        foreach ($this->songs as $song) {
             $result[] = $song['name'];
         }
 

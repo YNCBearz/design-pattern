@@ -15,11 +15,11 @@ class ProgramTest extends TestCase
 
     protected function setUp(): void
     {
-        $songLists = $this->getSongLists();
-        $this->sut = new Program($songLists);
+        $songs = $this->getTestSongs();
+        $this->sut = new Program($songs);
     }
 
-    private function getSongLists()
+    private function getTestSongs()
     {
         return [
             ['name' => 'Mojito', 'singer' => 'Jay Chou', 'releaseDate' => '2020-06-12'],
