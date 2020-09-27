@@ -25,4 +25,14 @@ class Program
 
         return $result;
     }
+
+    public function listReverse()
+    {
+        $iterator = $this->songCollection->reverse()->getIterator();
+        foreach ($iterator as $item) {
+            $result[] = $item->getName();
+        }
+
+        return $result;
+    }
 }

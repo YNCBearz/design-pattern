@@ -8,12 +8,18 @@ use Traversable;
 class SongCollection implements IteratorAggregate
 {
     /**
+     * @var array
+     */
+    protected $dataOfSongs;
+
+    /**
      * @var Song[]
      */
     protected $items = [];
 
     public function __construct(array $dataOfSongs)
     {
+        $this->dataOfSongs = $dataOfSongs;
         $this->items = $this->generateSongs($dataOfSongs);
     }
 
@@ -41,5 +47,13 @@ class SongCollection implements IteratorAggregate
     public function getIterator(): Traversable
     {
         return new SongIterator($this);
+    }
+
+    /**
+     * @return static
+     */
+    public function reverse()
+    {
+        return new static(array_reverse($this->dataOfSongs));
     }
 }

@@ -34,4 +34,11 @@ class ProgramTest extends TestCase
         $actual = $this->sut->list();
         $this->assertEquals($expected, $actual);
     }
+
+    public function testListReverse()
+    {
+        $expected = ['Miss You 3000', 'Light Years Away', 'Waiting For You'];
+        $actual = $this->sut->listReverse();
+        $this->assertEquals($expected, $actual);
+    }
 }
