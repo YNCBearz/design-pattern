@@ -18,6 +18,11 @@ class Program
 
     public function list()
     {
-        return $this->songCollection->list();
+        $iterator = $this->songCollection->getIterator();
+        foreach ($iterator as $item) {
+            $result[] = $item->getName();
+        }
+
+        return $result;
     }
 }

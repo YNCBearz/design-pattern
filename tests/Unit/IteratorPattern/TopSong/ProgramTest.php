@@ -22,7 +22,7 @@ class ProgramTest extends TestCase
     private function getTestSongs()
     {
         return [
-            ['name' => 'Mojito', 'singer' => 'Jay Chou', 'releaseDate' => '2020-06-12'],
+            ['name' => 'Waiting For You', 'singer' => 'Jay Chou', 'releaseDate' => '2018-01-18'],
             ['name' => 'Light Years Away', 'singer' => 'G.E.M.', 'releaseDate' => '2016-12-30'],
             ['name' => 'Miss You 3000', 'singer' => '831', 'releaseDate' => '2019-11-13']
         ];
@@ -30,7 +30,7 @@ class ProgramTest extends TestCase
 
     public function testList()
     {
-        $expected = ['Mojito', 'Light Years Away', 'Miss You 3000'];
+        $expected = ['Waiting For You', 'Light Years Away', 'Miss You 3000'];
         $actual = $this->sut->list();
         $this->assertEquals($expected, $actual);
     }

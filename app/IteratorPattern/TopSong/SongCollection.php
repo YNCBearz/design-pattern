@@ -5,7 +5,7 @@ namespace App\IteratorPattern\TopSong;
 use IteratorAggregate;
 use Traversable;
 
-class SongCollection
+class SongCollection implements IteratorAggregate
 {
     /**
      * @var Song[]
@@ -24,15 +24,10 @@ class SongCollection
     private function generateSongs($dataOfSongs)
     {
         foreach ($dataOfSongs as $dataOfSong) {
-            $result[] = $this->addItem($dataOfSong);
+            $result[] = new Song($dataOfSong);
         }
 
         return $result;
-    }
-
-    private function addItem(array $dataOfSong)
-    {
-        return new Song($dataOfSong);
     }
 
     /**
@@ -43,15 +38,8 @@ class SongCollection
         return $this->items;
     }
 
-    /**
-     * @return array
-     */
-    public function list()
+    public function getIterator(): Traversable
     {
-        foreach ($this->items as $item) {
-            $result[] = $item->getName();
-        }
-
-        return $result;
+        return new SongIterator($this);
     }
 }
