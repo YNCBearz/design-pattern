@@ -2,7 +2,9 @@
 
 namespace App\ProxyPattern\Cache;
 
-class Database
+use App\ProxyPattern\Cache\Contracts\Readable;
+
+class Database implements Readable
 {
     /**
      * @param string $keyword

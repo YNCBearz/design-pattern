@@ -2,18 +2,18 @@
 
 namespace App\ProxyPattern\Cache;
 
-use App\ProxyPattern\Cache\Database;
+use App\ProxyPattern\Cache\CacheProxy;
 
 class Program
 {
     /**
-     * @var Database
+     * @var CacheProxy
      */
-    protected $database;
+    protected $proxy;
 
     public function __construct()
     {
-        $this->database = new Database();
+        $this->proxy = new CacheProxy();
     }
 
     /**
@@ -22,6 +22,6 @@ class Program
      */
     public function search(string $keyword): array
     {
-        return $this->database->read($keyword);
+        return $this->proxy->read($keyword);
     }
 }
