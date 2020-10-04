@@ -28,4 +28,16 @@ class ProgramTest extends TestCase
         $actual = $this->sut->search($keyword);
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function Given_NoCache_When_SearchSteak_Then_ReturnEmptyArray()
+    {
+        $keyword = 'steak';
+        $expected = [];
+
+        $actual = $this->sut->search($keyword);
+        $this->assertEquals($expected, $actual);
+    }
 }

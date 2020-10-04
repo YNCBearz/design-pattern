@@ -2,12 +2,14 @@
 
 namespace App\ProxyPattern\Cache;
 
+use App\ProxyPattern\Cache\Database;
+
 class Program
 {
-    /**
-     * @var bool
-     */
-    protected $enabledCache = false;
+    public function __construct()
+    {
+        $this->database = new Database();
+    }
 
     /**
      * @param string $keyword
@@ -15,6 +17,6 @@ class Program
      */
     public function search(string $keyword): array
     {
-        return ['Bear Sushi', 'Lin Sushi', 'Alysa Sushi'];
+        return $this->database->read($keyword);
     }
 }
