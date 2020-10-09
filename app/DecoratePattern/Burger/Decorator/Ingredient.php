@@ -4,6 +4,7 @@ namespace App\DecoratePattern\Burger\Decorator;
 
 use App\DecoratePattern\Burger\Contracts\Food;
 use App\DecoratePattern\Burger\ConcreteComponent\Burger;
+use ReflectionClass;
 
 abstract class Ingredient implements Food
 {
@@ -32,6 +33,8 @@ abstract class Ingredient implements Food
      */
     public function customize($demand)
     {
+        $this->changeDefaultIfDemanded($demand);
+
         if ($this->food instanceof Ingredient) {
             $this->food->customize($demand);
         }
@@ -41,10 +44,12 @@ abstract class Ingredient implements Food
 
     /**
      * @param array $demand
-     * @param string $option
      */
-    protected function changeDefaultIfDemanded($demand, $option)
+    protected function changeDefaultIfDemanded($demand)
     {
+        $reflectionClass = new ReflectionClass($this);
+        $option = strtolower($reflectionClass->getShortName());
+
         if (isset($demand[$option])) {
             $this->$option = $demand[$option];
         }
