@@ -40,4 +40,9 @@ class MemberState extends UserState
     {
         throw new Exception('Sorry, you have not subscribed.');
     }
+
+    public function deleteAccount()
+    {
+        $this->program->setGuestState();
+    }
 }

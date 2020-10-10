@@ -72,6 +72,11 @@ class Program
         $this->state->cancelSubscription();
     }
 
+    public function setGuestState()
+    {
+        $this->state = $this->guestState;
+    }
+
     public function setMemberState()
     {
         $this->state = $this->memberState;
@@ -85,5 +90,10 @@ class Program
     public function getState()
     {
         return $this->state;
+    }
+
+    public function deleteAccount()
+    {
+        $this->state->deleteAccount();
     }
 }

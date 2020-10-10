@@ -40,4 +40,9 @@ class GuestState extends UserState
     {
         throw new Exception('Sorry, you have not subscribed.');
     }
+
+    public function deleteAccount()
+    {
+        throw new Exception('You need to be a member before deleting account.');
+    }
 }
