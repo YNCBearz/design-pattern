@@ -40,8 +40,7 @@ class Program
         $this->guestState = new GuestState($this);
         $this->premiumState = new PremiumState($this);
 
-        $this->state = $this->guestState;
-        $this->setLicense('guest');
+        $this->setGuestState();
     }
 
     public function register()
@@ -52,14 +51,6 @@ class Program
     public function getLicense()
     {
         return $this->state->getLicense();
-    }
-
-    /**
-     * @param string $license
-     */
-    public function setLicense($license)
-    {
-        $this->state = $this->{$license . 'State'};
     }
 
     public function subscribe()

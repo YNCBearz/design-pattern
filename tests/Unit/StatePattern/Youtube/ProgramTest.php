@@ -24,7 +24,7 @@ class ProgramTest extends TestCase
      */
     public function Given_Premium_When_CancelSubscription_Then_Member()
     {
-        $this->sut->setLicense('premium');
+        $this->sut->setPremiumState();
 
         $this->sut->cancelSubscription();
 
@@ -46,7 +46,7 @@ class ProgramTest extends TestCase
      */
     public function Given_Premium_When_Subscribe_Then_Premium()
     {
-        $this->sut->setLicense('premium');
+        $this->sut->setPremiumState();
 
         $this->sut->subscribe();
 
@@ -58,7 +58,7 @@ class ProgramTest extends TestCase
      */
     public function Given_Member_When_Subscribe_Then_Premium()
     {
-        $this->sut->setLicense('member');
+        $this->sut->setMemberState();
 
         $this->sut->subscribe();
 
@@ -100,7 +100,7 @@ class ProgramTest extends TestCase
      */
     public function Given_Member_When_DeleteAccount_Then_Guest()
     {
-        $this->sut->setLicense('member');
+        $this->sut->setMemberState();
 
         $this->sut->deleteAccount();
 
@@ -112,7 +112,7 @@ class ProgramTest extends TestCase
      */
     public function Given_Premium_When_DeleteAccount_Then_Guest()
     {
-        $this->sut->setLicense('premium');
+        $this->sut->setPremiumState();
 
         $this->sut->deleteAccount();
 
@@ -124,7 +124,7 @@ class ProgramTest extends TestCase
      */
     public function Given_Premium_When_Register_Then_Premium()
     {
-        $this->sut->setLicense('premium');
+        $this->sut->setPremiumState();
 
         $this->sut->register();
 
