@@ -40,7 +40,7 @@ class Program
         $this->guestState = new GuestState($this);
         $this->premiumState = new PremiumState($this);
 
-        $this->state = $this->guestState;
+        $this->setGuestState();
     }
 
     public function register()
