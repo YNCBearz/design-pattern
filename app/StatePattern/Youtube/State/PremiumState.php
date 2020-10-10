@@ -39,4 +39,9 @@ class PremiumState extends UserState
     {
         $this->program->setMemberState();
     }
+
+    public function deleteAccount()
+    {
+        $this->program->setGuestState();
+    }
 }

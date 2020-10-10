@@ -16,4 +16,6 @@ abstract class UserState
     abstract function subscribe();
 
     abstract function cancelSubscription();
+
+    abstract function deleteAccount();
 }

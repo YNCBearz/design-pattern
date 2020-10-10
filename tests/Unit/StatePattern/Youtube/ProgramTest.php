@@ -88,6 +88,40 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
+    public function Given_Guest_When_DeleteAccount_Then_Guest()
+    {
+        $this->expectExceptionMessage('You need to be a member before deleting account.');
+
+        $this->sut->deleteAccount();
+    }
+
+    /**
+     * @test
+     */
+    public function Given_Member_When_DeleteAccount_Then_Guest()
+    {
+        $this->sut->setLicense('member');
+
+        $this->sut->deleteAccount();
+
+        $this->licenseShouldBe('guest');
+    }
+
+    /**
+     * @test
+     */
+    public function Given_Premium_When_DeleteAccount_Then_Guest()
+    {
+        $this->sut->setLicense('premium');
+
+        $this->sut->deleteAccount();
+
+        $this->licenseShouldBe('guest');
+    }
+
+    /**
+     * @test
+     */
     public function Given_Premium_When_Register_Then_Premium()
     {
         $this->sut->setLicense('premium');
