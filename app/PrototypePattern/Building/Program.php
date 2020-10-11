@@ -26,7 +26,7 @@ class Program
         $secondBuilding->wall->material = 'wood';
 
         dump($firstBuilding->name); // oldestPigHouse
-        dump($firstBuilding->wall->material); // wood
+        dump($firstBuilding->wall->material); // straw
 
         dump($secondBuilding->name); // middlePigHouse
         dump($secondBuilding->wall->material); // wood
