@@ -20,9 +20,17 @@ class Program
     {
         $firstBuilding = $this->getFirstBuilding();
 
-        $secondBuiling = clone $firstBuilding;
-        $secondBuiling->name = 'middlePigHouse';
+        $secondBuilding = clone $firstBuilding;
+        $secondBuilding->name = 'middlePigHouse';
 
-        return $secondBuiling;
+        $secondBuilding->wall->material = 'wood';
+
+        dump($firstBuilding->name); // oldestPigHouse
+        dump($firstBuilding->wall->material); // wood
+
+        dump($secondBuilding->name); // middlePigHouse
+        dump($secondBuilding->wall->material); // wood
+
+        return $secondBuilding;
     }
 }
