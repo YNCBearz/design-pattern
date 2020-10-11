@@ -25,9 +25,4 @@ class Building
         $this->wall = $wall;
         $this->name = $name;
     }
-
-    public function __clone()
-    {
-        $this->wall = clone $this->wall;
-    }
 }

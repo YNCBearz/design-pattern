@@ -8,29 +8,37 @@ use App\PrototypePattern\Building\Wall;
 class Program
 {
     /**
-     * @return Building
+     * @return array
      */
-    public function getFirstBuilding()
+    public function run()
     {
+        //firstBuilding
         $strawWall = new Wall('straw');
-        return new Building($strawWall, 'oldestPigHouse');
-    }
+        $firstBuilding = new Building($strawWall, 'oldestPigHouse');
 
-    public function getSecondBuilding()
-    {
-        $firstBuilding = $this->getFirstBuilding();
-
+        //secondBuilding
         $secondBuilding = clone $firstBuilding;
         $secondBuilding->name = 'middlePigHouse';
-
         $secondBuilding->wall->material = 'wood';
 
+        //thirdBuilding
+        $thirdBuilding = clone $firstBuilding;
+        $thirdBuilding->name = 'youngestPigHouse';
+        $thirdBuilding->wall->material = 'bricks';
+
         dump($firstBuilding->name); // oldestPigHouse
-        dump($firstBuilding->wall->material); // straw
+        dump($firstBuilding->wall->material); // bricks
 
         dump($secondBuilding->name); // middlePigHouse
-        dump($secondBuilding->wall->material); // wood
+        dump($secondBuilding->wall->material); // bricks
 
-        return $secondBuilding;
+        dump($thirdBuilding->name); // youngestPigHouse
+        dump($thirdBuilding->wall->material); // bricks
+
+        return [
+            'firstBuilding' => $firstBuilding,
+            'secondBuilding' => $secondBuilding,
+            'thirdBuilding' => $thirdBuilding
+        ];
     }
 }

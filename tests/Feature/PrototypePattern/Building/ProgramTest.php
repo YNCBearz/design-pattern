@@ -22,26 +22,24 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
-    public function Given_StrawWall_When_GetFirstBuilding_Then_ReturnStrawBuilding()
+    public function Given_ThreePig_When_Build_Then_ReturnThreeHouse()
     {
         $strawWall = new Wall('straw');
-        $expected = new Building($strawWall, 'oldestPigHouse');
+        $woodWall = new Wall('wood');
+        $bricksWall = new Wall('bricks');
 
-        $actual = $this->sut->getFirstBuilding();
+        $firstBuilding = new Building($strawWall, 'oldestPigHouse');
+        $secondBuilding = new Building($woodWall, 'middlePigHouse');
+        $thirdBuilding = new Building($bricksWall, 'youngestPigHouse');
+
+        $expected = [
+            'firstBuilding' => $firstBuilding,
+            'secondBuilding' => $secondBuilding,
+            'thirdBuilding' => $thirdBuilding
+        ];
+
+        $actual = $this->sut->run();
 
         $this->assertEquals($expected, $actual);
-    }
-
-    /**
-     * @test
-     */
-    public function Given_StrawBuilding_When_Copy_Then_ReturnAnotherBuilding()
-    {
-        $strawWall = new Wall('straw');
-        $expected = new Building($strawWall, 'oldestPigHouse');
-
-        $actual = $this->sut->getSecondBuilding();
-
-        $this->assertNotEquals($expected, $actual);
     }
 }
