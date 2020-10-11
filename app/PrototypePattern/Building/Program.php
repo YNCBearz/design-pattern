@@ -26,15 +26,6 @@ class Program
         $thirdBuilding->name = 'youngestPigHouse';
         $thirdBuilding->wall->material = 'bricks';
 
-        dump($firstBuilding->name); // oldestPigHouse
-        dump($firstBuilding->wall->material); // bricks
-
-        dump($secondBuilding->name); // middlePigHouse
-        dump($secondBuilding->wall->material); // bricks
-
-        dump($thirdBuilding->name); // youngestPigHouse
-        dump($thirdBuilding->wall->material); // bricks
-
         return [
             'firstBuilding' => $firstBuilding,
             'secondBuilding' => $secondBuilding,
