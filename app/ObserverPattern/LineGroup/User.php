@@ -15,6 +15,7 @@ class User extends Observer
 
     public function update()
     {
-        //更新群組訊息
+        //使用者手機跳出通知
+        //使用者電腦跳出通知
     }
 }
