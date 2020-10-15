@@ -4,7 +4,7 @@ namespace App\BuilderPattern\Vacation\Contracts;
 
 use App\BuilderPattern\Vacation\Itinerary;
 
-abstract class Travel
+abstract class TravelBuilder
 {
     protected $from;
 
@@ -34,8 +34,15 @@ abstract class Travel
 
     abstract public function setTouristGuide(string $touristGuide): self;
 
-    public function getVacation(): Itinerary
+    public function getItinerary(): Itinerary
     {
-        return new Itinerary($this->from, $this->to, $this->day);
+        $options = [
+            'hotel' => $this->hotel,
+            'travelBy' => $this->transport,
+            'schedule' => $this->schedule,
+            'touristGuide' => $this->touristGuide
+        ];
+
+        return new Itinerary($this->from, $this->to, $this->day, $options);
     }
 }

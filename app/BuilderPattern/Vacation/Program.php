@@ -9,6 +9,8 @@ class Program
      */
     public function getDomesticTravel()
     {
+        //高速鐵路一日體驗
+
         return [
             'from' => 'Kaohsiung',
             'to' => 'Taipei',
@@ -23,6 +25,8 @@ class Program
      */
     public function getInternationalTravel()
     {
+        //東京迪士尼五日遊
+
         return [
             'from' => 'Kaohsiung',
             'to' => 'Tokyo',
