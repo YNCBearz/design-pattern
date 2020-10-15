@@ -30,4 +30,20 @@ class ProgramTest extends TestCase
         $actual = $this->sut->getDomesticTravel();
         $this->assertEquals($expected, $actual);
     }
+
+    public function testGetInternationalTravel()
+    {
+        $expected = [
+            'from' => 'Kaohsiung',
+            'to' => 'Tokyo',
+            'days' => 5,
+            'hotel' => 'Disney Hotel',
+            'travelBy' => 'EVA AIR',
+            'schedule' => 'Disneyland',
+            'touristGuide' => true
+        ];
+
+        $actual = $this->sut->getInternationalTravel();
+        $this->assertEquals($expected, $actual);
+    }
 }

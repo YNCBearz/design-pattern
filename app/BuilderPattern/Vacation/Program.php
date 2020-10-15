@@ -17,4 +17,20 @@ class Program
             'schedule' => 'Taipei 101'
         ];
     }
+
+    /**
+     * @return array
+     */
+    public function getInternationalTravel()
+    {
+        return [
+            'from' => 'Kaohsiung',
+            'to' => 'Tokyo',
+            'days' => 5,
+            'hotel' => 'Disney Hotel',
+            'travelBy' => 'EVA AIR',
+            'schedule' => 'Disneyland',
+            'touristGuide' => true
+        ];
+    }
 }
