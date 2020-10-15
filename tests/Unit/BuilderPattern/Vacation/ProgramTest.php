@@ -24,7 +24,6 @@ class ProgramTest extends TestCase
             'to' => 'Taipei',
             'day' => 1,
             'travelBy' => 'High Speed Rail',
-            'schedule' => 'Taipei 101'
         ];
 
         $actual = $this->sut->getDomesticTravel();
@@ -37,10 +36,8 @@ class ProgramTest extends TestCase
             'from' => 'Kaohsiung',
             'to' => 'Tokyo',
             'day' => 5,
-            'hotel' => 'Disney Hotel',
             'travelBy' => 'EVA AIR',
-            'schedule' => 'Disneyland',
-            'touristGuide' => 'Temari'
+            'hotel' => 'Disney Hotel',
         ];
 
         $actual = $this->sut->getInternationalTravel();

@@ -15,8 +15,7 @@ class Program
             'from' => 'Kaohsiung',
             'to' => 'Taipei',
             'day' => 1,
-            'travelBy' => 'High Speed Rail',
-            'schedule' => 'Taipei 101'
+            'travelBy' => 'High Speed Rail'
         ];
     }
 
@@ -25,16 +24,14 @@ class Program
      */
     public function getInternationalTravel()
     {
-        //東京迪士尼五日遊
+        //東京五日遊
 
         return [
             'from' => 'Kaohsiung',
             'to' => 'Tokyo',
             'day' => 5,
-            'hotel' => 'Disney Hotel',
             'travelBy' => 'EVA AIR',
-            'schedule' => 'Disneyland',
-            'touristGuide' => 'Temari'
+            'hotel' => 'Disney Hotel'
         ];
     }
 }
