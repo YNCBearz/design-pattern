@@ -30,7 +30,7 @@ class Program
             'hotel' => 'Disney Hotel',
             'travelBy' => 'EVA AIR',
             'schedule' => 'Disneyland',
-            'touristGuide' => true
+            'touristGuide' => 'Temari'
         ];
     }
 }

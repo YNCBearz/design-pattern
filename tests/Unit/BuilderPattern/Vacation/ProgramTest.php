@@ -40,7 +40,7 @@ class ProgramTest extends TestCase
             'hotel' => 'Disney Hotel',
             'travelBy' => 'EVA AIR',
             'schedule' => 'Disneyland',
-            'touristGuide' => true
+            'touristGuide' => 'Temari'
         ];
 
         $actual = $this->sut->getInternationalTravel();
