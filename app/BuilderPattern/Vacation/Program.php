@@ -12,7 +12,7 @@ class Program
         return [
             'from' => 'Kaohsiung',
             'to' => 'Taipei',
-            'days' => 1,
+            'day' => 1,
             'travelBy' => 'High Speed Rail',
             'schedule' => 'Taipei 101'
         ];
@@ -26,7 +26,7 @@ class Program
         return [
             'from' => 'Kaohsiung',
             'to' => 'Tokyo',
-            'days' => 5,
+            'day' => 5,
             'hotel' => 'Disney Hotel',
             'travelBy' => 'EVA AIR',
             'schedule' => 'Disneyland',
