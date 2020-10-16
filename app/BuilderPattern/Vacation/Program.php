@@ -15,7 +15,7 @@ class Program
             'from' => 'Kaohsiung',
             'to' => 'Taipei',
             'day' => 1,
-            'travelBy' => 'High Speed Rail'
+            'transport' => 'High Speed Rail'
         ];
     }
 
@@ -30,7 +30,7 @@ class Program
             'from' => 'Kaohsiung',
             'to' => 'Tokyo',
             'day' => 5,
-            'travelBy' => 'EVA AIR',
+            'transport' => 'Airplane',
             'hotel' => 'Disney Hotel'
         ];
     }
