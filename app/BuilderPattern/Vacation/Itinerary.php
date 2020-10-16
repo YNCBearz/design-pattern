@@ -4,63 +4,62 @@ namespace App\BuilderPattern\Vacation;
 
 class Itinerary
 {
+    /**
+     * @var string
+     */
     protected $from;
 
+    /**
+     * @var string
+     */
     protected $to;
 
+    /**
+     * @var int
+     */
     protected $day;
 
+    /**
+     * @var string
+     */
     protected $hotel;
 
+    /**
+     * @var string
+     */
     protected $transport;
 
     /**
-     * @param string $from
-     * @return self
+     * @param string $name
+     * @param string|int $value
      */
-    public function from(string $from): self
+    public function __set($name, $value)
     {
-        $this->from = $from;
-        return $this;
+        $this->$name = $value;
     }
 
     /**
-     * @param string $to
-     * @return self
+     * @param string $name
+     * @return string|int
      */
-    public function to(string $to): self
+    public function __get($name)
     {
-        $this->to = $to;
-        return $this;
+        return $this->$name;
     }
 
     /**
-     * @param integer $day
-     * @return self
+     * @return array
      */
-    public function spendDays(int $day): self
+    public function toArray()
     {
-        $this->day = $day;
-        return $this;
-    }
+        $result = get_object_vars($this);
 
-    /**
-     * @param string $hotel
-     * @return self
-     */
-    public function stayAt(string $hotel): self
-    {
-        $this->hotel = $hotel;
-        return $this;
-    }
+        foreach ($result as $name => $value) {
+            if (is_null($value)) {
+                unset($result[$name]);
+            }
+        }
 
-    /**
-     * @param string $transport
-     * @return self
-     */
-    public function travelBy(string $transport): self
-    {
-        $this->transport = $transport;
-        return $this;
+        return $result;
     }
 }

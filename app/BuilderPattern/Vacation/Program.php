@@ -2,6 +2,8 @@
 
 namespace App\BuilderPattern\Vacation;
 
+use App\BuilderPattern\Vacation\TravelAgency;
+
 class Program
 {
     /**
@@ -10,13 +12,8 @@ class Program
     public function getDomesticTravel()
     {
         //高速鐵路一日體驗
-
-        return [
-            'from' => 'Kaohsiung',
-            'to' => 'Taipei',
-            'day' => 1,
-            'transport' => 'High Speed Rail'
-        ];
+        $travelAgency = new TravelAgency();
+        return $travelAgency->getHighSpeedRailItinerary();
     }
 
     /**
@@ -25,13 +22,7 @@ class Program
     public function getInternationalTravel()
     {
         //東京五日遊
-
-        return [
-            'from' => 'Kaohsiung',
-            'to' => 'Tokyo',
-            'day' => 5,
-            'transport' => 'Airplane',
-            'hotel' => 'Disney Hotel'
-        ];
+        $travelAgency = new TravelAgency();
+        return $travelAgency->getFiveDaysTokyoItinerary();
     }
 }
