@@ -6,6 +6,11 @@ use App\BuilderPattern\Vacation\Contracts\ItineraryPlanable;
 
 class TravelAgency
 {
+    /**
+     * @var ItineraryPlanable
+     */
+    protected $itineraryBuilder;
+
     public function __construct(ItineraryPlanable $itineraryBuilder)
     {
         $this->itineraryBuilder = $itineraryBuilder;
