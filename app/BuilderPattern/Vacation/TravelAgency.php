@@ -2,11 +2,13 @@
 
 namespace App\BuilderPattern\Vacation;
 
+use App\BuilderPattern\Vacation\Contracts\ItineraryPlanable;
+
 class TravelAgency
 {
-    public function __construct()
+    public function __construct(ItineraryPlanable $itineraryBuilder)
     {
-        $this->itineraryBuilder = new ItineraryBuilder();
+        $this->itineraryBuilder = $itineraryBuilder;
     }
 
     /**
