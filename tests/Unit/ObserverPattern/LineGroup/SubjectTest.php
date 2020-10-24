@@ -24,7 +24,7 @@ class SubjectTest extends TestCase
     public function testAttachObserver()
     {
         $propertyName = 'observers';
-        $this->setProperty($propertyName, []);
+        $this->setSutProperty($propertyName, []);
 
         /**
          * @var Observer
@@ -33,7 +33,7 @@ class SubjectTest extends TestCase
         $expected = [$stubObserver];
 
         $this->sut->attachObserver($stubObserver);
-        $this->assertEquals($expected, $this->getProperty($propertyName));
+        $this->assertEquals($expected, $this->getSutProperty($propertyName));
     }
 
     public function testDetachObserver()
@@ -45,10 +45,10 @@ class SubjectTest extends TestCase
          * @var Observer
          */
         $stubObserver = $this->createStub(Observer::class);
-        $this->setProperty($propertyName, [$stubObserver]);
+        $this->setSutProperty($propertyName, [$stubObserver]);
 
         $this->sut->detachObserver($stubObserver);
-        $this->assertEquals($expected, $this->getProperty($propertyName));
+        $this->assertEquals($expected, $this->getSutProperty($propertyName));
     }
 
     public function testNotifyObservers()
@@ -56,7 +56,7 @@ class SubjectTest extends TestCase
         $propertyName = 'observers';
         $mockObserverA = $this->createMock(Observer::class);
         $mockObserverB = $this->createMock(Observer::class);
-        $this->setProperty($propertyName, [$mockObserverA, $mockObserverB]);
+        $this->setSutProperty($propertyName, [$mockObserverA, $mockObserverB]);
 
         $mockObserverA->expects($this->once())
             ->method('update');
