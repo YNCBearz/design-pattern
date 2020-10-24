@@ -15,16 +15,16 @@ class Program
         //write Code
         $git->writeCode('aaa');
 
-        dump($git->getUntrackedCode()); //aaa
+        // dump($git->getUntrackedCode()); //aaa
 
         $git->commit();
-        dump($git->getUntrackedCode()); //''
+        // dump($git->getUntrackedCode()); //''
 
         $git->writeCode('bbb');
         $git->commit();
 
         $git->reset(1);
 
-        dump($git->getUntrackedCode()); //aaa
+        // dump($git->getUntrackedCode()); //aaa
     }
 }
