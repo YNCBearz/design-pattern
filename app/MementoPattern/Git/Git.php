@@ -16,9 +16,11 @@ class Git
     protected $folder;
 
     /**
+     * This is our state.
+     *
      * @var string
      */
-    private $code = '';
+    private $code;
 
     /**
      * @param Folder $folder
