@@ -6,7 +6,7 @@ use ReflectionClass;
 
 trait notPublicPropertyMutatorTrait
 {
-    protected function setProperty($name, $value)
+    protected function setSutProperty($name, $value)
     {
         $reflection = new ReflectionClass($this->sut);
         $property = $reflection->getProperty($name);
@@ -14,7 +14,7 @@ trait notPublicPropertyMutatorTrait
         $property->setValue($this->sut, $value);
     }
 
-    protected function getProperty($name)
+    protected function getSutProperty($name)
     {
         $reflection = new ReflectionClass($this->sut);
         $property = $reflection->getProperty($name);
