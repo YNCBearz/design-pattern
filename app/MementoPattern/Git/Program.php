@@ -12,9 +12,7 @@ class Program
         $folder = new Folder();
         $git = new Git($folder);
 
-        //write Code
         $git->writeCode('aaa');
-
         // dump($git->getUntrackedCode()); //aaa
 
         $git->commit();
@@ -24,7 +22,6 @@ class Program
         $git->commit();
 
         $git->reset(1);
-
         // dump($git->getUntrackedCode()); //aaa
     }
 }

@@ -48,6 +48,6 @@ class FolderTest extends TestCase
         $this->assertEquals($fourthCommit, $actual);
 
         $actual = $this->sut->getPreviousCommit(2);
-        $this->assertEquals($secondCommit, $actual);
+        $this->assertEquals($thirdCommit, $actual);
     }
 }

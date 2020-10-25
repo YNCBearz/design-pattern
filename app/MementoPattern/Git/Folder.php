@@ -32,20 +32,6 @@ class Folder
         $index = $commitAmount - $previous;
 
         $result = $this->commits[$index];
-        $this->deleteCommitAfter($index);
-
         return $result;
-    }
-
-    /**
-     * @param int $index
-     */
-    private function deleteCommitAfter(int $index)
-    {
-        $commitAmount = count($this->commits);
-
-        for ($i = $index; $i < $commitAmount; $i++) {
-            unset($this->commits[$i]);
-        }
     }
 }
