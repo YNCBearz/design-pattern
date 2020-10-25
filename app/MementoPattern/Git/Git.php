@@ -18,7 +18,7 @@ class Git
     /**
      * @var string
      */
-    private $changes = '';
+    private $code = '';
 
     /**
      * @param Folder $folder
@@ -35,7 +35,7 @@ class Git
      */
     public function getUntrackedCode(): string
     {
-        return $this->changes;
+        return $this->code;
     }
 
     /**
@@ -43,22 +43,22 @@ class Git
      *
      * @var string
      */
-    public function writeCode(string $changes)
+    public function writeCode(string $code)
     {
-        $this->changes = $changes;
+        $this->code = $code;
     }
 
     public function commit()
     {
         $commit = $this->createCommit();
-        $this->changes = '';
+        $this->code = '';
 
         $this->folder->saveCommit($commit);
     }
 
     private function createCommit(): Commit
     {
-        return new Commit($this->changes);
+        return new Commit($this->code);
     }
 
     /**
@@ -67,6 +67,6 @@ class Git
      */
     public function reset(int $previous): string
     {
-        return $this->changes = $this->folder->getPreviousCommit($previous)->getCode();
+        return $this->code = $this->folder->getPreviousCommit($previous)->getCode();
     }
 }
