@@ -7,7 +7,7 @@ class Block
     /**
      * @var string
      */
-    public $shape;
+    protected $shape;
 
     /**
      * @var string
@@ -22,5 +22,21 @@ class Block
     {
         $this->shape = $shape;
         $this->word = $word;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShape(): string
+    {
+        return $this->shape;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWord(): string
+    {
+        return $this->word;
     }
 }
