@@ -4,7 +4,7 @@ namespace Tests\Unit\Flyweight\Blocks;
 
 use PHPUnit\Framework\TestCase;
 use App\Flyweight\Blocks\Program;
-use App\Flyweight\Blocks\Block;
+use App\Flyweight\Blocks\Contracts\Block;
 
 class ProgramTest extends TestCase
 {

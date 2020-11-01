@@ -11,10 +11,12 @@ class Program
      */
     public function getBlocks(): array
     {
-        $firstBlock = new Block('star', 'B');
-        $secondBlock = new Block('square', 'E');
-        $thirdBlock = new Block('square', 'A');
-        $fourthBlock = new Block('square', 'R');
+        $blockFactory = new BlockFactory();
+
+        $firstBlock = $blockFactory->getBlock('star');
+        $secondBlock = $blockFactory->getBlock('square');
+        $thirdBlock = $blockFactory->getBlock('square');
+        $fourthBlock = $blockFactory->getBlock('square');
 
         return [$firstBlock, $secondBlock, $thirdBlock, $fourthBlock];
     }

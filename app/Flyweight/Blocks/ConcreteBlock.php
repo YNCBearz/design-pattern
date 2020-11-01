@@ -2,7 +2,9 @@
 
 namespace App\Flyweight\Blocks;
 
-class Block
+use App\Flyweight\Blocks\Contracts\Block;
+
+class ConcreteBlock implements Block
 {
     /**
      * @var string
