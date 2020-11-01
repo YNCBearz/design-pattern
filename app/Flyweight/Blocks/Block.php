@@ -10,18 +10,11 @@ class Block
     protected $shape;
 
     /**
-     * @var string
-     */
-    public $word;
-
-    /**
      * @param string $shape
-     * @param string $word
      */
-    public function __construct(string $shape, string $word)
+    public function __construct(string $shape)
     {
         $this->shape = $shape;
-        $this->word = $word;
     }
 
     /**
@@ -33,10 +26,11 @@ class Block
     }
 
     /**
+     * @param string $word
      * @return string
      */
-    public function getWord(): string
+    public function display(string $word): string
     {
-        return $this->word;
+        return $word;
     }
 }

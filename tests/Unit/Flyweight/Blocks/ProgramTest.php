@@ -40,9 +40,9 @@ class ProgramTest extends TestCase
     {
         $blocks = $this->sut->getBlocks();
 
-        $this->assertEquals('B', $blocks[0]->getWord());
-        $this->assertEquals('E', $blocks[1]->getWord());
-        $this->assertEquals('A', $blocks[2]->getWord());
-        $this->assertEquals('R', $blocks[3]->getWord());
+        $this->assertEquals('B', $blocks[0]->display('B'));
+        $this->assertEquals('E', $blocks[1]->display('E'));
+        $this->assertEquals('A', $blocks[2]->display('A'));
+        $this->assertEquals('R', $blocks[3]->display('R'));
     }
 }
