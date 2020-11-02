@@ -6,8 +6,11 @@ use App\InterpreterPattern\MorseCode\Abstracts\Expression;
 
 class NonTerminalExpression extends Expression
 {
-    public function execute($key)
+    /**
+     * @param string $key
+     */
+    public function execute(string $key)
     {
-        echo '/';
+        echo ' / ';
     }
 }

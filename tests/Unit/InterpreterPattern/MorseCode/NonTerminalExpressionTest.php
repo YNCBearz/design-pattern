@@ -26,7 +26,7 @@ class NonTerminalExpressionTest extends TestCase
         $context = new Context(' bear');
 
         $expected = new Context('bear');
-        $output = '/';
+        $output = ' / ';
 
         $actual = $this->sut->interpret($context);
 
