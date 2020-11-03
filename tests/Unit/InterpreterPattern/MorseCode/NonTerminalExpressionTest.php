@@ -33,4 +33,20 @@ class NonTerminalExpressionTest extends TestCase
         $this->expectOutputString($output);
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function Given_Multiple_Space_With_Word_When_Interpret_Then_Return_Tail_And_Output()
+    {
+        $context = new Context('  bear');
+
+        $expected = new Context('bear');
+        $output = ' / ';
+
+        $actual = $this->sut->interpret($context);
+
+        $this->expectOutputString($output);
+        $this->assertEquals($expected, $actual);
+    }
 }

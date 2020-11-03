@@ -33,4 +33,20 @@ class TerminalExpressionTest extends TestCase
         $this->expectOutputString($output);
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function Given_A_Bear_When_Interpter_Then_Return_Tail_And_Output()
+    {
+        $context = new Context('a bear');
+
+        $expected = new Context(' bear');
+        $output = '.-';
+
+        $actual = $this->sut->interpret($context);
+
+        $this->expectOutputString($output);
+        $this->assertEquals($expected, $actual);
+    }
 }
