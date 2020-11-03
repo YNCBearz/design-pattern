@@ -7,6 +7,15 @@ use App\InterpreterPattern\MorseCode\Context;
 
 class TerminalExpression implements Expression
 {
+    protected $mapping = [
+        'a' => '.-',
+        'b' => '-...',
+        'c' => '-.-.',
+        'e' => '.',
+        'r' => '.-.'
+    ];
+
+
     public function interpret(Context $context): Context
     {
         $firstSpacePos = strpos($context->text, ' ');
@@ -48,28 +57,7 @@ class TerminalExpression implements Expression
     private function encode(string $character)
     {
         $character = strtolower($character);
-
-        switch ($character) {
-            case 'a':
-                echo '.-';
-                break;
-
-            case 'b':
-                echo '-...';
-                break;
-
-            case 'c':
-                echo '-.-.';
-                break;
-
-            case 'e':
-                echo '.';
-                break;
-
-            case 'r':
-                echo '.-.';
-                break;
-        }
+        echo $this->mapping[$character];
     }
 
     private function typeSpace()
