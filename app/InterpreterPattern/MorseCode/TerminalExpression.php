@@ -29,11 +29,12 @@ class TerminalExpression implements Expression
     public function execute(string $message)
     {
         $characters = str_split($message);
+        $lastKey = array_key_last($characters);
 
         foreach ($characters as $key => $character) {
             $this->encode($character);
 
-            if ($key == array_key_last($characters)) {
+            if ($key == $lastKey) {
                 break;
             }
 
