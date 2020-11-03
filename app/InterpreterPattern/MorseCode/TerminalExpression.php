@@ -58,6 +58,10 @@ class TerminalExpression implements Expression
                 echo '-...';
                 break;
 
+            case 'c':
+                echo '-.-.';
+                break;
+
             case 'e':
                 echo '.';
                 break;

@@ -49,4 +49,23 @@ class TerminalExpressionTest extends TestCase
         $this->expectOutputString($output);
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     * @dataProvider morseCodeCharacterProvider
+     */
+    public function Given_Character_When_Execute_Then_Output($character, $output)
+    {
+        $this->sut->execute($character);
+        $this->expectOutputString($output);
+    }
+
+    public function morseCodeCharacterProvider(): array
+    {
+        return [
+            ['a', '.-'],
+            ['b', '-...'],
+            ['c', '-.-.']
+        ];
+    }
 }
