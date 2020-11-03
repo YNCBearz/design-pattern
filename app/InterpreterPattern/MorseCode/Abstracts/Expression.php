@@ -40,7 +40,6 @@ abstract class Expression
      * 解析字串後，印在控制台
      *
      * @param string $key
-     * @return string
      */
     abstract function execute(string $key);
 }

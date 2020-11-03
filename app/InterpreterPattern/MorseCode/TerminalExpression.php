@@ -2,10 +2,27 @@
 
 namespace App\InterpreterPattern\MorseCode;
 
-use App\InterpreterPattern\MorseCode\Abstracts\Expression;
+use App\InterpreterPattern\MorseCode\Contracts\Expression;
+use App\InterpreterPattern\MorseCode\Context;
 
-class TerminalExpression extends Expression
+class TerminalExpression implements Expression
 {
+    public function interpret(Context $context): Context
+    {
+        $firstSpacePos = strpos($context->text, ' ');
+
+        if ($firstSpacePos) {
+            $head = substr($context->text, 0, $firstSpacePos);
+            $context->text = substr($context->text, $firstSpacePos);
+        } else {
+            $head = $context->text;
+            $context->text = '';
+        }
+
+        $this->execute($head);
+        return $context;
+    }
+
     /**
      * @param string $message
      */
