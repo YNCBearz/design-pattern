@@ -5,6 +5,7 @@ namespace Tests\Feature\InterpreterPattern\MorseCode;
 use PHPUnit\Framework\TestCase;
 use App\InterpreterPattern\MorseCode\Program;
 use App\InterpreterPattern\MorseCode\Context;
+use App\InterpreterPattern\MorseCode\Exceptions\UndefinedTextException;
 
 class ProgramTest extends TestCase
 {
@@ -29,6 +30,17 @@ class ProgramTest extends TestCase
     {
         $this->sut->encode($text);
         $this->expectOutputString($output);
+    }
+
+    /**
+     * @test
+     */
+    public function Given_Undefined_Text_When_Encode_Then_Throw_Exception()
+    {
+        $undefinedText = '❤';
+
+        $this->expectException(UndefinedTextException::class);
+        $this->sut->encode($undefinedText);
     }
 
     public function textProvider(): array

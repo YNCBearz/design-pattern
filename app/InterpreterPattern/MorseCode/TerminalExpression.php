@@ -4,6 +4,7 @@ namespace App\InterpreterPattern\MorseCode;
 
 use App\InterpreterPattern\MorseCode\Contracts\Expression;
 use App\InterpreterPattern\MorseCode\Context;
+use App\InterpreterPattern\MorseCode\Exceptions\UndefinedTextException;
 
 class TerminalExpression implements Expression
 {
@@ -94,6 +95,11 @@ class TerminalExpression implements Expression
     private function encode(string $character)
     {
         $character = strtolower($character);
+
+        if (!array_key_exists($character, $this->mapping)) {
+            throw new UndefinedTextException();
+        }
+
         echo $this->mapping[$character];
     }
 

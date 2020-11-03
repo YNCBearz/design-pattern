@@ -29,17 +29,21 @@ class Program
      */
     public function encode(string $text)
     {
-        $context = new Context(trim($text));
+        try {
+            $context = new Context(trim($text));
 
-        while (strlen($context->text) > 0) {
-            $firstCharacter = substr($context->text, 0, 1);
+            while (strlen($context->text) > 0) {
+                $firstCharacter = substr($context->text, 0, 1);
 
-            if ($firstCharacter == ' ') {
-                $context = $this->nonTerminalExpression->interpret($context);
-                continue;
+                if ($firstCharacter == ' ') {
+                    $context = $this->nonTerminalExpression->interpret($context);
+                    continue;
+                }
+
+                $context = $this->terminalExpression->interpret($context);
             }
-
-            $context = $this->terminalExpression->interpret($context);
+        } catch (\Throwable $th) {
+            throw $th;
         }
     }
 }
