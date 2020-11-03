@@ -14,12 +14,17 @@ abstract class Expression
      */
     public function interpret(Context $context): Context
     {
-        $firstSpacePos = strrpos($context->text, ' ');
+        $firstCharacter = substr($context->text, 0, 1);
 
-        $head = substr($context->text, 0, $firstSpacePos);
+        if ($firstCharacter == ' ') {
+            $head = ' ';
+            $context->text = trim($context->text);
+        } else {
+            $head = $context->text;
+            $context->text = '';
+        }
+
         $this->execute($head);
-
-        $context->text = substr($context->text, $firstSpacePos + 1);
         return $context;
     }
 
