@@ -7,6 +7,8 @@ use App\InterpreterPattern\MorseCode\Context;
 
 class NonTerminalExpression implements Expression
 {
+    protected $nonTerminalCharacters = [' '];
+
     public function interpret(Context $context): Context
     {
         $head = ' ';
@@ -16,12 +18,20 @@ class NonTerminalExpression implements Expression
         return $context;
     }
 
-
     /**
      * @param string $message
      */
     public function execute(string $message)
     {
         echo ' / ';
+    }
+
+    /**
+     * @param string $character
+     * @return boolean
+     */
+    public function isNonTerminalCharacter($character)
+    {
+        return in_array($character, $this->nonTerminalCharacters);
     }
 }
