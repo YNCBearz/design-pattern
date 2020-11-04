@@ -30,8 +30,8 @@ class NonTerminalExpression implements Expression
      * @param string $character
      * @return boolean
      */
-    public function isNonTerminalCharacter($character)
+    public function isSpace($character)
     {
-        return in_array($character, $this->nonTerminalCharacters);
+        return $character == ' ';
     }
 }

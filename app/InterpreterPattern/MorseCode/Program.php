@@ -35,7 +35,7 @@ class Program
             while (strlen($context->text) > 0) {
                 $firstCharacter = substr($context->text, 0, 1);
 
-                if ($this->nonTerminalExpression->isNonTerminalCharacter($firstCharacter)) {
+                if ($this->nonTerminalExpression->isSpace($firstCharacter)) {
                     $context = $this->nonTerminalExpression->interpret($context);
                     continue;
                 }
