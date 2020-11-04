@@ -3,11 +3,12 @@
 namespace App\Flyweight\Blocks;
 
 use App\Flyweight\Blocks\ConcreteBlock;
+use App\Flyweight\Blocks\Contracts\Block;
 
 class BlockFactory
 {
     /**
-     * @var ConcreteBlock[]
+     * @var Block[]
      */
     protected $blocks;
 
@@ -15,7 +16,7 @@ class BlockFactory
      * @param string $shape
      * @return ConcreteBlock
      */
-    public function getBlock(string $shape): ConcreteBlock
+    public function getBlock(string $shape): Block
     {
         if (!isset($this->blocks[$shape])) {
             $this->blocks[$shape] = new ConcreteBlock($shape);
