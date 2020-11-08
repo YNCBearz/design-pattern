@@ -7,8 +7,6 @@ use App\InterpreterPattern\MorseCode\Context;
 
 class NonTerminalExpression implements Expression
 {
-    protected $nonTerminalCharacters = [' '];
-
     public function interpret(Context $context): Context
     {
         $head = ' ';
