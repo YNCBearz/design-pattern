@@ -28,7 +28,7 @@ class NonTerminalExpression implements Expression
      * @param string $character
      * @return boolean
      */
-    public function isSpace($character)
+    public function isSpace(string $character)
     {
         return $character == ' ';
     }
