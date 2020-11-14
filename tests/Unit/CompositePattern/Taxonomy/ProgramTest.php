@@ -35,11 +35,6 @@ class ProgramTest extends TestCase
 ---------- 大貓熊屬
 ------------ 大貓熊
 
------- 長鼻目
--------- 象科
----------- 象屬
------------- 亞洲象
-
 ';
         $this->sut->getTaxonomy();
         $this->expectOutputString($expected);
