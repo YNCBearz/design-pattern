@@ -17,12 +17,8 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-    /**
-     * @test
-     */
-    public function Given_Koala_When_Get_Taxonomy_Then_Return_Result()
+    public function testGetTaxonomy()
     {
-        $animal = 'koala';
         $expected = '
         動物界
         -- 脊索動物門
@@ -31,29 +27,19 @@ class ProgramTest extends TestCase
         -------- 無尾熊科
         ---------- 無尾熊屬
         ------------ 無尾熊
+
+        ------ 食肉目
+        -------- 熊科
+        ---------- 大貓熊屬
+        ------------ 大貓熊
+
+        ------ 長鼻目
+        -------- 象科
+        ---------- 象屬
+        ------------ 亞洲象
         ';
 
-        $this->sut->getTaxonomy($animal);
-        $this->expectOutputString($expected);
-    }
-
-    /**
-     * @test
-     */
-    public function Given_King_Penguin_When_Get_Taxonomy_Then_Return_Result()
-    {
-        $animal = 'king penguin';
-        $expected = '
-        動物界
-        -- 脊索動物門
-        ---- 鳥綱
-        ------ 企鵝目
-        -------- 企鵝科
-        ---------- 王企鵝屬
-        ------------ 國王企鵝
-        ';
-
-        $this->sut->getTaxonomy($animal);
+        $this->sut->getTaxonomy();
         $this->expectOutputString($expected);
     }
 }
