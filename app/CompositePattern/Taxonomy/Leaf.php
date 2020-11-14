@@ -3,10 +3,13 @@
 namespace App\CompositePattern\Taxonomy;
 
 use App\CompositePattern\Taxonomy\Contracts\Component;
+use App\CompositePattern\Taxonomy\Traits\DashHelper;
 use Exception;
 
 class Leaf implements Component
 {
+    use DashHelper;
+
     /**
      * @var string
      */
@@ -42,13 +45,9 @@ class Leaf implements Component
      * @param integer $depth
      * @return void
      */
-    public function getClassifiaction(int $depth)
+    public function displayClassifiaction(int $depth)
     {
-        $dash = '';
-        for ($i = 0; $i < $depth; $i++) {
-            $dash = $dash . '-';
-        }
-
-        echo "$dash $this->name\n\n";
+        $dashes = $this->getDashes($depth);
+        echo "$dashes $this->name\n\n";
     }
 }

@@ -8,5 +8,5 @@ interface Component
 
     public function remove(Component $component);
 
-    public function getClassifiaction(int $depth);
+    public function displayClassifiaction(int $depth);
 }

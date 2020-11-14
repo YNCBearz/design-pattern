@@ -10,7 +10,6 @@ class Program
         $chordata = new Composite('脊索動物門');
         $mammalia = new Composite('哺乳綱');
 
-
         $animalia->add($chordata);
         $chordata->add($mammalia);
 
@@ -38,6 +37,6 @@ class Program
 
         $mammalia->add($carnivora);
 
-        $animalia->getClassifiaction(0);
+        $animalia->displayClassifiaction(0);
     }
 }

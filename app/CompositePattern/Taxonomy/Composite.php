@@ -3,16 +3,19 @@
 namespace App\CompositePattern\Taxonomy;
 
 use App\CompositePattern\Taxonomy\Contracts\Component;
+use App\CompositePattern\Taxonomy\Traits\DashHelper;
 
 class Composite implements Component
 {
+    use DashHelper;
+
     /**
      * @var string
      */
     public $name;
 
     /**
-     * @var array
+     * @var Component[]
      */
     protected $children = [];
 
@@ -46,21 +49,36 @@ class Composite implements Component
      * @param integer $depth
      * @return void
      */
-    public function getClassifiaction(int $depth)
+    public function displayClassifiaction(int $depth)
     {
-        $dash = '';
-        for ($i = 0; $i < $depth; $i++) {
-            $dash = $dash . '-';
-        }
+        $this->displaySelfClassification($depth);
+        $this->displayChildrenClassification($depth);
+    }
 
-        if (strlen($dash) > 0) {
-            echo "$dash $this->name\n";
-        } else {
+    /**
+     * @param int $depth
+     * @return void
+     */
+    private function displaySelfClassification(int $depth)
+    {
+        $dashes = $this->getDashes($depth);
+
+        if (strlen($dashes) == 0) {
             echo "$this->name\n";
+            return;
         }
 
+        echo "$dashes $this->name\n";
+    }
+
+    /**
+     * @param integer $depth
+     * @return void
+     */
+    private function displayChildrenClassification(int $depth)
+    {
         foreach ($this->children as $child) {
-            $child->getClassifiaction($depth + 2);
+            $child->displayClassifiaction($depth + 2);
         }
     }
 }
