@@ -20,17 +20,17 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
-    public function Given_Polar_Bear_When_Get_Taxonomy_Then_Return_Result()
+    public function Given_Koala_When_Get_Taxonomy_Then_Return_Result()
     {
-        $animal = 'polar bear';
+        $animal = 'koala';
         $expected = '
         動物界
         -- 脊索動物門
         ---- 哺乳綱
-        ------ 食肉目
-        -------- 熊科
-        ---------- 熊屬
-        ------------ 北極熊
+        ------ 雙門齒目
+        -------- 無尾熊科
+        ---------- 無尾熊屬
+        ------------ 無尾熊
         ';
 
         $this->sut->getTaxonomy($animal);
@@ -40,17 +40,17 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
-    public function Given_Dog_When_Get_Taxonomy_Then_Return_Result()
+    public function Given_King_Penguin_When_Get_Taxonomy_Then_Return_Result()
     {
-        $animal = 'dog';
+        $animal = 'king penguin';
         $expected = '
         動物界
         -- 脊索動物門
-        ---- 哺乳綱
-        ------ 食肉目
-        -------- 犬科
-        ---------- 犬屬
-        ------------ 狼
+        ---- 鳥綱
+        ------ 企鵝目
+        -------- 企鵝科
+        ---------- 王企鵝屬
+        ------------ 國王企鵝
         ';
 
         $this->sut->getTaxonomy($animal);

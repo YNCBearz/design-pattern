@@ -7,38 +7,38 @@ class Program
     public function getTaxonomy($animal)
     {
         switch ($animal) {
-            case 'polar bear':
-                $this->getPolarBearTaxonomy();
+            case 'koala':
+                $this->getKoalaTaxonomy();
                 break;
-            case 'dog':
-                $this->getDogTaxonomy();
+            case 'king penguin':
+                $this->getKingPenguinTaxonomy();
                 break;
         }
     }
 
-    private function getPolarBearTaxonomy()
+    private function getKoalaTaxonomy()
     {
         echo '
         動物界
         -- 脊索動物門
         ---- 哺乳綱
-        ------ 食肉目
-        -------- 熊科
-        ---------- 熊屬
-        ------------ 北極熊
+        ------ 雙門齒目
+        -------- 無尾熊科
+        ---------- 無尾熊屬
+        ------------ 無尾熊
         ';
     }
 
-    private function getDogTaxonomy()
+    private function getKingPenguinTaxonomy()
     {
         echo '
         動物界
         -- 脊索動物門
-        ---- 哺乳綱
-        ------ 食肉目
-        -------- 犬科
-        ---------- 犬屬
-        ------------ 狼
+        ---- 鳥綱
+        ------ 企鵝目
+        -------- 企鵝科
+        ---------- 王企鵝屬
+        ------------ 國王企鵝
         ';
     }
 }
