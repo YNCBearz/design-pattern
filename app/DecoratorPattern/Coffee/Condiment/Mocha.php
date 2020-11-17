@@ -1,8 +1,9 @@
 <?php
-namespace App\DecoratePattern\Coffee\Condiment;
 
-use App\DecoratePattern\Coffee\Beverage;
-use App\DecoratePattern\Coffee\Condiment\CondimentDecorator;
+namespace App\DecoratorPattern\Coffee\Condiment;
+
+use App\DecoratorPattern\Coffee\Beverage;
+use App\DecoratorPattern\Coffee\Condiment\CondimentDecorator;
 
 class Mocha extends CondimentDecorator
 {

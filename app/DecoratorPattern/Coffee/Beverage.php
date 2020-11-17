@@ -1,5 +1,6 @@
 <?php
-namespace App\DecoratePattern\Coffee;
+
+namespace App\DecoratorPattern\Coffee;
 
 abstract class Beverage
 {

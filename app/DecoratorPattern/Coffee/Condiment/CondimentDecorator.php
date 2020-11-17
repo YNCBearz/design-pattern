@@ -1,7 +1,8 @@
 <?php
-namespace App\DecoratePattern\Coffee\Condiment;
 
-use App\DecoratePattern\Coffee\Beverage;
+namespace App\DecoratorPattern\Coffee\Condiment;
+
+use App\DecoratorPattern\Coffee\Beverage;
 
 abstract class CondimentDecorator extends Beverage
 {

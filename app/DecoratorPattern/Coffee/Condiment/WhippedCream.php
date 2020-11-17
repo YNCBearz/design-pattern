@@ -1,9 +1,9 @@
 <?php
 
-namespace App\DecoratePattern\Coffee\Condiment;
+namespace App\DecoratorPattern\Coffee\Condiment;
 
-use App\DecoratePattern\Coffee\Beverage;
-use App\DecoratePattern\Coffee\Condiment\CondimentDecorator;
+use App\DecoratorPattern\Coffee\Beverage;
+use App\DecoratorPattern\Coffee\Condiment\CondimentDecorator;
 
 class WhippedCream extends CondimentDecorator
 {

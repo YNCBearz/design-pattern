@@ -1,7 +1,8 @@
 <?php
-namespace App\DecoratePattern\Coffee;
 
-use App\DecoratePattern\Coffee\Beverage;
+namespace App\DecoratorPattern\Coffee;
+
+use App\DecoratorPattern\Coffee\Beverage;
 
 class Espresso extends Beverage
 {

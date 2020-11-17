@@ -1,10 +1,11 @@
 <?php
-namespace App\DecoratePattern\Coffee;
 
-use App\DecoratePattern\Coffee\Decaf;
-use App\DecoratePattern\Coffee\DarkRoast;
-use App\DecoratePattern\Coffee\Condiment\Mocha;
-use App\DecoratePattern\Coffee\Condiment\SteamedMilk;
+namespace App\DecoratorPattern\Coffee;
+
+use App\DecoratorPattern\Coffee\Decaf;
+use App\DecoratorPattern\Coffee\DarkRoast;
+use App\DecoratorPattern\Coffee\Condiment\Mocha;
+use App\DecoratorPattern\Coffee\Condiment\SteamedMilk;
 
 class StarbuzzCoffee
 {
