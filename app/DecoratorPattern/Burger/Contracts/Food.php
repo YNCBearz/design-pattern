@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DecoratePattern\Burger\Contracts;
+namespace App\DecoratorPattern\Burger\Contracts;
 
 interface Food
 {

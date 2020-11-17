@@ -1,8 +1,8 @@
 <?php
 
-namespace App\DecoratePattern\Burger\Decorator;
+namespace App\DecoratorPattern\Burger\Decorator;
 
-use App\DecoratePattern\Burger\Decorator\Ingredient;
+use App\DecoratorPattern\Burger\Decorator\Ingredient;
 
 class Pickle extends Ingredient
 {

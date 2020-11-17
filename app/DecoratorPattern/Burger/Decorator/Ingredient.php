@@ -1,9 +1,8 @@
 <?php
 
-namespace App\DecoratePattern\Burger\Decorator;
+namespace App\DecoratorPattern\Burger\Decorator;
 
-use App\DecoratePattern\Burger\Contracts\Food;
-use App\DecoratePattern\Burger\ConcreteComponent\Burger;
+use App\DecoratorPattern\Burger\Contracts\Food;
 use ReflectionClass;
 
 abstract class Ingredient implements Food

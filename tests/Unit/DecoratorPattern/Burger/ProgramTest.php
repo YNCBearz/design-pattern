@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\DecoratePattern\Burger;
+namespace Tests\Unit\DecoratorPattern\Burger;
 
 use PHPUnit\Framework\TestCase;
-use App\DecoratePattern\Burger\Program;
+use App\DecoratorPattern\Burger\Program;
 
 class ProgramTest extends TestCase
 {

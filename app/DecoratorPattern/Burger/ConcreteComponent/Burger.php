@@ -1,8 +1,8 @@
 <?php
 
-namespace App\DecoratePattern\Burger\ConcreteComponent;
+namespace App\DecoratorPattern\Burger\ConcreteComponent;
 
-use App\DecoratePattern\Burger\Contracts\Food;
+use App\DecoratorPattern\Burger\Contracts\Food;
 
 abstract class Burger implements Food
 {

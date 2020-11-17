@@ -1,16 +1,16 @@
 <?php
 
-namespace App\DecoratePattern\Burger;
+namespace App\DecoratorPattern\Burger;
 
-use App\DecoratePattern\Burger\ConcreteComponent\BigMac;
-use App\DecoratePattern\Burger\Decorator\Bread;
-use App\DecoratePattern\Burger\Decorator\Beef;
-use App\DecoratePattern\Burger\Decorator\Lettuce;
-use App\DecoratePattern\Burger\Decorator\Cheese;
-use App\DecoratePattern\Burger\Decorator\Salad;
-use App\DecoratePattern\Burger\ConcreteComponent\DoubleCheeseBurger;
-use App\DecoratePattern\Burger\Decorator\Pickle;
-use App\DecoratePattern\Burger\Decorator\Ingredient;
+use App\DecoratorPattern\Burger\ConcreteComponent\BigMac;
+use App\DecoratorPattern\Burger\Decorator\Bread;
+use App\DecoratorPattern\Burger\Decorator\Beef;
+use App\DecoratorPattern\Burger\Decorator\Lettuce;
+use App\DecoratorPattern\Burger\Decorator\Cheese;
+use App\DecoratorPattern\Burger\Decorator\Salad;
+use App\DecoratorPattern\Burger\ConcreteComponent\DoubleCheeseBurger;
+use App\DecoratorPattern\Burger\Decorator\Pickle;
+use App\DecoratorPattern\Burger\Decorator\Ingredient;
 
 class Program
 {
