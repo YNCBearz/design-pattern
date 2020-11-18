@@ -12,7 +12,7 @@ abstract class Ingredient implements Food
      */
     protected $food;
 
-    protected $name = '配料';
+    protected $name = '未知配料';
 
     public function __construct(Food $food)
     {
