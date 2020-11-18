@@ -3,7 +3,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use App\FactoryPattern\Pizza\PizzaStore;
 use App\StrategyPattern\Duck\DucksConference;
-use App\DecoratePattern\Coffee\StarbuzzCoffee;
+use App\DecoratorPattern\Coffee\StarbuzzCoffee;
 use App\ObserverPattern\WeatherDisplay\WeatherStation;
 use App\FactoryPattern\Pizza\NewYork\NYStylePizzaStore;
 use App\SingletonPattern\ChocolateFactory\ChocolateFactory;
@@ -25,8 +25,8 @@ use App\TemplateMethodPattern\Beverage\BeverageShop;
 // /**
 //  * 裝飾者模式 - 星巴茲咖啡
 //  */
-// $StarbuzzCoffee = new StarbuzzCoffee();
-// $StarbuzzCoffee->run();
+$StarbuzzCoffee = new StarbuzzCoffee();
+$StarbuzzCoffee->run();
 
 // /**
 //  * 簡單工廠模式 - 披薩店
@@ -55,5 +55,5 @@ use App\TemplateMethodPattern\Beverage\BeverageShop;
 /**
  * 樣板方法模式 - 飲料篇
  */
-$Beverage = new BeverageShop();
-$Beverage->run();
+// $Beverage = new BeverageShop();
+// $Beverage->run();
