@@ -46,11 +46,19 @@ abstract class Ingredient implements Food
      */
     protected function changeDefaultIfDemanded($demand)
     {
-        $reflectionClass = new ReflectionClass($this);
-        $option = strtolower($reflectionClass->getShortName());
+        $ingredientName = $this->getIngredientName();
 
-        if (isset($demand[$option])) {
-            $this->$option = $demand[$option];
+        if (isset($demand[$ingredientName])) {
+            $this->$ingredientName = $demand[$ingredientName];
         }
+    }
+
+    /**
+     * @return string
+     */
+    private function getIngredientName()
+    {
+        $reflectionClass = new ReflectionClass($this);
+        return strtolower($reflectionClass->getShortName());
     }
 }
