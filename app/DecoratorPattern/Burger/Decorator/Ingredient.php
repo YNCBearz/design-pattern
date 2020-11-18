@@ -42,6 +42,8 @@ abstract class Ingredient implements Food
     }
 
     /**
+     * 我們會利用該配料名稱，當作客製化的設定
+     *
      * @param array $demand
      */
     protected function changeDefaultIfDemanded($demand)
