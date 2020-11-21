@@ -24,7 +24,8 @@ class Program
                 break;
 
             case 'dragon':
-                echo '壯麗地飛啊飛';
+                $dragon = new Dragon();
+                $dragon->crossRiver();
                 break;
 
             case 'snake':
