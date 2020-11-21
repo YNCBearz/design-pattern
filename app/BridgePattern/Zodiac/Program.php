@@ -2,6 +2,8 @@
 
 namespace App\BridgePattern\Zodiac;
 
+use App\BridgePattern\Zodiac\Rat;
+
 class Program
 {
     /**
@@ -11,7 +13,8 @@ class Program
     {
         switch ($animal) {
             case 'rat':
-                echo '悠哉地站啊站';
+                $rat = new Rat();
+                $rat->crossRiver();
                 break;
 
             case 'ox':
