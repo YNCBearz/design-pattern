@@ -2,8 +2,6 @@
 
 namespace App\BridgePattern\Zodiac;
 
-use App\BridgePattern\Zodiac\Rat;
-use App\BridgePattern\Zodiac\Ox;
 use ReflectionClass;
 use App\BridgePattern\Zodiac\Contracts\Contestant;
 
