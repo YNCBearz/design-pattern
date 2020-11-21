@@ -11,7 +11,7 @@ class Program
     {
         switch ($animal) {
             case 'rat':
-                echo '站在水牛背上';
+                echo '悠哉地站啊站';
                 break;
 
             case 'ox':
