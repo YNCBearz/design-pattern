@@ -28,4 +28,10 @@ class ProgramTest extends TestCase
         $this->expectOutputString('努力地游啊游');
         $this->sut->crossRiver('ox');
     }
+
+    public function testDragonCrossRiver()
+    {
+        $this->expectOutputString('翱翔在天空中');
+        $this->sut->crossRiver('dragon');
+    }
 }

@@ -17,6 +17,10 @@ class Program
             case 'ox':
                 echo '努力地游啊游';
                 break;
+
+            case 'dragon':
+                echo '翱翔在天空中';
+                break;
         }
     }
 }
