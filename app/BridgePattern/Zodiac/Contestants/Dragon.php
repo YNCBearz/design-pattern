@@ -2,14 +2,13 @@
 
 namespace App\BridgePattern\Zodiac\Contestants;
 
-use App\BridgePattern\Zodiac\Contracts\Contestant;
 use App\BridgePattern\Zodiac\CrossRiverBehaviors\FlyWithNoWings;
-use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
+use App\BridgePattern\Zodiac\Abstracts\Contestant;
 
-class Dragon implements Contestant
+class Dragon extends Contestant
 {
     /**
-     * @var CrossRiverBehavior
+     * @var FlyWithNoWings
      */
     protected $crossRiverBehavior;
 

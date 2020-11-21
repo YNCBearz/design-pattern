@@ -2,24 +2,18 @@
 
 namespace App\BridgePattern\Zodiac\Contestants;
 
-use App\BridgePattern\Zodiac\Contracts\Contestant;
 use App\BridgePattern\Zodiac\CrossRiverBehaviors\Slither;
-use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
+use App\BridgePattern\Zodiac\Abstracts\Contestant;
 
-class Snake implements Contestant
+class Snake extends Contestant
 {
     /**
-     * @var CrossRiverBehavior
+     * @var Slither
      */
     protected $crossRiverBehavior;
 
     public function __construct()
     {
         $this->crossRiverBehavior = new Slither();
-    }
-
-    public function crossRiver()
-    {
-        $this->crossRiverBehavior->crossRiver();
     }
 }

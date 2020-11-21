@@ -2,24 +2,18 @@
 
 namespace App\BridgePattern\Zodiac\Contestants;
 
-use App\BridgePattern\Zodiac\Contracts\Contestant;
 use App\BridgePattern\Zodiac\CrossRiverBehaviors\RideAtopTheOx;
-use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
+use App\BridgePattern\Zodiac\Abstracts\Contestant;
 
-class Rat implements Contestant
+class Rat extends Contestant
 {
     /**
-     * @var CrossRiverBehavior
+     * @var RideAtopTheOx
      */
     protected $crossRiverBehavior;
 
     public function __construct()
     {
         $this->crossRiverBehavior = new RideAtopTheOx();
-    }
-
-    public function crossRiver()
-    {
-        $this->crossRiverBehavior->crossRiver();
     }
 }

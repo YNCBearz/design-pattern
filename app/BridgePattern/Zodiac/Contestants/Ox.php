@@ -2,14 +2,13 @@
 
 namespace App\BridgePattern\Zodiac\Contestants;
 
-use App\BridgePattern\Zodiac\Contracts\Contestant;
 use App\BridgePattern\Zodiac\CrossRiverBehaviors\Swim;
-use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
+use App\BridgePattern\Zodiac\Abstracts\Contestant;
 
-class Ox implements Contestant
+class Ox extends Contestant
 {
     /**
-     * @var CrossRiverBehavior
+     * @var Swim
      */
     protected $crossRiverBehavior;
 
