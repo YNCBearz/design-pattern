@@ -4,6 +4,8 @@ namespace App\BridgePattern\Zodiac;
 
 use App\BridgePattern\Zodiac\Rat;
 use App\BridgePattern\Zodiac\Ox;
+use ReflectionClass;
+use App\BridgePattern\Zodiac\Contracts\Contestant;
 
 class Program
 {
@@ -12,26 +14,20 @@ class Program
      */
     public function crossRiver($animal)
     {
-        switch ($animal) {
-            case 'rat':
-                $rat = new Rat();
-                $rat->crossRiver();
-                break;
+        $contestant = $this->getContestant($animal);
+        $contestant->crossRiver();
+    }
 
-            case 'ox':
-                $ox = new Ox();
-                $ox->crossRiver();
-                break;
+    /**
+     * @param string $animalName
+     * @return Contestant
+     */
+    private function getContestant($animalName)
+    {
+        $namespace = 'App\BridgePattern\Zodiac';
+        $className = ucfirst($animalName);
 
-            case 'dragon':
-                $dragon = new Dragon();
-                $dragon->crossRiver();
-                break;
-
-            case 'snake':
-                $snake = new Snake();
-                $snake->crossRiver();
-                break;
-        }
+        $reflector = new ReflectionClass($namespace . '\\' . $className);
+        return $reflector->newInstance();
     }
 }
