@@ -19,7 +19,7 @@ class Program
                 break;
 
             case 'dragon':
-                echo '翱翔在天空中';
+                echo '壯麗地飛啊飛';
                 break;
 
             case 'snake':
