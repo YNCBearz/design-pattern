@@ -29,7 +29,8 @@ class Program
                 break;
 
             case 'snake':
-                echo '迅速地滑啊滑';
+                $snake = new Snake();
+                $snake->crossRiver();
                 break;
         }
     }
