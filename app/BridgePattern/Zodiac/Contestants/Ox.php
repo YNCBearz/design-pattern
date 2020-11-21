@@ -1,6 +1,6 @@
 <?php
 
-namespace App\BridgePattern\Zodiac;
+namespace App\BridgePattern\Zodiac\Contestants;
 
 use App\BridgePattern\Zodiac\Contracts\Contestant;
 use App\BridgePattern\Zodiac\Swim;

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\BridgePattern\Zodiac;
+namespace App\BridgePattern\Zodiac\Contestants;
 
 use App\BridgePattern\Zodiac\Contracts\Contestant;
-use App\BridgePattern\Zodiac\Slither;
+use App\BridgePattern\Zodiac\FlyWithNoWings;
 use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
 
-class Snake implements Contestant
+class Dragon implements Contestant
 {
     /**
      * @var CrossRiverBehavior
@@ -15,7 +15,7 @@ class Snake implements Contestant
 
     public function __construct()
     {
-        $this->crossRiverBehavior = new Slither();
+        $this->crossRiverBehavior = new FlyWithNoWings();
     }
 
     public function crossRiver()

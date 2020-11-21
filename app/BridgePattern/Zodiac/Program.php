@@ -24,7 +24,7 @@ class Program
      */
     private function getContestant($animalName)
     {
-        $namespace = 'App\BridgePattern\Zodiac';
+        $namespace = 'App\BridgePattern\Zodiac\Contestants';
         $className = ucfirst($animalName);
 
         $reflector = new ReflectionClass($namespace . '\\' . $className);
