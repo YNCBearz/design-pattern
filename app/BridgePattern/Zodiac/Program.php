@@ -21,6 +21,10 @@ class Program
             case 'dragon':
                 echo '翱翔在天空中';
                 break;
+
+            case 'snake':
+                echo '迅速地滑啊滑';
+                break;
         }
     }
 }
