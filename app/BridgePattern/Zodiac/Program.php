@@ -3,6 +3,7 @@
 namespace App\BridgePattern\Zodiac;
 
 use App\BridgePattern\Zodiac\Rat;
+use App\BridgePattern\Zodiac\Ox;
 
 class Program
 {
@@ -18,7 +19,8 @@ class Program
                 break;
 
             case 'ox':
-                echo '努力地游啊游';
+                $ox = new Ox();
+                $ox->crossRiver();
                 break;
 
             case 'dragon':

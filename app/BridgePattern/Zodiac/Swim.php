@@ -4,15 +4,15 @@ namespace App\BridgePattern\Zodiac;
 
 use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
 
-class RideAtopTheOx implements CrossRiverBehavior
+class Swim implements CrossRiverBehavior
 {
     public function crossRiver()
     {
-        $this->rideAtopTheOx();
+        $this->swim();
     }
 
-    private function rideAtopTheOx()
+    private function swim()
     {
-        echo '悠哉地站啊站';
+        echo '努力地游啊游';
     }
 }
