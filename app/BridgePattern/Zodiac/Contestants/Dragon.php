@@ -3,7 +3,7 @@
 namespace App\BridgePattern\Zodiac\Contestants;
 
 use App\BridgePattern\Zodiac\Contracts\Contestant;
-use App\BridgePattern\Zodiac\FlyWithNoWings;
+use App\BridgePattern\Zodiac\CrossRiverBehaviors\FlyWithNoWings;
 use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
 
 class Dragon implements Contestant

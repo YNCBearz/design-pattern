@@ -1,6 +1,6 @@
 <?php
 
-namespace App\BridgePattern\Zodiac;
+namespace App\BridgePattern\Zodiac\CrossRiverBehaviors;
 
 use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
 

@@ -3,7 +3,7 @@
 namespace App\BridgePattern\Zodiac\Contestants;
 
 use App\BridgePattern\Zodiac\Contracts\Contestant;
-use App\BridgePattern\Zodiac\Slither;
+use App\BridgePattern\Zodiac\CrossRiverBehaviors\Slither;
 use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
 
 class Snake implements Contestant

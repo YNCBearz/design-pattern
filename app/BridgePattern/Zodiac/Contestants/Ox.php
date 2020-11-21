@@ -3,7 +3,7 @@
 namespace App\BridgePattern\Zodiac\Contestants;
 
 use App\BridgePattern\Zodiac\Contracts\Contestant;
-use App\BridgePattern\Zodiac\Swim;
+use App\BridgePattern\Zodiac\CrossRiverBehaviors\Swim;
 use App\BridgePattern\Zodiac\Contracts\CrossRiverBehavior;
 
 class Ox implements Contestant
