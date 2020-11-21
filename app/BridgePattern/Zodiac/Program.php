@@ -9,6 +9,14 @@ class Program
      */
     public function crossRiver($animal)
     {
-        echo '站在水牛背上';
+        switch ($animal) {
+            case 'rat':
+                echo '站在水牛背上';
+                break;
+
+            case 'ox':
+                echo '努力地游啊游';
+                break;
+        }
     }
 }
