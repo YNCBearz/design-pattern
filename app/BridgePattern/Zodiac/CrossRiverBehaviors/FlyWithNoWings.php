@@ -8,11 +8,6 @@ class FlyWithNoWings implements CrossRiverBehavior
 {
     public function crossRiver()
     {
-        $this->flyWithNoWings();
-    }
-
-    private function flyWithNoWings()
-    {
         echo '壯麗地飛啊飛';
     }
 }
