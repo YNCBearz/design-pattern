@@ -8,11 +8,11 @@ use App\BridgePattern\Zodiac\Contracts\Contestant;
 class Program
 {
     /**
-     * @param string $animal
+     * @param string $animalName
      */
-    public function crossRiver($animal)
+    public function crossRiver($animalName)
     {
-        $contestant = $this->getContestant($animal);
+        $contestant = $this->getContestant($animalName);
         $contestant->crossRiver();
     }
 
