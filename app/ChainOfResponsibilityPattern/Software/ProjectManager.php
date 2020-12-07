@@ -4,15 +4,15 @@ namespace App\ChainOfResponsibilityPattern\Software;
 
 use App\ChainOfResponsibilityPattern\Software\Abstracts\Handler;
 
-class Support extends Handler
+class ProjectManager extends Handler
 {
     /**
      * @var string
      */
-    public $role = 'Support';
+    protected $role = 'PM';
 
     /**
      * @var array
      */
-    protected $canHandleType = ['bug'];
+    protected $canHandleType = ['bug', 'feature'];
 }

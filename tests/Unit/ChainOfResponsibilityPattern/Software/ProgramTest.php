@@ -24,9 +24,9 @@ class ProgramTest extends TestCase
     public function Given_Bug_When_Handle_Then_Customer_Service_Solve()
     {
         $request = new Request('bug', 'no connection');
-        $expected = 'Support已開始處理[bug:no connection]的問題。';
+        $expected = 'Support can solve [bug:no connection] issue.';
         $actual = $this->sut->handle($request);
-        $this->assertEquals($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     /**
@@ -35,9 +35,9 @@ class ProgramTest extends TestCase
     public function Given_Feature_When_Handle_Then_PM_Solve()
     {
         $request = new Request('feature', 'add filter');
-        $expected = 'PM已開始處理[feature:add filter]的問題。';
+        $expected = 'PM can solve [feature:add filter] issue.';
         $actual = $this->sut->handle($request);
-        $this->assertEquals($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 
     /**
@@ -46,8 +46,8 @@ class ProgramTest extends TestCase
     public function Given_Cooperative_Business_When_Handle_Then_Boss_Solve()
     {
         $request = new Request('cooperative business', 'become Google partner');
-        $expected = 'Boss已開始處理[cooperative business:become Google partner]的問題。';
+        $expected = 'Boss can solve [cooperative business:become Google partner] issue.';
         $actual = $this->sut->handle($request);
-        $this->assertEquals($expected, $actual);
+        $this->assertSame($expected, $actual);
     }
 }

@@ -14,17 +14,15 @@ class Program
 
         switch ($type) {
             case 'bug':
-                $support = new Support();
-                return $support->handle($request);
-                // return "Support已開始處理[$type:$content]的問題。";
+                return "Support can solve [$type:$content] issue.";
                 break;
 
             case 'feature':
-                return "PM已開始處理[$type:$content]的問題。";
+                return "PM can solve [$type:$content] issue.";
                 break;
 
             default:
-                return "Boss已開始處理[$type:$content]的問題。";
+                return "Boss can solve [$type:$content] issue.";
                 break;
         }
     }

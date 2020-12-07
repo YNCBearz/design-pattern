@@ -9,7 +9,7 @@ abstract class Handler
     /**
      * @var string
      */
-    protected $role;
+    public $role;
 
     /**
      * @var array
@@ -21,13 +21,14 @@ abstract class Handler
      */
     protected $nextHandler;
 
-    public function handle(Request $request)
+    public function handle(Request $request): string
     {
         $type = $request->getType();
         $content = $request->getContent();
 
         if ($this->canHandle($type)) {
-            return $this->role . '已開始處理[' . $type . ':' . $content . ']的問題。';
+            $result = $this->role . '已開始處理[' . $type . ':' . $content . ']的問題。';
+            return $result;
         }
 
         return $this->nextHandler->handle($request);

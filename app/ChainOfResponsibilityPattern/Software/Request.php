@@ -14,7 +14,7 @@ class Request
      */
     protected $content;
 
-    public function __construct($type, $content)
+    public function __construct(string $type, string $content)
     {
         $this->type = $type;
         $this->content = $content;
