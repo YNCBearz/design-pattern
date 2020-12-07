@@ -2,7 +2,7 @@
 
 namespace App\ChainOfResponsibilityPattern\Software;
 
-use Tests\Unit\ChainOfResponsibilityPattern\Software\Request;
+use App\ChainOfResponsibilityPattern\Software\Request;
 
 class Program
 {

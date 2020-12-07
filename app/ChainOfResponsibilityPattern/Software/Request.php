@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\ChainOfResponsibilityPattern\Software;
+namespace App\ChainOfResponsibilityPattern\Software;
 
 class Request
 {

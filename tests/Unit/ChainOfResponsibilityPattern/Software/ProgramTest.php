@@ -4,7 +4,7 @@ namespace Tests\Unit\ChainOfResponsibilityPattern\Software;
 
 use PHPUnit\Framework\TestCase;
 use App\ChainOfResponsibilityPattern\Software\Program;
-use Tests\Unit\ChainOfResponsibilityPattern\Software\Request;
+use App\ChainOfResponsibilityPattern\Software\Request;
 
 class ProgramTest extends TestCase
 {
