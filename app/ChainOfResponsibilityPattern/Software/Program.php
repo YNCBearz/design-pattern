@@ -9,21 +9,13 @@ class Program
 {
     public function handle(Request $request)
     {
-        $type = $request->getType();
-        $content = $request->getContent();
+        $support = new Support();
+        $projectManager = new ProjectManager();
+        $boss = new Boss();
 
-        switch ($type) {
-            case 'bug':
-                return "Support can solve [$type:$content] issue.";
-                break;
+        $support->setNextHandler($projectManager);
+        $projectManager->setNextHandler($boss);
 
-            case 'feature':
-                return "PM can solve [$type:$content] issue.";
-                break;
-
-            default:
-                return "Boss can solve [$type:$content] issue.";
-                break;
-        }
+        return $support->handle($request);
     }
 }

@@ -9,12 +9,22 @@ abstract class Handler
     /**
      * @var string
      */
-    public $role;
+    protected $role;
 
     /**
      * @var array
      */
     protected $canHandleType = [];
+
+    /**
+     * @var string
+     */
+    protected $requestType;
+
+    /**
+     * @var string
+     */
+    protected $requestContent;
 
     /**
      * @var Handler
@@ -23,11 +33,12 @@ abstract class Handler
 
     public function handle(Request $request): string
     {
-        $type = $request->getType();
-        $content = $request->getContent();
+        $this->requestType = $request->getType();
+        $this->requestContent = $request->getContent();
 
-        if ($this->canHandle($type)) {
-            $result = $this->role . '已開始處理[' . $type . ':' . $content . ']的問題。';
+        if ($this->canHandle()) {
+            $role = $this->role;
+            $result = "$role can solve [$this->requestType:$this->requestContent] issue.";
             return $result;
         }
 
@@ -40,11 +51,10 @@ abstract class Handler
     }
 
     /**
-     * @param string $type
      * @return boolean
      */
-    public function canHandle($type)
+    protected function canHandle()
     {
-        return in_array($type, $this->canHandleType);
+        return in_array($this->requestType, $this->canHandleType);
     }
 }

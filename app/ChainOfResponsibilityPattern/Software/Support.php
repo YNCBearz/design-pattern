@@ -9,7 +9,7 @@ class Support extends Handler
     /**
      * @var string
      */
-    public $role = 'Support';
+    protected $role = 'Support';
 
     /**
      * @var array
