@@ -26,7 +26,7 @@ class ProgramTest extends TestCase
         $request = new Request('bug', 'no connection');
         $expected = 'Support can solve [bug:no connection] issue.';
         $actual = $this->sut->handle($request);
-        $this->assertSame($expected, $actual);
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -37,7 +37,7 @@ class ProgramTest extends TestCase
         $request = new Request('feature', 'add filter');
         $expected = 'PM can solve [feature:add filter] issue.';
         $actual = $this->sut->handle($request);
-        $this->assertSame($expected, $actual);
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -48,6 +48,6 @@ class ProgramTest extends TestCase
         $request = new Request('cooperative business', 'become Google partner');
         $expected = 'Boss can solve [cooperative business:become Google partner] issue.';
         $actual = $this->sut->handle($request);
-        $this->assertSame($expected, $actual);
+        $this->assertEquals($expected, $actual);
     }
 }
