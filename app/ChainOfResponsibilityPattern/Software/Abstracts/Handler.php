@@ -31,6 +31,10 @@ abstract class Handler
      */
     protected $nextHandler;
 
+    /**
+     * @param Request $request
+     * @return string
+     */
     public function handle(Request $request): string
     {
         $this->requestType = $request->getType();
@@ -45,6 +49,9 @@ abstract class Handler
         return $this->nextHandler->handle($request);
     }
 
+    /**
+     * @param Handler $handler
+     */
     public function setNextHandler(Handler $handler)
     {
         $this->nextHandler = $handler;

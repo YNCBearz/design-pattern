@@ -6,6 +6,9 @@ use App\ChainOfResponsibilityPattern\Software\Abstracts\Handler;
 
 class Boss extends Handler
 {
+    /**
+     * @var string
+     */
     protected $role = 'Boss';
 
     /**
