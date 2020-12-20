@@ -17,15 +17,6 @@ class Face extends Organ
      */
     public function execute($message)
     {
-        return $this->show($message);
-    }
-
-    /**
-     * @param string $message
-     * @return string
-     */
-    private function show($message)
-    {
         return "[臉]開始[$message]";
     }
 }

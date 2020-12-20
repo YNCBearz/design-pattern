@@ -14,15 +14,6 @@ class Hand extends Organ
      */
     public function execute($message)
     {
-        return $this->do($message);
-    }
-
-    /**
-     * @param string $message
-     * @return string
-     */
-    private function do($message)
-    {
         return "[手]做出[$message]的動作";
     }
 }

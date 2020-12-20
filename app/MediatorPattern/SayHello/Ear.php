@@ -17,15 +17,6 @@ class Ear extends Organ
      */
     public function execute($message)
     {
-        return $this->hear($message);
-    }
-
-    /**
-     * @param string $message
-     * @return string
-     */
-    private function hear($message)
-    {
         switch ($message) {
             case '喜歡的人':
                 return $this->brain->sendMessage('臉', '發紅');

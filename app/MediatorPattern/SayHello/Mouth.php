@@ -17,15 +17,6 @@ class Mouth extends Organ
      */
     public function execute($message)
     {
-        return $this->say($message);
-    }
-
-    /**
-     * @param string $message
-     * @return string
-     */
-    private function say($message)
-    {
         return "[嘴巴]發出[$message]的聲音";
     }
 }

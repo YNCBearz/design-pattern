@@ -8,6 +8,11 @@ use App\MediatorPattern\SayHello\Brain;
 abstract class Organ implements Executable
 {
     /**
+     * @var string
+     */
+    protected $name = 'Unknown';
+
+    /**
      * @var Brain
      */
     protected $brain;
@@ -17,10 +22,6 @@ abstract class Organ implements Executable
         $this->brain = $brain;
     }
 
-    /**
-     * @var string
-     */
-    protected $name = 'Unknown';
 
     public function getName()
     {

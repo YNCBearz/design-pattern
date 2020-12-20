@@ -18,15 +18,6 @@ class Eye extends Organ
      */
     public function execute($message)
     {
-        return $this->see($message);
-    }
-
-    /**
-     * @param string $message
-     * @return string
-     */
-    private function see($message)
-    {
         switch ($message) {
             case '認識的人':
                 return $this->brain->sendMessage('嘴巴', '你好');
