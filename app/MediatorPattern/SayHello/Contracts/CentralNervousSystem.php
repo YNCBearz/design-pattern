@@ -2,8 +2,6 @@
 
 namespace App\MediatorPattern\SayHello\Contracts;
 
-use App\MediatorPattern\SayHello\Contracts\Organ;
-
 interface CentralNervousSystem
 {
     /**
