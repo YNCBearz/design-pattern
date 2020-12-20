@@ -9,16 +9,6 @@ class Hand extends Organ
     protected $name = '手';
 
     /**
-     * @var Brain
-     */
-    protected $brain;
-
-    public function __construct(Brain $brain)
-    {
-        $this->brain = $brain;
-    }
-
-    /**
      * @param string $message
      * @return string
      */

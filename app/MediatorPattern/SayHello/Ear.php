@@ -12,16 +12,6 @@ class Ear extends Organ
     protected $name = '耳朵';
 
     /**
-     * @var Brain
-     */
-    protected $brain;
-
-    public function __construct(Brain $brain)
-    {
-        $this->brain = $brain;
-    }
-
-    /**
      * @param string $message
      * @return string
      */

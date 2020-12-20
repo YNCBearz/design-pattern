@@ -12,16 +12,6 @@ class Face extends Organ
     protected $name = '臉';
 
     /**
-     * @var Brain
-     */
-    protected $brain;
-
-    public function __construct(Brain $brain)
-    {
-        $this->brain = $brain;
-    }
-
-    /**
      * @param string $message
      * @return string
      */

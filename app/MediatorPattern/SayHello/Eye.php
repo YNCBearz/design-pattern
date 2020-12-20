@@ -3,7 +3,6 @@
 namespace App\MediatorPattern\SayHello;
 
 use App\MediatorPattern\SayHello\Abstracts\Organ;
-use App\MediatorPattern\SayHello\Brain;
 
 
 class Eye extends Organ
@@ -12,16 +11,6 @@ class Eye extends Organ
      * @var string
      */
     protected $name = '眼睛';
-
-    /**
-     * @var Brain
-     */
-    protected $brain;
-
-    public function __construct(Brain $brain)
-    {
-        $this->brain = $brain;
-    }
 
     /**
      * @param string $message

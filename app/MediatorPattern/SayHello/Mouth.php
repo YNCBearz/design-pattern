@@ -12,16 +12,6 @@ class Mouth extends Organ
     protected $name = '嘴巴';
 
     /**
-     * @var Brain
-     */
-    protected $brain;
-
-    public function __construct(Brain $brain)
-    {
-        $this->brain = $brain;
-    }
-
-    /**
      * @param string $message
      * @return string
      */
