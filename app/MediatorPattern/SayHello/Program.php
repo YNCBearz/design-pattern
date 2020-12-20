@@ -43,7 +43,7 @@ class Program
 
     public function __construct()
     {
-        $this->brain = $this->prepareBrainAndOrgan();
+        $this->brain = $this->resolveBrainAndOrgans();
     }
 
     /**
@@ -64,20 +64,24 @@ class Program
         return $this->ear->execute($item);
     }
 
-    private function prepareBrainAndOrgan()
+    private function resolveBrainAndOrgans()
     {
         $this->brain = new Brain();
-
-        $this->eye = new Eye($this->brain);
-        $this->mouth = new Mouth($this->brain);
-        $this->hand = new Hand($this->brain);
-        $this->ear = new Ear($this->brain);
-        $this->face = new Face($this->brain);
+        $this->resolveOrgans();
 
         $this->brain->setOrgan($this->eye);
         $this->brain->setOrgan($this->mouth);
         $this->brain->setOrgan($this->hand);
         $this->brain->setOrgan($this->ear);
         $this->brain->setOrgan($this->face);
+    }
+
+    private function resolveOrgans()
+    {
+        $this->eye = new Eye($this->brain);
+        $this->mouth = new Mouth($this->brain);
+        $this->hand = new Hand($this->brain);
+        $this->ear = new Ear($this->brain);
+        $this->face = new Face($this->brain);
     }
 }
