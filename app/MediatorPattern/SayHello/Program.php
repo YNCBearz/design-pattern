@@ -2,8 +2,49 @@
 
 namespace App\MediatorPattern\SayHello;
 
+use App\MediatorPattern\SayHello\Brain;
+use App\MediatorPattern\SayHello\Eye;
+use App\MediatorPattern\SayHello\Mouth;
+use App\MediatorPattern\SayHello\Hand;
+use App\MediatorPattern\SayHello\Ear;
+use App\MediatorPattern\SayHello\Face;
+
 class Program
 {
+    /**
+     * @var Brain
+     */
+    protected $brain;
+
+    /**
+     * @var Eye
+     */
+    protected $eye;
+
+    /**
+     * @var Mouth
+     */
+    protected $mouth;
+
+    /**
+     * @var Hand
+     */
+    protected $hand;
+
+    /**
+     * @var Ear
+     */
+    protected $ear;
+
+    /**
+     * @var Face
+     */
+    protected $face;
+
+    public function __construct()
+    {
+        $this->brain = $this->prepareBrainAndOrgan();
+    }
 
     /**
      * @param string $item
@@ -11,15 +52,7 @@ class Program
      */
     public function see($item)
     {
-        switch ($item) {
-            case '認識的人':
-                return $this->sayHello();
-                break;
-
-            case '熟識的人':
-                return $this->waveHand();
-                break;
-        }
+        return $this->eye->execute($item);
     }
 
     /**
@@ -28,34 +61,23 @@ class Program
      */
     public function hear($item)
     {
-        switch ($item) {
-            case '喜歡的人':
-                return $this->blush();
-                break;
-
-            case '討厭的人':
-                return $this->pretendToLookBusy();
-                break;
-        }
+        return $this->ear->execute($item);
     }
 
-    private function sayHello()
+    private function prepareBrainAndOrgan()
     {
-        return '[嘴巴]發出[你好]的聲音';
-    }
+        $this->brain = new Brain();
 
-    private function waveHand()
-    {
-        return '[手]做出[揮手]的動作';
-    }
+        $this->eye = new Eye($this->brain);
+        $this->mouth = new Mouth($this->brain);
+        $this->hand = new Hand($this->brain);
+        $this->ear = new Ear($this->brain);
+        $this->face = new Face($this->brain);
 
-    private function blush()
-    {
-        return '[臉]開始[發紅]';
-    }
-
-    private function pretendToLookBusy()
-    {
-        return '[手]做出[裝忙]的動作';
+        $this->brain->setOrgan($this->eye);
+        $this->brain->setOrgan($this->mouth);
+        $this->brain->setOrgan($this->hand);
+        $this->brain->setOrgan($this->ear);
+        $this->brain->setOrgan($this->face);
     }
 }
