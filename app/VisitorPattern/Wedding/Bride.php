@@ -2,7 +2,9 @@
 
 namespace App\VisitorPattern\Wedding;
 
-class Bride
+use App\VisitorPattern\Wedding\Contracts\WeddingRole;
+
+class Bride implements WeddingRole
 {
     /**
      * @param string $weddingType

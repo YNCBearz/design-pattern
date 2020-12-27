@@ -7,4 +7,8 @@ interface WeddingType
     public function getBrideGroomClothes();
 
     public function getBrideClothes();
+
+    public function getBrideGroomShoes();
+
+    public function getBrideShoes();
 }
