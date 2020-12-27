@@ -2,15 +2,17 @@
 
 namespace App\VisitorPattern\Wedding\Contracts;
 
+use App\VisitorPattern\Wedding\Contracts\WeddingType;
+
 interface WeddingRole
 {
     /**
-     * @param string $weddingType
+     * @param WeddingType $weddingType
      */
     public function getClothes($weddingType);
 
     /**
-     * @param string $weddingType
+     * @param WeddingType $weddingType
      */
     public function getShoes($weddingType);
 }

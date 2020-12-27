@@ -3,22 +3,50 @@
 namespace App\VisitorPattern\Wedding\Type;
 
 use App\VisitorPattern\Wedding\Contracts\WeddingType;
+use App\VisitorPattern\Wedding\Contracts\WeddingRole;
+use ReflectionClass;
 
 class JapaneseWedding implements WeddingType
 {
     /**
-     * @return string
+     * @param WeddingRole $role
      */
-    public function getBrideGroomClothes()
+    public function getClothes($role)
     {
-        return '繡有家紋的和服';
+        $reflectionClass = new ReflectionClass($role);
+        $roleName = $reflectionClass->getShortName();
+
+        switch ($roleName) {
+            case 'BrideGroom':
+                echo
+                    "新郎：繡有家紋的和服\n";
+                break;
+
+            case 'Bride':
+                echo
+                    "新娘：純潔的白無垢\n";
+                break;
+        }
     }
 
     /**
-     * @return string
+     * @param WeddingRole $role
      */
-    public function getBrideClothes()
+    public function getShoes($role)
     {
-        return '純潔的白無垢';
+        $reflectionClass = new ReflectionClass($role);
+        $roleName = $reflectionClass->getShortName();
+
+        switch ($roleName) {
+            case 'BrideGroom':
+                echo
+                    "新郎：雪駄\n";
+                break;
+
+            case 'Bride':
+                echo
+                    "新娘：草履\n";
+                break;
+        }
     }
 }

@@ -4,11 +4,13 @@ namespace App\VisitorPattern\Wedding\Contracts;
 
 interface WeddingType
 {
-    public function getBrideGroomClothes();
+    /**
+     * @param WeddingRole $role
+     */
+    public function getClothes($role);
 
-    public function getBrideClothes();
-
-    public function getBrideGroomShoes();
-
-    public function getBrideShoes();
+    /**
+     * @param WeddingRole $role
+     */
+    public function getShoes($role);
 }
