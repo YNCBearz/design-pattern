@@ -12,7 +12,7 @@ class Program
     {
         switch ($weddingType) {
             case 'Chinese':
-                return
+                echo
                     '新郎：中式囍袍
 新郎：黑色秀禾鞋
 新娘：龍鳳褂
@@ -20,7 +20,7 @@ class Program
                 break;
 
             case 'Japanese':
-                return
+                echo
                     '新郎：繡有家紋的和服
 新郎：雪駄
 新娘：純潔的白無垢

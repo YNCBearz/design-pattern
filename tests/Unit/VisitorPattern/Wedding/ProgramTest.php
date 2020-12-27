@@ -25,8 +25,8 @@ class ProgramTest extends TestCase
 新娘：龍鳳褂
 新娘：紅色秀禾鞋';
         $weddingType = 'Chinese';
-        $actual = $this->sut->getWedding($weddingType);
-        $this->assertEquals($expected, $actual);
+        $this->sut->getWedding($weddingType);
+        $this->expectOutputString($expected);
     }
 
     public function testJapaneseWedding()
@@ -37,7 +37,7 @@ class ProgramTest extends TestCase
 新娘：純潔的白無垢
 新娘：草履';
         $weddingType = 'Japanese';
-        $actual = $this->sut->getWedding($weddingType);
-        $this->assertEquals($expected, $actual);
+        $this->sut->getWedding($weddingType);
+        $this->expectOutputString($expected);
     }
 }
