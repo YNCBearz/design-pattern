@@ -8,6 +8,11 @@ use App\VisitorPattern\Wedding\Contracts\WeddingType;
 class BrideGroom implements WeddingRole
 {
     /**
+     * @var string
+     */
+    public $name = 'BrideGroom';
+
+    /**
      * @param WeddingType $weddingType
      */
     public function getClothes($weddingType)

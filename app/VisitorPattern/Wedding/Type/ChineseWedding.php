@@ -4,7 +4,6 @@ namespace App\VisitorPattern\Wedding\Type;
 
 use App\VisitorPattern\Wedding\Contracts\WeddingType;
 use App\VisitorPattern\Wedding\Contracts\WeddingRole;
-use ReflectionClass;
 
 class ChineseWedding implements WeddingType
 {
@@ -13,8 +12,7 @@ class ChineseWedding implements WeddingType
      */
     public function getClothes($role)
     {
-        $reflectionClass = new ReflectionClass($role);
-        $roleName = $reflectionClass->getShortName();;
+        $roleName = $role->name;
 
         switch ($roleName) {
             case 'BrideGroom':
@@ -34,8 +32,7 @@ class ChineseWedding implements WeddingType
      */
     public function getShoes($role)
     {
-        $reflectionClass = new ReflectionClass($role);
-        $roleName = $reflectionClass->getShortName();;
+        $roleName = $role->name;
 
         switch ($roleName) {
             case 'BrideGroom':

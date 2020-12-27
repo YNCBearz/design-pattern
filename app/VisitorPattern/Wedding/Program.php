@@ -2,6 +2,12 @@
 
 namespace App\VisitorPattern\Wedding;
 
+use App\VisitorPattern\Wedding\Contracts\WeddingType;
+use App\VisitorPattern\Wedding\WeddingTypeFactory;
+use App\VisitorPattern\Wedding\Composite;
+use App\VisitorPattern\Wedding\BrideGroom;
+use App\VisitorPattern\Wedding\Bride;
+
 class Program
 {
     /**
@@ -21,14 +27,15 @@ class Program
     {
         $weddingType = $this->createWeddingType($weddingType);
 
+        $composite = new Composite();
+
         $brideGroom = new BrideGroom();
         $bride = new Bride();
 
-        $brideGroom->getClothes($weddingType);
-        $brideGroom->getShoes($weddingType);
+        $composite->add($brideGroom);
+        $composite->add($bride);
 
-        $bride->getClothes($weddingType);
-        $bride->getShoes($weddingType);
+        $composite->display($weddingType);
     }
 
     /**
