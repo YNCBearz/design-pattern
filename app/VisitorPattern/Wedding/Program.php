@@ -31,6 +31,10 @@ class Program
             case 'Chinese':
                 return '龍鳳褂';
                 break;
+
+            case 'Japanese':
+                return '純潔的白無垢';
+                break;
         }
     }
 }
