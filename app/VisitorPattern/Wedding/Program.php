@@ -11,11 +11,11 @@ class Program
     public function getBrideGroomClothes($weddingType)
     {
         switch ($weddingType) {
-            case 'ChineseWedding':
+            case 'Chinese':
                 return '中式囍袍';
                 break;
 
-            case 'JapaneseWedding':
+            case 'Japanese':
                 return '繡有家紋的和服';
                 break;
         }

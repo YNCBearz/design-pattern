@@ -24,7 +24,7 @@ class ProgramTest extends TestCase
     public function Given_Chinese_Wedding_When_Get_BrideGroom_Clothes_Then_Return_Result()
     {
         $expected = '中式囍袍';
-        $type = 'ChineseWedding';
+        $type = 'Chinese';
         $actual = $this->sut->getBrideGroomClothes($type);
         $this->assertEquals($expected, $actual);
     }
@@ -35,7 +35,7 @@ class ProgramTest extends TestCase
     public function Given_Japanese_Wedding_When_Get_BrideGroom_Clothes_Then_Return_Result()
     {
         $expected = '繡有家紋的和服';
-        $type = 'JapaneseWedding';
+        $type = 'Japanese';
         $actual = $this->sut->getBrideGroomClothes($type);
         $this->assertEquals($expected, $actual);
     }
