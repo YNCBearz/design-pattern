@@ -2,52 +2,30 @@
 
 namespace App\VisitorPattern\Wedding;
 
-use App\VisitorPattern\Wedding\Contracts\WeddingType;
-use App\VisitorPattern\Wedding\WeddingTypeFactory;
-use App\VisitorPattern\Wedding\BrideGroom;
-
 class Program
 {
     /**
-     * @var WeddingTypeFactory
-     */
-    protected $weddingTypeFactory;
-
-    public function __construct()
-    {
-        $this->weddingTypeFactory = new WeddingTypeFactory();
-    }
-
-    /**
      * @param string $weddingType
      * @return string
      */
-    public function getBrideGroomClothes($weddingType)
+    public function getWedding($weddingType)
     {
-        $weddingType = $this->createWeddingType($weddingType);
+        switch ($weddingType) {
+            case 'Chinese':
+                return
+                    '新郎：中式囍袍
+新郎：黑色秀禾鞋
+新娘：龍鳳褂
+新娘：紅色秀禾鞋';
+                break;
 
-        $brideGroom = new BrideGroom();
-        return $brideGroom->getClothes($weddingType);
-    }
-
-    /**
-     * @param string $weddingType
-     * @return string
-     */
-    public function getBrideClothes($weddingType)
-    {
-        $weddingType = $this->createWeddingType($weddingType);
-
-        $bride = new Bride();
-        return $bride->getClothes($weddingType);
-    }
-
-    /**
-     * @param string $weddingType
-     * @return WeddingType
-     */
-    private function createWeddingType($weddingType)
-    {
-        return $this->weddingTypeFactory->create($weddingType);
+            case 'Japanese':
+                return
+                    '新郎：繡有家紋的和服
+新郎：雪駄
+新娘：純潔的白無垢
+新娘：草履';
+                break;
+        }
     }
 }

@@ -17,48 +17,27 @@ class ProgramTest extends TestCase
         $this->sut = new Program();
     }
 
-
-    /**
-     * @test
-     */
-    public function Given_Chinese_Wedding_When_Get_BrideGroom_Clothes_Then_Return_Result()
+    public function testChineseWedding()
     {
-        $expected = '中式囍袍';
-        $type = 'Chinese';
-        $actual = $this->sut->getBrideGroomClothes($type);
-        $this->assertEquals($expected, $actual);
-    }
-
-    /**
-     * @test
-     */
-    public function Given_Japanese_Wedding_When_Get_BrideGroom_Clothes_Then_Return_Result()
-    {
-        $expected = '繡有家紋的和服';
-        $type = 'Japanese';
-        $actual = $this->sut->getBrideGroomClothes($type);
-        $this->assertEquals($expected, $actual);
-    }
-
-    /**
-     * @test
-     */
-    public function Given_Chinese_Wedding_When_Get_Bride_Clothes_Then_Return_Result()
-    {
-        $expected = '龍鳳褂';
+        $expected =
+            '新郎：中式囍袍
+新郎：黑色秀禾鞋
+新娘：龍鳳褂
+新娘：紅色秀禾鞋';
         $weddingType = 'Chinese';
-        $actual = $this->sut->getBrideClothes($weddingType);
+        $actual = $this->sut->getWedding($weddingType);
         $this->assertEquals($expected, $actual);
     }
 
-    /**
-     * @test
-     */
-    public function Given_Japanese_Wedding_When_Get_Bride_Clothes_Then_Return_Result()
+    public function testJapaneseWedding()
     {
-        $expected = '純潔的白無垢';
+        $expected =
+            '新郎：繡有家紋的和服
+新郎：雪駄
+新娘：純潔的白無垢
+新娘：草履';
         $weddingType = 'Japanese';
-        $actual = $this->sut->getBrideClothes($weddingType);
+        $actual = $this->sut->getWedding($weddingType);
         $this->assertEquals($expected, $actual);
     }
 }
