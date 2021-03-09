@@ -4,11 +4,11 @@
     "description": "Design Pattern Practice.",
     "license": "MIT",
     "require": {
-        "php": "^7.3"
+        "php": "^8.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
-        "phpunit/phpunit": "^8.0",
+        "phpunit/phpunit": "^9.0",
         "symfony/var-dumper": "^5.1"
     },
     "autoload": {
