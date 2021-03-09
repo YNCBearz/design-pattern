@@ -2,6 +2,8 @@
 
 namespace App\SingletonPattern\DBConnection;
 
+use Exception;
+
 class DBConnection
 {
     private static $instance = null;
@@ -22,9 +24,12 @@ class DBConnection
 
     /**
      * 避免反序列化後，生成兩個實例
+     *
+     * @throws Exception
      */
-    private function __wakeup()
+    public function __wakeup()
     {
+        throw new Exception("Cannot unserialize singleton");
     }
 
     /**
