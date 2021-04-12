@@ -8,23 +8,23 @@ use ReflectionClass;
 class Program
 {
     /**
-     * @param string $model
+     * @param string $modelName
      * @return string
      */
-    public function getModel($model)
+    public function getModel($modelName)
     {
-        $modelFactory = $this->createModelFactory($model);
+        $modelFactory = $this->createModelFactory($modelName);
         $model = $modelFactory->createModel();
         return $model->getName();
     }
 
     /**
-     * @param string $model
+     * @param string $modelName
      * @return string
      */
-    public function getChair($model)
+    public function getChair($modelName)
     {
-        $modelFactory = $this->createModelFactory($model);
+        $modelFactory = $this->createModelFactory($modelName);
         $chair = $modelFactory->createChair();
         return $chair->getName();
     }
