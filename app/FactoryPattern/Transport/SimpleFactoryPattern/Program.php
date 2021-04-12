@@ -7,13 +7,13 @@ use App\FactoryPattern\Transport\SimpleFactoryPattern\RailwayModelFactory;
 class Program
 {
     /**
-     * @param string $model
+     * @param string $modelName
      * @return string
      */
-    public function getModel($model)
+    public function getModel($modelName)
     {
         $railwayModelFactory = new RailwayModelFactory();
-        $model = $railwayModelFactory->createModel($model);
+        $model = $railwayModelFactory->createModel($modelName);
         return $model->getName();
     }
 }

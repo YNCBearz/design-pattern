@@ -10,12 +10,12 @@ use App\FactoryPattern\Transport\SimpleFactoryPattern\Model\SemiExpress;
 class RailWayModelFactory
 {
     /**
-     * @param string $model
+     * @param string $modelName
      * @return Model
      */
-    public function createModel($model): Model
+    public function createModel($modelName): Model
     {
-        switch ($model) {
+        switch ($modelName) {
             case 'LocalTrain':
                 return new LocalTrain();
                 break;
