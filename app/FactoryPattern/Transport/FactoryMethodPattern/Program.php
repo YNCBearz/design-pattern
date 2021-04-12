@@ -8,12 +8,12 @@ use ReflectionClass;
 class Program
 {
     /**
-     * @param string $model
+     * @param string $modelName
      * @return string
      */
-    public function getModel($model)
+    public function getModel($modelName)
     {
-        $modelFactory = $this->createModelFactory($model);
+        $modelFactory = $this->createModelFactory($modelName);
         $model = $modelFactory->createModel();
         return $model->getName();
     }
@@ -22,10 +22,10 @@ class Program
      * @param string $model
      * @return ModelFactory
      */
-    private function createModelFactory($model)
+    private function createModelFactory($modelName)
     {
         $namespace = 'App\FactoryPattern\Transport\FactoryMethodPattern\ModelFactories';
-        $className = $model . 'Factory';
+        $className = $modelName . 'Factory';
 
         $reflector = new ReflectionClass($namespace . '\\' . $className);
         return $reflector->newInstance();
