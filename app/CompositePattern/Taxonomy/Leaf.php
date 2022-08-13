@@ -48,6 +48,6 @@ class Leaf implements Component
     public function displayClassifiaction(int $depth)
     {
         $dashes = $this->getDashes($depth);
-        echo "$dashes $this->name\n\n";
+        echo "$dashes $this->name" . PHP_EOL . PHP_EOL;
     }
 }

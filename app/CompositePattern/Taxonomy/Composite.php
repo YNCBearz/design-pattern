@@ -64,11 +64,12 @@ class Composite implements Component
         $dashes = $this->getDashes($depth);
 
         if (strlen($dashes) == 0) {
-            echo "$this->name\n";
+            echo "$this->name" . PHP_EOL;
+
             return;
         }
 
-        echo "$dashes $this->name\n";
+        echo "$dashes $this->name" . PHP_EOL;
     }
 
     /**
