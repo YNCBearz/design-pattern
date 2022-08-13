@@ -17,12 +17,12 @@ class JapaneseWedding implements WeddingType
         switch ($roleName) {
             case 'BrideGroom':
                 echo
-                    "新郎：繡有家紋的和服\n";
+                    "新郎：繡有家紋的和服" . PHP_EOL;
                 break;
 
             case 'Bride':
                 echo
-                    "新娘：純潔的白無垢\n";
+                    "新娘：純潔的白無垢" . PHP_EOL;
                 break;
         }
     }
@@ -37,12 +37,12 @@ class JapaneseWedding implements WeddingType
         switch ($roleName) {
             case 'BrideGroom':
                 echo
-                    "新郎：雪駄\n";
+                    "新郎：雪駄" . PHP_EOL;
                 break;
 
             case 'Bride':
                 echo
-                    "新娘：草履\n";
+                    "新娘：草履" . PHP_EOL;
                 break;
         }
     }
