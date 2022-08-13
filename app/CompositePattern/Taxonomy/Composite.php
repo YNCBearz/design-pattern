@@ -49,7 +49,7 @@ class Composite implements Component
      * @param integer $depth
      * @return void
      */
-    public function displayClassifiaction(int $depth)
+    public function displayClassification(int $depth)
     {
         $this->displaySelfClassification($depth);
         $this->displayChildrenClassification($depth);
@@ -79,7 +79,7 @@ class Composite implements Component
     private function displayChildrenClassification(int $depth)
     {
         foreach ($this->children as $child) {
-            $child->displayClassifiaction($depth + 2);
+            $child->displayClassification($depth + 2);
         }
     }
 }

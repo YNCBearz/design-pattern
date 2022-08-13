@@ -37,6 +37,6 @@ class Program
 
         $mammalia->add($carnivora);
 
-        $animalia->displayClassifiaction(0);
+        $animalia->displayClassification(0);
     }
 }
