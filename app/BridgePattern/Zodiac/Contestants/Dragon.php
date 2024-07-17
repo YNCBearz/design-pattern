@@ -16,9 +16,4 @@ class Dragon extends Contestant
     {
         $this->crossRiverBehavior = new FlyWithNoWings();
     }
-
-    public function crossRiver()
-    {
-        $this->crossRiverBehavior->crossRiver();
-    }
 }

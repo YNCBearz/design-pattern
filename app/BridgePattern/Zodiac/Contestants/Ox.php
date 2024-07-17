@@ -16,9 +16,4 @@ class Ox extends Contestant
     {
         $this->crossRiverBehavior = new Swim();
     }
-
-    public function crossRiver()
-    {
-        $this->crossRiverBehavior->crossRiver();
-    }
 }
